@@ -11,7 +11,9 @@
         newDiv.className = "particles";
 
       var width = screen.width / 27;
-      console.log (Math.floor(width))
+      if (width < 40) {
+        width = 40;
+      }
       for(var i=0; i<Math.floor(width); i++) {
         var newSpan = document.createElement('span');
         newSpan.className = "particle";
