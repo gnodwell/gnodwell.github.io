@@ -10,7 +10,9 @@
         var newDiv = document.createElement('div');
         newDiv.className = "particles";
 
-      for(var i=0; i<75; i++) {
+      var width = screen.width / 27;
+      console.log (Math.floor(width))
+      for(var i=0; i<Math.floor(width); i++) {
         var newSpan = document.createElement('span');
         newSpan.className = "particle";
         // newDiv.style.top = Math.floor(Math.random() * 100);
@@ -31,7 +33,7 @@
         var finalStr = tempStr.concat(tempVal);
         thisDiv.style = finalStr;
 
-        console.log(finalStr)
+        // console.log(finalStr)
         finalStr = ""
       }
     </script>
