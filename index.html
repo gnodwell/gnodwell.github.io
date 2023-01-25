@@ -6,66 +6,35 @@
 
 
   <body class="background-body">
-    <div class="background-container">
-      <div class="particles">
-        <span style="--i:11"></span>
-        <span style="--i:18"></span>
-        <span style="--i:25"></span>
-        <span style="--i:13"></span>
-        <span style="--i:26"></span>
-        <span style="--i:10"></span>
-        <span style="--i:19"></span>
-        <span style="--i:29"></span>
-        <span style="--i:22"></span>
-        <span style="--i:30"></span>
-        <span style="--i:21"></span>
-        <span style="--i:14"></span>
-        <span style="--i:17"></span>
-        <span style="--i:10"></span>
-        <span style="--i:12"></span>
-        <span style="--i:24"></span>
-        <span style="--i:9"></span>
-        <span style="--i:17"></span>
-        <span style="--i:26"></span>
-        <span style="--i:22"></span>
-        <span style="--i:13"></span>
-        <span style="--i:29"></span>
-        <span style="--i:10"></span>
-        <span style="--i:19"></span>
-        <span style="--i:13"></span>
-        <span style="--i:22"></span>
-        <span style="--i:34"></span>
-        <span style="--i:21"></span>
-        <span style="--i:19"></span>
-        <span style="--i:17"></span>
-        <span style="--i:14"></span>
-        <span style="--i:12"></span>
-        <span style="--i:24"></span>
-        <span style="--i:9"></span>
-        <span style="--i:22"></span>
-        <span style="--i:30"></span>
-        <span style="--i:21"></span>
-        <span style="--i:25"></span>
-        <span style="--i:17"></span>
-        <span style="--i:14"></span>
-        <span style="--i:12"></span>
-        <span style="--i:24"></span>
-        <span style="--i:9"></span>
-        <span style="--i:22"></span>
-        <span style="--i:28"></span>
-        <span style="--i:21"></span>
-        <span style="--i:23"></span>
-        <span style="--i:11"></span>
-        <span style="--i:19"></span>
-        <span style="--i:15"></span>
-        <span style="--i:24"></span>
-        <span style="--i:18"></span>
-        <span style="--i:14"></span>
-        <span style="--i:12"></span>
-        <span style="--i:24"></span>
-        <span style="--i:9"></span>
-      </div>
-    </div>
+    <script>
+        var newDiv = document.createElement('div');
+        newDiv.className = "particles";
+
+      for(var i=0; i<75; i++) {
+        var newSpan = document.createElement('span');
+        newSpan.className = "particle";
+        // newDiv.style.top = Math.floor(Math.random() * 100);
+        // newDiv.style.left = Math.floor(Math.random() * 100);
+
+        // document.body.appendChild(newDiv);
+        newDiv.appendChild(newSpan);
+      }
+
+      document.body.appendChild(newDiv);
+      
+      var divs = document.getElementsByClassName('particle');
+
+      for(var i=0; i<divs.length; i++) {
+        var thisDiv = divs[i];
+        var tempVal = Math.floor(Math.random() * 20) + 10 + Math.floor(Math.random() * 10);
+        var tempStr = "--i:";
+        var finalStr = tempStr.concat(tempVal);
+        thisDiv.style = finalStr;
+
+        console.log(finalStr)
+        finalStr = ""
+      }
+    </script>
 
     <div class="title">
       <h1>Gavin Nodwell</h1>
