@@ -11,3 +11,12 @@ h1, h2, h3, h4, p {color: #fff}
     max-width: 100%;
     border-radius: 50%;
 }
+
+/* CSS For Hockey Card */
+.card {height: fit-content; width:fit-content; max-width: 600px; position: relative; transition: transform 1000ms; transform-style: preserve-3d; cursor: pointer; margin: 50px auto; display: inline-flex;}
+.card img {max-width: 540px;}
+@media only screen and (max-width: 600px) {
+    .card img {max-width: 100%;}
+}
+.card .clearfix::before{display: none;}
+.card .clearfix::after{display: none;}
