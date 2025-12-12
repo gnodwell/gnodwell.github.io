@@ -223,11 +223,6 @@
           <button class="btn primary" id="checkBtn" type="button">Check</button>
         </div>
       </div>
-
-      <div class="divider"></div>
-      <p class="tiny">
-        Edit questions in the <code>QUESTIONS</code> array inside the script.
-      </p>
     </div>
 
     <script>
@@ -484,6 +479,237 @@
           options: ["Summary Conviction", "Dual Procedure", "Indictable"],
           answerValue: "Indictable",
           explanation: "Aggravated Assault = Indictable.",
+        },
+        // -------------------------------
+        // Intro to Law – Concept Questions
+        // -------------------------------
+
+        {
+          id: "law1",
+          type: "single",
+          prompt:
+            "Which option best describes the purpose of law in Canadian society?",
+          choices: [
+            "To punish people after crimes occur",
+            "To protect individual rights and regulate behaviour",
+            "To give police unlimited authority",
+            "To replace moral values",
+          ],
+          answerIndex: 1,
+          explanation:
+            "Law exists to protect rights, regulate behaviour, and provide order in society.",
+        },
+
+        {
+          id: "law2",
+          type: "single",
+          prompt:
+            "Which type of law is created through decisions made by judges in court?",
+          choices: [
+            "Statute law",
+            "Common law",
+            "Procedural law",
+            "Regulatory law",
+          ],
+          answerIndex: 1,
+          explanation:
+            "Common law develops from previous court decisions and judicial interpretation.",
+        },
+
+        {
+          id: "law3",
+          type: "single",
+          prompt: "What is the highest form of law in Canada?",
+          choices: [
+            "Criminal Code",
+            "Common law",
+            "The Constitution",
+            "Federal statutes",
+          ],
+          answerIndex: 2,
+          explanation:
+            "The Constitution of Canada is the supreme law of the land.",
+        },
+
+        {
+          id: "law4",
+          type: "single",
+          prompt: "Procedural law primarily provides instructions for whom?",
+          choices: [
+            "The general public",
+            "The accused",
+            "Police and courts",
+            "Victims of crime",
+          ],
+          answerIndex: 2,
+          explanation:
+            "Procedural law governs how laws are enforced by police and courts.",
+        },
+
+        {
+          id: "law5",
+          type: "single",
+          prompt: "Substantive law mainly tells citizens:",
+          choices: [
+            "How trials are conducted",
+            "What behaviour is permitted or prohibited",
+            "How evidence is collected",
+            "What courts have jurisdiction",
+          ],
+          answerIndex: 1,
+          explanation:
+            "Substantive law defines rights, duties, and prohibited conduct.",
+        },
+
+        // -------------------------------
+        // Criminal Law Fundamentals
+        // -------------------------------
+
+        {
+          id: "crim1",
+          type: "single",
+          prompt:
+            "Which court generally hears most Criminal Code matters at first instance in Ontario?",
+          choices: [
+            "Superior Court of Justice",
+            "Ontario Court of Justice",
+            "Divisional Court",
+            "Federal Court",
+          ],
+          answerIndex: 1,
+          explanation:
+            "Most criminal matters begin in the Ontario Court of Justice.",
+        },
+
+        {
+          id: "crim2",
+          type: "multi",
+          prompt:
+            "Which of the following are classifications of criminal offences in Canada? (Select THREE)",
+          choices: [
+            "Indictable",
+            "Hybrid (dual procedure)",
+            "Regulatory",
+            "Summary conviction",
+          ],
+          answerIndices: [0, 1, 3],
+          explanation:
+            "Criminal offences are classified as indictable, summary, or hybrid.",
+        },
+
+        {
+          id: "crim3",
+          type: "single",
+          prompt: "A criminal information is best described as:",
+          choices: [
+            "A police report filed after an arrest",
+            "A sworn document that begins a criminal charge",
+            "A document issued only by Crown Attorneys",
+            "A court summons for witnesses",
+          ],
+          answerIndex: 1,
+          explanation:
+            "An information is a sworn document that initiates a criminal charge.",
+        },
+
+        {
+          id: "crim4",
+          type: "single",
+          prompt:
+            "Who may lay a criminal information under oath if they have reasonable grounds?",
+          choices: [
+            "Only a police officer",
+            "Only a Crown Attorney",
+            "Only a justice of the peace",
+            "Any person",
+          ],
+          answerIndex: 3,
+          explanation:
+            "Under the Criminal Code, anyone may lay an information if legal requirements are met.",
+        },
+
+        // -------------------------------
+        // Evidence / Interpretation Concepts
+        // -------------------------------
+
+        {
+          id: "interp1",
+          type: "single",
+          prompt:
+            "Which word in legislation generally indicates a mandatory action?",
+          choices: ["May", "Should", "Shall", "Could"],
+          answerIndex: 2,
+          explanation: "'Shall' is interpreted as mandatory or imperative.",
+        },
+
+        {
+          id: "interp2",
+          type: "single",
+          prompt:
+            "In statutory interpretation, the word 'may' is usually understood to mean:",
+          choices: [
+            "Mandatory action",
+            "Judicial discretion",
+            "Police authority",
+            "Immediate action",
+          ],
+          answerIndex: 1,
+          explanation: "'May' generally indicates discretion, not obligation.",
+        },
+
+        {
+          id: "interp3",
+          type: "single",
+          prompt:
+            "Which term generally means 'without delay' in legal interpretation?",
+          choices: ["Eventually", "Forthwith", "Subsequently", "Thereafter"],
+          answerIndex: 1,
+          explanation:
+            "'Forthwith' is commonly interpreted as immediately or without delay.",
+        },
+
+        // -------------------------------
+        // Court Process / Police Authority
+        // -------------------------------
+
+        {
+          id: "proc1",
+          type: "single",
+          prompt:
+            "Which document is typically used to compel a witness to attend court and bring documents?",
+          choices: [
+            "Arrest warrant",
+            "Information",
+            "Subpoena",
+            "Recognizance",
+          ],
+          answerIndex: 2,
+          explanation:
+            "A subpoena orders a witness to attend court and may require documents.",
+        },
+
+        {
+          id: "proc2",
+          type: "single",
+          prompt: "R.C.A. is commonly used by police as a framework to:",
+          choices: [
+            "Investigate offences",
+            "Determine court jurisdiction",
+            "Recognize, classify, and apply authority",
+            "Assess credibility of witnesses",
+          ],
+          answerIndex: 2,
+          explanation: "RCA stands for Recognize, Classify, and Authority.",
+        },
+
+        {
+          id: "proc3",
+          type: "truefalse",
+          prompt:
+            "True or False: All criminal offences in Canada are indictable offences.",
+          answer: false,
+          explanation:
+            "Criminal offences may be summary, indictable, or hybrid.",
         },
       ];
 
@@ -757,7 +983,6 @@
       shuffleInPlace(QUESTIONS);
       state.total = QUESTIONS.length;
       renderCurrentQuestion();
-
     </script>
   </body>
 </html>
