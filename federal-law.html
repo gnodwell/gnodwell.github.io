@@ -1,395 +1,763 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Federal / Public Law – Study Questions</title>
-  <style>
-    :root{
-      --bg:#f4f6f8; --card:#fff; --ink:#111; --muted:#58606a;
-      --line:#e6e9ee; --soft:#f7f9fb; --soft2:#e9eef3;
-      --good:#137333; --bad:#b00020;
-    }
-    body{font-family:Arial, Helvetica, sans-serif;background:var(--bg);margin:0;padding:20px;color:var(--ink);}
-    header{max-width:980px;margin:0 auto 18px;}
-    h1{margin:0 0 6px;}
-    .sub{margin:0;color:var(--muted);}
-    .wrap{max-width:980px;margin:0 auto;background:var(--card);border-radius:12px;padding:18px;box-shadow:0 2px 12px rgba(0,0,0,.08);}
-    a{color:#0b57d0;text-decoration:none;font-weight:700}
-    a:hover{text-decoration:underline}
-
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px;}
-    .btn{border:0;border-radius:10px;padding:10px 12px;cursor:pointer;font-weight:900;background:var(--soft2);}
-    .btn:hover{filter:brightness(.97)}
-    .btn.primary{background:#d6e3f3;}
-    .pill{padding:10px 12px;border-radius:999px;background:#f1f3f5;font-weight:900}
-    .pill span{font-variant-numeric:tabular-nums}
-    .divider{height:1px;background:var(--line);margin:14px 0;}
-
-    .q{border:1px solid var(--line);border-radius:12px;padding:16px;margin:0;}
-    .q h2{font-size:1.05rem;margin:0 0 10px;}
-    .choices{display:grid;gap:8px;margin-top:8px;}
-    label.choice{display:flex;gap:10px;align-items:flex-start;padding:10px;border-radius:10px;background:var(--soft);border:1px solid transparent;cursor:pointer}
-    label.choice:hover{background:#f0f5ff;border-color:#d8e2ff}
-    input[type="radio"], input[type="checkbox"]{margin-top:2px;}
-    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-top:10px;}
-    select{padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#fff;min-width:260px;}
-    .tiny{color:var(--muted);font-size:.92rem}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;align-items:center;}
-    .status{margin-top:10px;font-weight:900}
-    .good{color:var(--good)}
-    .bad{color:var(--bad)}
-    .explain{margin-top:8px;color:var(--muted);font-size:.92rem}
-    .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;margin-top:14px;}
-    .nav .left, .nav .right{display:flex;gap:10px;flex-wrap:wrap;}
-    .disabled{opacity:.45; cursor:not-allowed;}
-    code{background:#f1f3f5;padding:2px 6px;border-radius:6px}
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>Federal / Public Law – Study Questions</h1>
-    <p class="sub">One question at a time. Click <strong>Check</strong>, then move Next/Prev. Refresh resets.</p>
-    <p class="tiny"><a href="index.html">← Back to Directory</a></p>
-  </header>
-
-  <div class="wrap">
-    <div class="topbar">
-      <button class="btn" id="resetBtn" type="button">Reset All</button>
-      <div class="pill">Correct: <span id="correctCount">0</span></div>
-      <div class="pill">Wrong: <span id="wrongCount">0</span></div>
-      <div class="pill">Checked: <span id="checkedCount">0</span> / <span id="totalCount">0</span></div>
-      <div class="pill">Question: <span id="posCount">1</span> / <span id="totalCount2">0</span></div>
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="questionHost"></div>
-
-    <div class="nav">
-      <div class="left">
-        <button class="btn" id="prevBtn" type="button">← Prev</button>
-        <button class="btn" id="nextBtn" type="button">Next →</button>
-      </div>
-      <div class="right">
-        <button class="btn primary" id="checkBtn" type="button">Check</button>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-    <p class="tiny">Edit questions in the <code>QUESTIONS</code> array inside the script.</p>
-  </div>
-
-  <script>
-    // === Questions pulled from your screenshots ===
-    const QUESTIONS = [
-      {
-        id: "s1",
-        type: "single",
-        prompt: "Scenario 1: I hire a contractor to pave my driveway and he does it using defective materials. My driveway falls short of what I expected. Is this issue a matter of private or public law?",
-        choices: ["Private", "Public"],
-        answerIndex: 0,
-        explanation: "This is a private dispute (contract/civil issue) between you and the contractor."
-      },
-      {
-        id: "s2",
-        type: "single",
-        prompt: "Scenario 2: I hire a contractor to pave my driveway and give him $1000 down payment and he never returns. Is this issue a matter of private or public law?",
-        choices: ["Public", "Private"],
-        answerIndex: 0,
-        explanation: "This can involve criminal/fraud/theft concerns → public law involvement."
-      },
-      {
-        id: "e1",
-        type: "double",
-        prompt: "EVENT: Todd parked in a handicap parking spot.",
-        fields: [
-          { label: "STATUTE", options: ["Municipal Bylaw", "Provincial Statute", "Federal Statute", "(no offence)"] },
-          { label: "OFFENCE", options: ["Unauthorized Parking", "Assault", "Red Light - Fail to Stop", "(no offence)"] }
-        ],
-        answers: ["Municipal Bylaw", "Unauthorized Parking"],
-        explanation: "Handicap parking enforcement is commonly handled under municipal bylaw; offence is unauthorized parking."
-      },
-      {
-        id: "e2",
-        type: "double",
-        prompt: "EVENT: James made a sly comment to Todd.",
-        fields: [
-          { label: "STATUTE", options: ["Municipal Bylaw", "Provincial Statute", "Federal Statute", "(no offence)"] },
-          { label: "OFFENCE", options: ["Unauthorized Parking", "Assault", "Red Light - Fail to Stop", "(no offence)"] }
-        ],
-        answers: ["(no offence)", "(no offence)"],
-        explanation: "A rude comment alone is not an offence in this scenario."
-      },
-      {
-        id: "e3",
-        type: "double",
-        prompt: "EVENT: Todd struck James in the face with a closed fist.",
-        fields: [
-          { label: "STATUTE", options: ["Municipal Bylaw", "Provincial Statute", "Federal Statute", "(no offence)"] },
-          { label: "OFFENCE", options: ["Unauthorized Parking", "Assault", "Red Light - Fail to Stop", "(no offence)"] }
-        ],
-        answers: ["Federal Statute", "Assault"],
-        explanation: "Assault is a Criminal Code offence (federal)."
-      },
-      {
-        id: "e4",
-        type: "double",
-        prompt: "EVENT: Todd drove through a red light.",
-        fields: [
-          { label: "STATUTE", options: ["Municipal Bylaw", "Provincial Statute", "Federal Statute", "(no offence)"] },
-          { label: "OFFENCE", options: ["Unauthorized Parking", "Assault", "Red Light - Fail to Stop", "(no offence)"] }
-        ],
-        answers: ["Provincial Statute", "Red Light - Fail to Stop"],
-        explanation: "Traffic offences like failing to stop for a red light are typically under the HTA (provincial)."
-      },
-      {
-        id: "c1",
-        type: "multi",
-        prompt: "What two right(s) does the driver (Todd Tucker) have at the time of their arrest? (Select TWO)",
-        choices: [
-          "to know the name, address and phone number of the complainant",
-          "to keep his cell phone on him at all times.",
-          "to retain and instruct counsel without delay and to be informed of that right",
-          "to be informed promptly of the reasons therefore"
-        ],
-        answerIndices: [2, 3],
-        explanation: "At arrest/detention: right to counsel without delay + right to be promptly informed of reasons."
-      },
-      { id:"yn1", type:"single", prompt:"Can you ask the driver for their name?", choices:["Yes","No"], answerIndex:0, explanation:"Yes." },
-      { id:"yn2", type:"single", prompt:"Can you ask for the name of the passenger in the back seat?", choices:["Yes","No"], answerIndex:0, explanation:"Yes, you can ask." },
-      { id:"yn3", type:"single", prompt:"Is the person in the backseat obligated to give you their name if you ask?", choices:["No","Yes"], answerIndex:0, explanation:"No." },
-      { id:"yn4", type:"single", prompt:"Can you ask to see what’s inside the bag that is beside the passenger?", choices:["Yes","No"], answerIndex:1, explanation:"No (not just because you asked)." },
-      { id:"yn5", type:"single", prompt:"If your questions focus more on the passenger, are you detaining the passenger?", choices:["Yes","No"], answerIndex:0, explanation:"Yes (your focus can amount to detention depending on circumstances)." },
-      {
-        id:"court1",
-        type:"single",
-        prompt:"Based on the scenario with Todd Tucker (municipal bylaw + HTA + Criminal Code), which court will Todd attend for criminal and provincial charges?",
-        choices:["Provincial Offences Court","Superior Court of Justice","Divisional Court","Ontario Court of Justice"],
-        answerIndex:3,
-        explanation:"Ontario Court of Justice."
-      },
-      { id:"class1", type:"dropdown", prompt:"Offence: Trespass at Night — Classification", options:["Summary Conviction","Dual Procedure","Indictable"], answerValue:"Summary Conviction", explanation:"Trespass at Night = Summary Conviction." },
-      { id:"class2", type:"dropdown", prompt:"Offence: Cause Disturbance — Classification", options:["Summary Conviction","Dual Procedure","Indictable"], answerValue:"Summary Conviction", explanation:"Cause Disturbance = Summary Conviction." },
-      { id:"class3", type:"dropdown", prompt:"Offence: Theft Under — Classification", options:["Summary Conviction","Dual Procedure","Indictable"], answerValue:"Dual Procedure", explanation:"Theft Under = Dual Procedure." },
-      { id:"class4", type:"dropdown", prompt:"Offence: Assault — Classification", options:["Summary Conviction","Dual Procedure","Indictable"], answerValue:"Dual Procedure", explanation:"Assault = Dual Procedure." },
-      { id:"class5", type:"dropdown", prompt:"Offence: Murder — Classification", options:["Summary Conviction","Dual Procedure","Indictable"], answerValue:"Indictable", explanation:"Murder = Indictable." },
-      { id:"class6", type:"dropdown", prompt:"Offence: Aggravated Assault — Classification", options:["Summary Conviction","Dual Procedure","Indictable"], answerValue:"Indictable", explanation:"Aggravated Assault = Indictable." }
-    ];
-
-    const els = {
-      host: document.getElementById("questionHost"),
-      correctCount: document.getElementById("correctCount"),
-      wrongCount: document.getElementById("wrongCount"),
-      checkedCount: document.getElementById("checkedCount"),
-      totalCount: document.getElementById("totalCount"),
-      totalCount2: document.getElementById("totalCount2"),
-      posCount: document.getElementById("posCount"),
-      resetBtn: document.getElementById("resetBtn"),
-      prevBtn: document.getElementById("prevBtn"),
-      nextBtn: document.getElementById("nextBtn"),
-      checkBtn: document.getElementById("checkBtn"),
-    };
-
-    const state = {
-      index: 0,
-      checked: {}, // qid -> "right"|"wrong"
-      total: QUESTIONS.length
-    };
-
-    function escapeHtml(str) {
-      return String(str)
-        .replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;").replaceAll("'","&#039;");
-    }
-
-    function updateCounters() {
-      let correct = 0, wrong = 0, checked = 0;
-      for (const q of QUESTIONS) {
-        const m = state.checked[q.id];
-        if (!m) continue;
-        checked++;
-        if (m === "right") correct++;
-        if (m === "wrong") wrong++;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Federal / Public Law – Study Questions</title>
+    <style>
+      :root {
+        --bg: #f4f6f8;
+        --card: #fff;
+        --ink: #111;
+        --muted: #58606a;
+        --line: #e6e9ee;
+        --soft: #f7f9fb;
+        --soft2: #e9eef3;
+        --good: #137333;
+        --bad: #b00020;
       }
-      els.correctCount.textContent = correct;
-      els.wrongCount.textContent = wrong;
-      els.checkedCount.textContent = checked;
-      els.totalCount.textContent = state.total;
-      els.totalCount2.textContent = state.total;
-      els.posCount.textContent = state.index + 1;
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        margin: 0;
+        padding: 20px;
+        color: var(--ink);
+      }
+      header {
+        max-width: 980px;
+        margin: 0 auto 18px;
+      }
+      h1 {
+        margin: 0 0 6px;
+      }
+      .sub {
+        margin: 0;
+        color: var(--muted);
+      }
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        background: var(--card);
+        border-radius: 12px;
+        padding: 18px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      }
+      a {
+        color: #0b57d0;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
 
-      // nav buttons
-      const atStart = state.index === 0;
-      const atEnd = state.index === state.total - 1;
-      setDisabled(els.prevBtn, atStart);
-      setDisabled(els.nextBtn, atEnd);
-    }
+      .topbar {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      .btn {
+        border: 0;
+        border-radius: 10px;
+        padding: 10px 12px;
+        cursor: pointer;
+        font-weight: 900;
+        background: var(--soft2);
+      }
+      .btn:hover {
+        filter: brightness(0.97);
+      }
+      .btn.primary {
+        background: #d6e3f3;
+      }
+      .pill {
+        padding: 10px 12px;
+        border-radius: 999px;
+        background: #f1f3f5;
+        font-weight: 900;
+      }
+      .pill span {
+        font-variant-numeric: tabular-nums;
+      }
+      .divider {
+        height: 1px;
+        background: var(--line);
+        margin: 14px 0;
+      }
 
-    function setDisabled(btn, disabled) {
-      btn.disabled = disabled;
-      btn.classList.toggle("disabled", disabled);
-    }
+      .q {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 16px;
+        margin: 0;
+      }
+      .q h2 {
+        font-size: 1.05rem;
+        margin: 0 0 10px;
+      }
+      .choices {
+        display: grid;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      label.choice {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        padding: 10px;
+        border-radius: 10px;
+        background: var(--soft);
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+      label.choice:hover {
+        background: #f0f5ff;
+        border-color: #d8e2ff;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-top: 2px;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        margin-top: 10px;
+      }
+      select {
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        background: #fff;
+        min-width: 260px;
+      }
+      .tiny {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+        align-items: center;
+      }
+      .status {
+        margin-top: 10px;
+        font-weight: 900;
+      }
+      .good {
+        color: var(--good);
+      }
+      .bad {
+        color: var(--bad);
+      }
+      .explain {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .nav {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 14px;
+      }
+      .nav .left,
+      .nav .right {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+      code {
+        background: #f1f3f5;
+        padding: 2px 6px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
 
-    function renderCurrentQuestion() {
-      const q = QUESTIONS[state.index];
-      const mark = state.checked[q.id] || null;
+  <body>
+    <header>
+      <h1>Federal / Public Law – Study Questions</h1>
+      <p class="sub">
+        One question at a time. Click <strong>Check</strong>, then move
+        Next/Prev. Refresh resets.
+      </p>
+      <p class="tiny"><a href="index.html">← Back to Directory</a></p>
+    </header>
 
-      let inputHtml = "";
+    <div class="wrap">
+      <div class="topbar">
+        <button class="btn" id="resetBtn" type="button">Reset All</button>
+        <div class="pill">Correct: <span id="correctCount">0</span></div>
+        <div class="pill">Wrong: <span id="wrongCount">0</span></div>
+        <div class="pill">
+          Checked: <span id="checkedCount">0</span> /
+          <span id="totalCount">0</span>
+        </div>
+        <div class="pill">
+          Question: <span id="posCount">1</span> /
+          <span id="totalCount2">0</span>
+        </div>
+      </div>
 
-      if (q.type === "single") {
-        inputHtml = `
+      <div class="divider"></div>
+
+      <div id="questionHost"></div>
+
+      <div class="nav">
+        <div class="left">
+          <button class="btn" id="prevBtn" type="button">← Prev</button>
+          <button class="btn" id="nextBtn" type="button">Next →</button>
+        </div>
+        <div class="right">
+          <button class="btn primary" id="checkBtn" type="button">Check</button>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <p class="tiny">
+        Edit questions in the <code>QUESTIONS</code> array inside the script.
+      </p>
+    </div>
+
+    <script>
+      // === Questions pulled from your screenshots ===
+      const QUESTIONS = [
+        {
+          id: "s1",
+          type: "single",
+          prompt:
+            "Scenario 1: I hire a contractor to pave my driveway and he does it using defective materials. My driveway falls short of what I expected. Is this issue a matter of private or public law?",
+          choices: ["Private", "Public"],
+          answerIndex: 0,
+          explanation:
+            "This is a private dispute (contract/civil issue) between you and the contractor.",
+        },
+        {
+          id: "s2",
+          type: "single",
+          prompt:
+            "Scenario 2: I hire a contractor to pave my driveway and give him $1000 down payment and he never returns. Is this issue a matter of private or public law?",
+          choices: ["Public", "Private"],
+          answerIndex: 0,
+          explanation:
+            "This can involve criminal/fraud/theft concerns → public law involvement.",
+        },
+        {
+          id: "e1",
+          type: "double",
+          prompt: "EVENT: Todd parked in a handicap parking spot.",
+          fields: [
+            {
+              label: "STATUTE",
+              options: [
+                "Municipal Bylaw",
+                "Provincial Statute",
+                "Federal Statute",
+                "(no offence)",
+              ],
+            },
+            {
+              label: "OFFENCE",
+              options: [
+                "Unauthorized Parking",
+                "Assault",
+                "Red Light - Fail to Stop",
+                "(no offence)",
+              ],
+            },
+          ],
+          answers: ["Municipal Bylaw", "Unauthorized Parking"],
+          explanation:
+            "Handicap parking enforcement is commonly handled under municipal bylaw; offence is unauthorized parking.",
+        },
+        {
+          id: "e2",
+          type: "double",
+          prompt: "EVENT: James made a sly comment to Todd.",
+          fields: [
+            {
+              label: "STATUTE",
+              options: [
+                "Municipal Bylaw",
+                "Provincial Statute",
+                "Federal Statute",
+                "(no offence)",
+              ],
+            },
+            {
+              label: "OFFENCE",
+              options: [
+                "Unauthorized Parking",
+                "Assault",
+                "Red Light - Fail to Stop",
+                "(no offence)",
+              ],
+            },
+          ],
+          answers: ["(no offence)", "(no offence)"],
+          explanation:
+            "A rude comment alone is not an offence in this scenario.",
+        },
+        {
+          id: "e3",
+          type: "double",
+          prompt: "EVENT: Todd struck James in the face with a closed fist.",
+          fields: [
+            {
+              label: "STATUTE",
+              options: [
+                "Municipal Bylaw",
+                "Provincial Statute",
+                "Federal Statute",
+                "(no offence)",
+              ],
+            },
+            {
+              label: "OFFENCE",
+              options: [
+                "Unauthorized Parking",
+                "Assault",
+                "Red Light - Fail to Stop",
+                "(no offence)",
+              ],
+            },
+          ],
+          answers: ["Federal Statute", "Assault"],
+          explanation: "Assault is a Criminal Code offence (federal).",
+        },
+        {
+          id: "e4",
+          type: "double",
+          prompt: "EVENT: Todd drove through a red light.",
+          fields: [
+            {
+              label: "STATUTE",
+              options: [
+                "Municipal Bylaw",
+                "Provincial Statute",
+                "Federal Statute",
+                "(no offence)",
+              ],
+            },
+            {
+              label: "OFFENCE",
+              options: [
+                "Unauthorized Parking",
+                "Assault",
+                "Red Light - Fail to Stop",
+                "(no offence)",
+              ],
+            },
+          ],
+          answers: ["Provincial Statute", "Red Light - Fail to Stop"],
+          explanation:
+            "Traffic offences like failing to stop for a red light are typically under the HTA (provincial).",
+        },
+        {
+          id: "c1",
+          type: "multi",
+          prompt:
+            "What two right(s) does the driver (Todd Tucker) have at the time of their arrest? (Select TWO)",
+          choices: [
+            "to know the name, address and phone number of the complainant",
+            "to keep his cell phone on him at all times.",
+            "to retain and instruct counsel without delay and to be informed of that right",
+            "to be informed promptly of the reasons therefore",
+          ],
+          answerIndices: [2, 3],
+          explanation:
+            "At arrest/detention: right to counsel without delay + right to be promptly informed of reasons.",
+        },
+        {
+          id: "yn1",
+          type: "single",
+          prompt: "Can you ask the driver for their name?",
+          choices: ["Yes", "No"],
+          answerIndex: 0,
+          explanation: "Yes.",
+        },
+        {
+          id: "yn2",
+          type: "single",
+          prompt: "Can you ask for the name of the passenger in the back seat?",
+          choices: ["Yes", "No"],
+          answerIndex: 0,
+          explanation: "Yes, you can ask.",
+        },
+        {
+          id: "yn3",
+          type: "single",
+          prompt:
+            "Is the person in the backseat obligated to give you their name if you ask?",
+          choices: ["No", "Yes"],
+          answerIndex: 0,
+          explanation: "No.",
+        },
+        {
+          id: "yn4",
+          type: "single",
+          prompt:
+            "Can you ask to see what’s inside the bag that is beside the passenger?",
+          choices: ["Yes", "No"],
+          answerIndex: 1,
+          explanation: "No (not just because you asked).",
+        },
+        {
+          id: "yn5",
+          type: "single",
+          prompt:
+            "If your questions focus more on the passenger, are you detaining the passenger?",
+          choices: ["Yes", "No"],
+          answerIndex: 0,
+          explanation:
+            "Yes (your focus can amount to detention depending on circumstances).",
+        },
+        {
+          id: "court1",
+          type: "single",
+          prompt:
+            "Based on the scenario with Todd Tucker (municipal bylaw + HTA + Criminal Code), which court will Todd attend for criminal and provincial charges?",
+          choices: [
+            "Provincial Offences Court",
+            "Superior Court of Justice",
+            "Divisional Court",
+            "Ontario Court of Justice",
+          ],
+          answerIndex: 3,
+          explanation: "Ontario Court of Justice.",
+        },
+        {
+          id: "class1",
+          type: "dropdown",
+          prompt: "Offence: Trespass at Night — Classification",
+          options: ["Summary Conviction", "Dual Procedure", "Indictable"],
+          answerValue: "Summary Conviction",
+          explanation: "Trespass at Night = Summary Conviction.",
+        },
+        {
+          id: "class2",
+          type: "dropdown",
+          prompt: "Offence: Cause Disturbance — Classification",
+          options: ["Summary Conviction", "Dual Procedure", "Indictable"],
+          answerValue: "Summary Conviction",
+          explanation: "Cause Disturbance = Summary Conviction.",
+        },
+        {
+          id: "class3",
+          type: "dropdown",
+          prompt: "Offence: Theft Under — Classification",
+          options: ["Summary Conviction", "Dual Procedure", "Indictable"],
+          answerValue: "Dual Procedure",
+          explanation: "Theft Under = Dual Procedure.",
+        },
+        {
+          id: "class4",
+          type: "dropdown",
+          prompt: "Offence: Assault — Classification",
+          options: ["Summary Conviction", "Dual Procedure", "Indictable"],
+          answerValue: "Dual Procedure",
+          explanation: "Assault = Dual Procedure.",
+        },
+        {
+          id: "class5",
+          type: "dropdown",
+          prompt: "Offence: Murder — Classification",
+          options: ["Summary Conviction", "Dual Procedure", "Indictable"],
+          answerValue: "Indictable",
+          explanation: "Murder = Indictable.",
+        },
+        {
+          id: "class6",
+          type: "dropdown",
+          prompt: "Offence: Aggravated Assault — Classification",
+          options: ["Summary Conviction", "Dual Procedure", "Indictable"],
+          answerValue: "Indictable",
+          explanation: "Aggravated Assault = Indictable.",
+        },
+      ];
+
+      const els = {
+        host: document.getElementById("questionHost"),
+        correctCount: document.getElementById("correctCount"),
+        wrongCount: document.getElementById("wrongCount"),
+        checkedCount: document.getElementById("checkedCount"),
+        totalCount: document.getElementById("totalCount"),
+        totalCount2: document.getElementById("totalCount2"),
+        posCount: document.getElementById("posCount"),
+        resetBtn: document.getElementById("resetBtn"),
+        prevBtn: document.getElementById("prevBtn"),
+        nextBtn: document.getElementById("nextBtn"),
+        checkBtn: document.getElementById("checkBtn"),
+      };
+
+      const state = {
+        index: 0,
+        checked: {}, // qid -> "right"|"wrong"
+        total: QUESTIONS.length,
+      };
+
+      function escapeHtml(str) {
+        return String(str)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function updateCounters() {
+        let correct = 0,
+          wrong = 0,
+          checked = 0;
+        for (const q of QUESTIONS) {
+          const m = state.checked[q.id];
+          if (!m) continue;
+          checked++;
+          if (m === "right") correct++;
+          if (m === "wrong") wrong++;
+        }
+        els.correctCount.textContent = correct;
+        els.wrongCount.textContent = wrong;
+        els.checkedCount.textContent = checked;
+        els.totalCount.textContent = state.total;
+        els.totalCount2.textContent = state.total;
+        els.posCount.textContent = state.index + 1;
+
+        // nav buttons
+        const atStart = state.index === 0;
+        const atEnd = state.index === state.total - 1;
+        setDisabled(els.prevBtn, atStart);
+        setDisabled(els.nextBtn, atEnd);
+      }
+
+      function setDisabled(btn, disabled) {
+        btn.disabled = disabled;
+        btn.classList.toggle("disabled", disabled);
+      }
+
+      function renderCurrentQuestion() {
+        const q = QUESTIONS[state.index];
+        const mark = state.checked[q.id] || null;
+
+        let inputHtml = "";
+
+        if (q.type === "single") {
+          inputHtml = `
           <div class="choices">
-            ${q.choices.map((c, i) => `
+            ${q.choices
+              .map(
+                (c, i) => `
               <label class="choice">
                 <input type="radio" name="q-${q.id}" value="${i}">
-                <div><strong>${String.fromCharCode(65+i)}.</strong> ${escapeHtml(c)}</div>
+                <div><strong>${String.fromCharCode(
+                  65 + i
+                )}.</strong> ${escapeHtml(c)}</div>
               </label>
-            `).join("")}
+            `
+              )
+              .join("")}
           </div>
         `;
-      }
+        }
 
-      if (q.type === "multi") {
-        inputHtml = `
+        if (q.type === "multi") {
+          inputHtml = `
           <div class="choices">
-            ${q.choices.map((c, i) => `
+            ${q.choices
+              .map(
+                (c, i) => `
               <label class="choice">
                 <input type="checkbox" name="q-${q.id}" value="${i}">
-                <div><strong>${String.fromCharCode(65+i)}.</strong> ${escapeHtml(c)}</div>
+                <div><strong>${String.fromCharCode(
+                  65 + i
+                )}.</strong> ${escapeHtml(c)}</div>
               </label>
-            `).join("")}
+            `
+              )
+              .join("")}
           </div>
         `;
-      }
+        }
 
-      if (q.type === "dropdown") {
-        inputHtml = `
+        if (q.type === "dropdown") {
+          inputHtml = `
           <div class="row">
             <select data-qid="${q.id}" data-kind="dropdown">
               <option value="" selected disabled>Select one…</option>
-              ${q.options.map(opt => `<option value="${escapeHtml(opt)}">${escapeHtml(opt)}</option>`).join("")}
+              ${q.options
+                .map(
+                  (opt) =>
+                    `<option value="${escapeHtml(opt)}">${escapeHtml(
+                      opt
+                    )}</option>`
+                )
+                .join("")}
             </select>
           </div>
         `;
-      }
+        }
 
-      if (q.type === "double") {
-        inputHtml = `
+        if (q.type === "double") {
+          inputHtml = `
           <div class="row">
-            ${q.fields.map((f, fi) => `
+            ${q.fields
+              .map(
+                (f, fi) => `
               <div>
-                <div class="tiny" style="font-weight:900; margin:0 0 6px;">${escapeHtml(f.label)}</div>
-                <select data-qid="${q.id}" data-kind="double" data-field="${fi}">
+                <div class="tiny" style="font-weight:900; margin:0 0 6px;">${escapeHtml(
+                  f.label
+                )}</div>
+                <select data-qid="${
+                  q.id
+                }" data-kind="double" data-field="${fi}">
                   <option value="" selected disabled>Select one…</option>
-                  ${f.options.map(opt => `<option value="${escapeHtml(opt)}">${escapeHtml(opt)}</option>`).join("")}
+                  ${f.options
+                    .map(
+                      (opt) =>
+                        `<option value="${escapeHtml(opt)}">${escapeHtml(
+                          opt
+                        )}</option>`
+                    )
+                    .join("")}
                 </select>
               </div>
-            `).join("")}
+            `
+              )
+              .join("")}
           </div>
         `;
-      }
+        }
 
-      const statusHtml = mark
-        ? `<div class="status ${mark === "right" ? "good" : "bad"}">
+        const statusHtml = mark
+          ? `<div class="status ${mark === "right" ? "good" : "bad"}">
              ${mark === "right" ? "Correct ✅" : "Wrong ❌"}
            </div>`
-        : `<div class="status" style="color:var(--muted);">Not checked yet</div>`;
+          : `<div class="status" style="color:var(--muted);">Not checked yet</div>`;
 
-      els.host.innerHTML = `
+        els.host.innerHTML = `
         <section class="q" data-qid="${q.id}">
           <h2>${state.index + 1}. ${escapeHtml(q.prompt)}</h2>
           ${inputHtml}
           ${statusHtml}
-          <div class="explain"><strong>Explanation:</strong> ${escapeHtml(q.explanation || "")}</div>
+          <div class="explain"><strong>Explanation:</strong> ${escapeHtml(
+            q.explanation || ""
+          )}</div>
         </section>
       `;
 
-      updateCounters();
-    }
-
-    function arraysEqualAsSets(a, b) {
-      if (a.length !== b.length) return false;
-      return [...a].sort().join("|") === [...b].sort().join("|");
-    }
-
-    function checkCurrent() {
-      const q = QUESTIONS[state.index];
-      const section = els.host.querySelector("section[data-qid]");
-      const qid = q.id;
-
-      if (q.type === "single") {
-        const picked = section.querySelector(`input[name="q-${qid}"]:checked`);
-        if (!picked) return alert("Pick an answer first.");
-        const isRight = Number(picked.value) === q.answerIndex;
-        state.checked[qid] = isRight ? "right" : "wrong";
-        return renderCurrentQuestion();
+        updateCounters();
       }
 
-      if (q.type === "multi") {
-        const picked = [...section.querySelectorAll(`input[name="q-${qid}"]:checked`)].map(x => Number(x.value));
-        if (picked.length === 0) return alert("Select your answers first.");
-        if (q.answerIndices && picked.length !== q.answerIndices.length) {
-          return alert(`Select exactly ${q.answerIndices.length} option(s).`);
+      function arraysEqualAsSets(a, b) {
+        if (a.length !== b.length) return false;
+        return [...a].sort().join("|") === [...b].sort().join("|");
+      }
+
+      function checkCurrent() {
+        const q = QUESTIONS[state.index];
+        const section = els.host.querySelector("section[data-qid]");
+        const qid = q.id;
+
+        if (q.type === "single") {
+          const picked = section.querySelector(
+            `input[name="q-${qid}"]:checked`
+          );
+          if (!picked) return alert("Pick an answer first.");
+          const isRight = Number(picked.value) === q.answerIndex;
+          state.checked[qid] = isRight ? "right" : "wrong";
+          return renderCurrentQuestion();
         }
-        const isRight = arraysEqualAsSets(picked, q.answerIndices);
-        state.checked[qid] = isRight ? "right" : "wrong";
-        return renderCurrentQuestion();
+
+        if (q.type === "multi") {
+          const picked = [
+            ...section.querySelectorAll(`input[name="q-${qid}"]:checked`),
+          ].map((x) => Number(x.value));
+          if (picked.length === 0) return alert("Select your answers first.");
+          if (q.answerIndices && picked.length !== q.answerIndices.length) {
+            return alert(`Select exactly ${q.answerIndices.length} option(s).`);
+          }
+          const isRight = arraysEqualAsSets(picked, q.answerIndices);
+          state.checked[qid] = isRight ? "right" : "wrong";
+          return renderCurrentQuestion();
+        }
+
+        if (q.type === "dropdown") {
+          const sel = section.querySelector(`select[data-kind="dropdown"]`);
+          if (!sel || !sel.value) return alert("Select an option first.");
+          const isRight = sel.value === q.answerValue;
+          state.checked[qid] = isRight ? "right" : "wrong";
+          return renderCurrentQuestion();
+        }
+
+        if (q.type === "double") {
+          const sels = [
+            ...section.querySelectorAll(`select[data-kind="double"]`),
+          ];
+          if (sels.some((s) => !s.value))
+            return alert("Select an option for each dropdown first.");
+          const picked = sels
+            .sort((a, b) => Number(a.dataset.field) - Number(b.dataset.field))
+            .map((s) => s.value);
+          const isRight =
+            picked[0] === q.answers[0] && picked[1] === q.answers[1];
+          state.checked[qid] = isRight ? "right" : "wrong";
+          return renderCurrentQuestion();
+        }
       }
 
-      if (q.type === "dropdown") {
-        const sel = section.querySelector(`select[data-kind="dropdown"]`);
-        if (!sel || !sel.value) return alert("Select an option first.");
-        const isRight = sel.value === q.answerValue;
-        state.checked[qid] = isRight ? "right" : "wrong";
-        return renderCurrentQuestion();
+      function prev() {
+        if (state.index === 0) return;
+        state.index--;
+        renderCurrentQuestion();
       }
 
-      if (q.type === "double") {
-        const sels = [...section.querySelectorAll(`select[data-kind="double"]`)];
-        if (sels.some(s => !s.value)) return alert("Select an option for each dropdown first.");
-        const picked = sels
-          .sort((a,b) => Number(a.dataset.field) - Number(b.dataset.field))
-          .map(s => s.value);
-        const isRight = picked[0] === q.answers[0] && picked[1] === q.answers[1];
-        state.checked[qid] = isRight ? "right" : "wrong";
-        return renderCurrentQuestion();
+      function next() {
+        if (state.index >= state.total - 1) return;
+        state.index++;
+        renderCurrentQuestion();
       }
-    }
 
-    function prev() {
-      if (state.index === 0) return;
-      state.index--;
+      function resetAll() {
+        state.checked = {};
+        state.index = 0;
+        renderCurrentQuestion();
+      }
+
+      function shuffleInPlace(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+      }
+
+      // Controls
+      els.checkBtn.addEventListener("click", checkCurrent);
+      els.prevBtn.addEventListener("click", prev);
+      els.nextBtn.addEventListener("click", next);
+      els.resetBtn.addEventListener("click", resetAll);
+
+      // Optional: keyboard shortcuts
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") prev();
+        if (e.key === "ArrowRight") next();
+        if (e.key === "Enter") checkCurrent();
+      });
+
+      shuffleInPlace(QUESTIONS);
+      state.total = QUESTIONS.length;
       renderCurrentQuestion();
-    }
 
-    function next() {
-      if (state.index >= state.total - 1) return;
-      state.index++;
-      renderCurrentQuestion();
-    }
-
-    function resetAll() {
-      state.checked = {};
-      state.index = 0;
-      renderCurrentQuestion();
-    }
-
-    // Controls
-    els.checkBtn.addEventListener("click", checkCurrent);
-    els.prevBtn.addEventListener("click", prev);
-    els.nextBtn.addEventListener("click", next);
-    els.resetBtn.addEventListener("click", resetAll);
-
-    // Optional: keyboard shortcuts
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-      if (e.key === "Enter") checkCurrent();
-    });
-
-    renderCurrentQuestion();
-  </script>
-</body>
+    </script>
+  </body>
 </html>
