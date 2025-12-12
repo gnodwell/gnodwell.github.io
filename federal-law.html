@@ -867,20 +867,25 @@
 
         const statusHtml = mark
           ? `<div class="status ${mark === "right" ? "good" : "bad"}">
-             ${mark === "right" ? "Correct ✅" : "Wrong ❌"}
-           </div>`
+            ${mark === "right" ? "Correct ✅" : "Wrong ❌"}
+            </div>`
           : `<div class="status" style="color:var(--muted);">Not checked yet</div>`;
+
+        // Show explanation ONLY if marked correct
+        const explanationHtml =
+          mark === "right" && q.explanation
+            ? `<div class="explain"><strong>Explanation:</strong> ${escapeHtml(
+                q.explanation
+              )}</div>`
+            : "";
 
         els.host.innerHTML = `
         <section class="q" data-qid="${q.id}">
-          <h2>${state.index + 1}. ${escapeHtml(q.prompt)}</h2>
-          ${inputHtml}
-          ${statusHtml}
-          <div class="explain"><strong>Explanation:</strong> ${escapeHtml(
-            q.explanation || ""
-          )}</div>
-        </section>
-      `;
+            <h2>${state.index + 1}. ${escapeHtml(q.prompt)}</h2>
+            ${inputHtml}
+            ${statusHtml}
+            ${explanationHtml}
+        </section>`;
 
         updateCounters();
       }
