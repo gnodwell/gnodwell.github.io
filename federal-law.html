@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Federal Law – Study Questions</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; background:#f4f6f8; margin:0; padding:20px; }
+    header { max-width: 900px; margin: 0 auto 20px; }
+    h1 { margin: 0 0 8px; }
+    .sub { color:#555; margin:0; }
+    .wrap { max-width: 900px; margin: 0 auto; background:#fff; border-radius:10px; padding:20px; box-shadow:0 2px 10px rgba(0,0,0,0.08); }
+
+    .topbar { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:14px; }
+    .btn { border:0; border-radius:8px; padding:10px 12px; cursor:pointer; font-weight:700; background:#e9eef3; }
+    .btn:hover { background:#d6e3f3; }
+    .pill { padding:10px 12px; border-radius:999px; background:#f1f3f5; font-weight:700; }
+    .pill span { font-variant-numeric: tabular-nums; }
+
+    .q { border:1px solid #e6e9ee; border-radius:10px; padding:16px; margin:14px 0; }
+    .q h2 { font-size: 1.05rem; margin:0 0 10px; }
+    .choices { display:grid; gap:8px; margin-top:10px; }
+    label.choice { display:flex; gap:10px; align-items:flex-start; padding:10px; border-radius:8px; background:#f7f9fb; cursor:pointer; border:1px solid transparent; }
+    label.choice:hover { background:#f0f5ff; border-color:#d8e2ff; }
+    input[type="radio"] { margin-top: 2px; }
+
+    .actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+    .mark { border:0; border-radius:8px; padding:10px 12px; cursor:pointer; font-weight:800; }
+    .right { background:#e6f7ea; }
+    .right:hover { background:#d7f2dd; }
+    .wrong { background:#ffe8e8; }
+    .wrong:hover { background:#ffd6d6; }
+
+    .status { margin-top:10px; font-weight:800; }
+    .status.good { color:#137333; }
+    .status.bad { color:#b00020; }
+
+    .divider { height:1px; background:#e9eef3; margin:18px 0; }
+
+    .note { color:#666; font-size: 0.95rem; margin-top:10px; }
+    .small { font-size: 0.9rem; color:#666; }
+    a { color:#0b57d0; text-decoration:none; font-weight:700; }
+    a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Federal Law – Study Questions</h1>
+    <p class="sub">Answer the questions, then mark yourself right or wrong (no saving; refresh resets).</p>
+    <p class="small"><a href="index.html">← Back to Directory</a></p>
+  </header>
+
+  <div class="wrap">
+    <div class="topbar">
+      <button class="btn" id="resetBtn" type="button">Reset Marks</button>
+      <div class="pill">Correct: <span id="correctCount">0</span></div>
+      <div class="pill">Wrong: <span id="wrongCount">0</span></div>
+      <div class="pill">Marked: <span id="markedCount">0</span> / <span id="totalCount">0</span></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="questions"></div>
+
+    <p class="note">
+      Tip: You can add/edit questions by updating the <code>QUESTIONS</code> array in the script.
+    </p>
+  </div>
+
+  <script>
+    // Edit/add questions here
+    const QUESTIONS = [
+      {
+        id: "q1",
+        prompt: "Which level of government creates and passes the Criminal Code of Canada?",
+        choices: ["Municipal government", "Provincial/Territorial government", "Federal government", "Courts only"],
+        answerIndex: 2,
+        explanation: "The Criminal Code is federal legislation passed by Parliament."
+      },
+      {
+        id: "q2",
+        prompt: "True or False: The Canada Evidence Act is a federal statute.",
+        choices: ["True", "False"],
+        answerIndex: 0,
+        explanation: "Yes—it's federal legislation (though provinces also have evidence acts/rules for provincial matters)."
+      },
+      {
+        id: "q3",
+        prompt: "In general, which court hears most Criminal Code matters at first instance?",
+        choices: ["Small Claims Court", "Provincial Court", "Federal Court", "Supreme Court of Canada"],
+        answerIndex: 1,
+        explanation: "Most criminal matters start in Provincial Court; some proceed to Superior Court depending on offence/mode."
+      },
+      {
+        id: "q4",
+        prompt: "What does “mens rea” generally refer to in criminal law?",
+        choices: ["The physical act", "The mental element/intent", "A type of sentence", "The jurisdiction of a court"],
+        answerIndex: 1,
+        explanation: "Mens rea is the mental element (e.g., intent, knowledge, recklessness) required for many offences."
+      },
+      {
+        id: "q5",
+        prompt: "True or False: The Charter of Rights and Freedoms is part of the Constitution of Canada.",
+        choices: ["True", "False"],
+        answerIndex: 0,
+        explanation: "Yes—it's Part I of the Constitution Act, 1982."
+      }
+    ];
+
+    // State (not persisted)
+    const state = {
+      // per question: { marked: "right" | "wrong" | null }
+      marks: {},
+      total: QUESTIONS.length
+    };
+
+    const els = {
+      questions: document.getElementById("questions"),
+      correctCount: document.getElementById("correctCount"),
+      wrongCount: document.getElementById("wrongCount"),
+      markedCount: document.getElementById("markedCount"),
+      totalCount: document.getElementById("totalCount"),
+      resetBtn: document.getElementById("resetBtn")
+    };
+
+    function render() {
+      els.totalCount.textContent = state.total;
+
+      els.questions.innerHTML = QUESTIONS.map((q, idx) => {
+        const marked = state.marks[q.id] || null;
+
+        const statusHtml = marked
+          ? `<div class="status ${marked === "right" ? "good" : "bad"}">
+               Marked: ${marked === "right" ? "Correct ✅" : "Wrong ❌"}
+             </div>`
+          : `<div class="status" style="color:#666;">Not marked yet</div>`;
+
+        const choicesHtml = q.choices.map((c, cIdx) => {
+          const name = `choice-${q.id}`;
+          return `
+            <label class="choice">
+              <input type="radio" name="${name}" value="${cIdx}" aria-label="Answer choice ${cIdx + 1}">
+              <div>
+                <div><strong>${String.fromCharCode(65 + cIdx)}.</strong> ${escapeHtml(c)}</div>
+              </div>
+            </label>
+          `;
+        }).join("");
+
+        return `
+          <section class="q" data-qid="${q.id}">
+            <h2>${idx + 1}. ${escapeHtml(q.prompt)}</h2>
+
+            <div class="choices">
+              ${choicesHtml}
+            </div>
+
+            <div class="actions">
+              <button class="mark right" type="button" data-action="check" data-qid="${q.id}">
+                Check Answer
+              </button>
+              <button class="mark right" type="button" data-action="markRight" data-qid="${q.id}">
+                Mark Right
+              </button>
+              <button class="mark wrong" type="button" data-action="markWrong" data-qid="${q.id}">
+                Mark Wrong
+              </button>
+            </div>
+
+            ${statusHtml}
+            <div class="small" style="margin-top:8px;">
+              <strong>Explanation:</strong> ${escapeHtml(q.explanation)}
+            </div>
+          </section>
+        `;
+      }).join("");
+
+      updateCounters();
+    }
+
+    function updateCounters() {
+      let correct = 0;
+      let wrong = 0;
+      let marked = 0;
+
+      for (const q of QUESTIONS) {
+        const m = state.marks[q.id];
+        if (!m) continue;
+        marked++;
+        if (m === "right") correct++;
+        if (m === "wrong") wrong++;
+      }
+
+      els.correctCount.textContent = correct;
+      els.wrongCount.textContent = wrong;
+      els.markedCount.textContent = marked;
+    }
+
+    function mark(qid, value) {
+      state.marks[qid] = value;
+      render();
+      // preserve radio selections on rerender? (optional) - since you said no state saving, keep it simple.
+    }
+
+    function checkAnswer(qid) {
+      const q = QUESTIONS.find(x => x.id === qid);
+      if (!q) return;
+
+      const section = document.querySelector(`[data-qid="${qid}"]`);
+      const selected = section.querySelector(`input[type="radio"]:checked`);
+
+      if (!selected) {
+        alert("Select an answer first.");
+        return;
+      }
+
+      const selectedIndex = Number(selected.value);
+      const isCorrect = selectedIndex === q.answerIndex;
+      mark(qid, isCorrect ? "right" : "wrong");
+    }
+
+    function resetAll() {
+      state.marks = {};
+      render();
+    }
+
+    // Basic HTML escape for prompts/choices/explanations
+    function escapeHtml(str) {
+      return String(str)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    // Event delegation
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest("button[data-action]");
+      if (!btn) return;
+
+      const action = btn.dataset.action;
+      const qid = btn.dataset.qid;
+
+      if (action === "check") checkAnswer(qid);
+      if (action === "markRight") mark(qid, "right");
+      if (action === "markWrong") mark(qid, "wrong");
+    });
+
+    els.resetBtn.addEventListener("click", resetAll);
+
+    render();
+  </script>
+</body>
+</html>
