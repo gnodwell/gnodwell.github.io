@@ -27,8 +27,13 @@
         max-width: 980px;
         margin: 0 auto 18px;
       }
-      h1 { margin: 0 0 6px; }
-      .sub { margin: 0; color: var(--muted); }
+      h1 {
+        margin: 0 0 6px;
+      }
+      .sub {
+        margin: 0;
+        color: var(--muted);
+      }
 
       .wrap {
         max-width: 980px;
@@ -39,7 +44,11 @@
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
       }
 
-      .divider { height: 1px; background: var(--line); margin: 14px 0; }
+      .divider {
+        height: 1px;
+        background: var(--line);
+        margin: 14px 0;
+      }
 
       .topbar {
         display: flex;
@@ -57,10 +66,19 @@
         font-weight: 900;
         background: var(--soft2);
       }
-      .btn:hover { filter: brightness(0.97); }
-      .btn.primary { background: #d6e3f3; }
-      .btn.small { padding: 8px 10px; font-weight: 800; }
-      .btn.selected { outline: 3px solid #bcd2f7; }
+      .btn:hover {
+        filter: brightness(0.97);
+      }
+      .btn.primary {
+        background: #d6e3f3;
+      }
+      .btn.small {
+        padding: 8px 10px;
+        font-weight: 800;
+      }
+      .btn.selected {
+        outline: 3px solid #bcd2f7;
+      }
 
       .pill {
         padding: 10px 12px;
@@ -68,7 +86,9 @@
         background: #f1f3f5;
         font-weight: 900;
       }
-      .pill span { font-variant-numeric: tabular-nums; }
+      .pill span {
+        font-variant-numeric: tabular-nums;
+      }
 
       .q {
         border: 1px solid var(--line);
@@ -76,9 +96,16 @@
         padding: 16px;
         margin: 0;
       }
-      .q h2 { font-size: 1.05rem; margin: 0 0 10px; }
+      .q h2 {
+        font-size: 1.05rem;
+        margin: 0 0 10px;
+      }
 
-      .choices { display: grid; gap: 8px; margin-top: 8px; }
+      .choices {
+        display: grid;
+        gap: 8px;
+        margin-top: 8px;
+      }
       label.choice {
         display: flex;
         gap: 10px;
@@ -89,9 +116,15 @@
         border: 1px solid transparent;
         cursor: pointer;
       }
-      label.choice:hover { background: #f0f5ff; border-color: #d8e2ff; }
+      label.choice:hover {
+        background: #f0f5ff;
+        border-color: #d8e2ff;
+      }
 
-      input[type="radio"], input[type="checkbox"] { margin-top: 2px; }
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-top: 2px;
+      }
 
       .row {
         display: flex;
@@ -108,12 +141,26 @@
         min-width: 260px;
       }
 
-      .tiny { color: var(--muted); font-size: 0.92rem; }
+      .tiny {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
 
-      .status { margin-top: 10px; font-weight: 900; }
-      .good { color: var(--good); }
-      .bad { color: var(--bad); }
-      .explain { margin-top: 8px; color: var(--muted); font-size: 0.92rem; }
+      .status {
+        margin-top: 10px;
+        font-weight: 900;
+      }
+      .good {
+        color: var(--good);
+      }
+      .bad {
+        color: var(--bad);
+      }
+      .explain {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
 
       .nav {
         display: flex;
@@ -122,8 +169,16 @@
         justify-content: space-between;
         margin-top: 14px;
       }
-      .nav .left, .nav .right { display: flex; gap: 10px; flex-wrap: wrap; }
-      .disabled { opacity: 0.45; cursor: not-allowed; }
+      .nav .left,
+      .nav .right {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
 
       /* Selector UI */
       .selector {
@@ -132,9 +187,20 @@
         padding: 12px;
         background: #fbfcfd;
       }
-      .selector h3 { margin: 0 0 8px; font-size: 1rem; }
-      .chips { display: flex; gap: 8px; flex-wrap: wrap; }
-      .metaLine { margin-top: 10px; color: var(--muted); font-size: 0.92rem; }
+      .selector h3 {
+        margin: 0 0 8px;
+        font-size: 1rem;
+      }
+      .chips {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .metaLine {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
       .warn {
         margin-top: 10px;
         padding: 10px 12px;
@@ -150,32 +216,45 @@
   <body>
     <header>
       <h1>Study Questions</h1>
-      <p class="sub">Pick a subject/topic/lecture, then study one question at a time.</p>
+      <p class="sub">
+        Pick a subject/topic/lecture, then study one question at a time.
+      </p>
     </header>
 
     <div class="wrap">
-
       <!-- NEW: Dynamic selectors -->
       <div class="selector">
         <h3>Choose what to study</h3>
 
-        <div class="tiny" style="font-weight:900; margin-bottom:6px;">Subject</div>
+        <div class="tiny" style="font-weight: 900; margin-bottom: 6px">
+          Subject
+        </div>
         <div class="chips" id="subjectChips"></div>
 
-        <div class="tiny" style="font-weight:900; margin:12px 0 6px;">Topic</div>
+        <div class="tiny" style="font-weight: 900; margin: 12px 0 6px">
+          Topic
+        </div>
         <div class="chips" id="topicChips"></div>
 
-        <div class="tiny" style="font-weight:900; margin:12px 0 6px;">Lecture</div>
+        <div class="tiny" style="font-weight: 900; margin: 12px 0 6px">
+          Lecture
+        </div>
         <div class="chips" id="lectureChips"></div>
 
         <div class="metaLine" id="selectionSummary">No quiz selected yet.</div>
 
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <button class="btn primary" id="startBtn" type="button">Start Quiz</button>
-          <button class="btn" id="clearSelectionBtn" type="button">Clear Selection</button>
+        <div
+          style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap"
+        >
+          <button class="btn primary" id="startBtn" type="button">
+            Start Quiz
+          </button>
+          <button class="btn" id="clearSelectionBtn" type="button">
+            Clear Selection
+          </button>
         </div>
 
-        <div class="warn" id="noMatchesWarn" style="display:none;">
+        <div class="warn" id="noMatchesWarn" style="display: none">
           No questions match this selection. Pick different filters.
         </div>
       </div>
@@ -189,10 +268,12 @@
         <div class="pill">Correct: <span id="correctCount">0</span></div>
         <div class="pill">Wrong: <span id="wrongCount">0</span></div>
         <div class="pill">
-          Checked: <span id="checkedCount">0</span> / <span id="totalCount">0</span>
+          Checked: <span id="checkedCount">0</span> /
+          <span id="totalCount">0</span>
         </div>
         <div class="pill">
-          Question: <span id="posCount">0</span> / <span id="totalCount2">0</span>
+          Question: <span id="posCount">0</span> /
+          <span id="totalCount2">0</span>
         </div>
       </div>
 
@@ -214,7 +295,6 @@
     <script src="./question-bank.js"></script>
 
     <script>
-
       // =========================
       // 2) ELEMENTS
       // =========================
@@ -249,11 +329,11 @@
 
       const state = {
         index: 0,
-        checked: {},      // qid -> "right"|"wrong"
+        checked: {}, // qid -> "right"|"wrong"
         total: 0,
-        selectedSubject: null,
-        selectedTopic: null,
-        selectedLecture: null,
+        selectedSubjects: [],
+        selectedTopics: [],
+        selectedLectures: [],
       };
 
       // =========================
@@ -268,6 +348,12 @@
           .replaceAll("'", "&#039;");
       }
 
+      function toggleInArray(arr, value) {
+        const i = arr.indexOf(value);
+        if (i === -1) arr.push(value);
+        else arr.splice(i, 1);
+      }
+
       function shuffleInPlace(arr) {
         for (let i = arr.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
@@ -276,35 +362,53 @@
       }
 
       function uniqueSorted(values) {
-        return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+        return [...new Set(values.filter(Boolean))].sort((a, b) =>
+          a.localeCompare(b)
+        );
       }
 
       function getBankSubjects() {
-        return uniqueSorted(QUESTIONS.map(q => q.subject));
+        return uniqueSorted(QUESTIONS.map((q) => q.subject));
       }
 
       function getBankTopics(subject) {
         return uniqueSorted(
-          QUESTIONS
-            .filter(q => !subject || q.subject === subject)
-            .map(q => q.topic)
+          QUESTIONS.filter((q) => !subject || q.subject === subject).map(
+            (q) => q.topic
+          )
         );
       }
 
       function getBankLectures(subject, topic) {
         return uniqueSorted(
-          QUESTIONS
-            .filter(q => (!subject || q.subject === subject) && (!topic || q.topic === topic))
-            .map(q => q.lecture)
+          QUESTIONS.filter(
+            (q) =>
+              (!subject || q.subject === subject) &&
+              (!topic || q.topic === topic)
+          ).map((q) => q.lecture)
         );
       }
 
       function filterQuestions() {
-        const { selectedSubject, selectedTopic, selectedLecture } = state;
-        return QUESTIONS.filter(q => {
-          if (selectedSubject && q.subject !== selectedSubject) return false;
-          if (selectedTopic && q.topic !== selectedTopic) return false;
-          if (selectedLecture && q.lecture !== selectedLecture) return false;
+        return QUESTIONS.filter((q) => {
+          if (
+            state.selectedSubjects.length &&
+            !state.selectedSubjects.includes(q.subject)
+          )
+            return false;
+
+          if (
+            state.selectedTopics.length &&
+            !state.selectedTopics.includes(q.topic)
+          )
+            return false;
+
+          if (
+            state.selectedLectures.length &&
+            !state.selectedLectures.includes(q.lecture)
+          )
+            return false;
+
           return true;
         });
       }
@@ -314,18 +418,21 @@
         btn.classList.toggle("disabled", disabled);
       }
 
-      function setChipContainer(containerEl, items, selectedValue, onPick) {
+      function setChipContainer(containerEl, items, selectedArray, onToggle) {
         containerEl.innerHTML = "";
-        items.forEach(val => {
+
+        items.forEach((val) => {
           const b = document.createElement("button");
           b.type = "button";
-          b.className = "btn small" + (val === selectedValue ? " selected" : "");
+          b.className =
+            "btn small" + (selectedArray.includes(val) ? " selected" : "");
           b.textContent = val;
-          b.addEventListener("click", () => onPick(val));
+
+          b.addEventListener("click", () => onToggle(val));
+
           containerEl.appendChild(b);
         });
 
-        // If no items, show a placeholder
         if (items.length === 0) {
           const span = document.createElement("div");
           span.className = "tiny";
@@ -335,38 +442,73 @@
       }
 
       function updateSelectionUI() {
-        // Subject chips always from full bank
-        const subjects = getBankSubjects();
-        setChipContainer(els.subjectChips, subjects, state.selectedSubject, (val) => {
-          state.selectedSubject = val;
-          // Reset downstream selections
-          state.selectedTopic = null;
-          state.selectedLecture = null;
-          updateSelectionUI();
-        });
+        // SUBJECTS (always from full bank)
+        const subjects = uniqueSorted(QUESTIONS.map((q) => q.subject));
+        setChipContainer(
+          els.subjectChips,
+          subjects,
+          state.selectedSubjects,
+          (val) => {
+            toggleInArray(state.selectedSubjects, val);
 
-        // Topic chips depend on subject
-        const topics = getBankTopics(state.selectedSubject);
-        setChipContainer(els.topicChips, topics, state.selectedTopic, (val) => {
-          state.selectedTopic = val;
-          state.selectedLecture = null;
-          updateSelectionUI();
-        });
+            // Reset dependent selections
+            state.selectedTopics = [];
+            state.selectedLectures = [];
 
-        // Lecture chips depend on subject+topic
-        const lectures = getBankLectures(state.selectedSubject, state.selectedTopic);
-        setChipContainer(els.lectureChips, lectures, state.selectedLecture, (val) => {
-          state.selectedLecture = val;
-          updateSelectionUI();
-        });
+            updateSelectionUI();
+          }
+        );
+
+        // TOPICS (filtered by selected subjects if any)
+        const topics = uniqueSorted(
+          QUESTIONS.filter(
+            (q) =>
+              state.selectedSubjects.length === 0 ||
+              state.selectedSubjects.includes(q.subject)
+          ).map((q) => q.topic)
+        );
+
+        setChipContainer(
+          els.topicChips,
+          topics,
+          state.selectedTopics,
+          (val) => {
+            toggleInArray(state.selectedTopics, val);
+            state.selectedLectures = [];
+            updateSelectionUI();
+          }
+        );
+
+        // LECTURES (filtered by subject + topic selections)
+        const lectures = uniqueSorted(
+          QUESTIONS.filter(
+            (q) =>
+              (state.selectedSubjects.length === 0 ||
+                state.selectedSubjects.includes(q.subject)) &&
+              (state.selectedTopics.length === 0 ||
+                state.selectedTopics.includes(q.topic))
+          ).map((q) => q.lecture)
+        );
+
+        setChipContainer(
+          els.lectureChips,
+          lectures,
+          state.selectedLectures,
+          (val) => {
+            toggleInArray(state.selectedLectures, val);
+            updateSelectionUI();
+          }
+        );
 
         const matches = filterQuestions();
-        els.noMatchesWarn.style.display = matches.length === 0 ? "block" : "none";
+        els.noMatchesWarn.style.display =
+          matches.length === 0 ? "block" : "none";
 
-        const s = state.selectedSubject ? `Subject: ${state.selectedSubject}` : "Subject: (any)";
-        const t = state.selectedTopic ? `Topic: ${state.selectedTopic}` : "Topic: (any)";
-        const l = state.selectedLecture ? `Lecture: ${state.selectedLecture}` : "Lecture: (any)";
-        els.selectionSummary.textContent = `${s} • ${t} • ${l} • Matches: ${matches.length}`;
+        els.selectionSummary.textContent =
+          `Subjects: ${state.selectedSubjects.length || "any"} • ` +
+          `Topics: ${state.selectedTopics.length || "any"} • ` +
+          `Lectures: ${state.selectedLectures.length || "any"} • ` +
+          `Matches: ${matches.length}`;
       }
 
       function startQuiz() {
@@ -376,7 +518,7 @@
           return;
         }
 
-        activeQuestions = matches.map(q => ({ ...q })); // shallow copy
+        activeQuestions = matches.map((q) => ({ ...q })); // shallow copy
         shuffleInPlace(activeQuestions);
 
         state.checked = {};
@@ -390,7 +532,9 @@
       // 5) QUIZ RENDERING
       // =========================
       function updateCounters() {
-        let correct = 0, wrong = 0, checked = 0;
+        let correct = 0,
+          wrong = 0,
+          checked = 0;
 
         for (const q of activeQuestions) {
           const m = state.checked[q.id];
@@ -406,7 +550,7 @@
 
         els.totalCount.textContent = state.total;
         els.totalCount2.textContent = state.total;
-        els.posCount.textContent = state.total ? (state.index + 1) : 0;
+        els.posCount.textContent = state.total ? state.index + 1 : 0;
 
         const atStart = state.index === 0;
         const atEnd = state.index === state.total - 1;
@@ -440,22 +584,26 @@
         let inputHtml = "";
 
         // Support a "truefalse" type as radio True/False
-        const normalizedType = (q.type === "truefalse") ? "single" : q.type;
+        const normalizedType = q.type === "truefalse" ? "single" : q.type;
 
         if (normalizedType === "single") {
           const choices =
-            q.type === "truefalse"
-              ? ["True", "False"]
-              : q.choices;
+            q.type === "truefalse" ? ["True", "False"] : q.choices;
 
           inputHtml = `
             <div class="choices">
-              ${choices.map((c, i) => `
+              ${choices
+                .map(
+                  (c, i) => `
                 <label class="choice">
                   <input type="radio" name="q-${q.id}" value="${i}">
-                  <div><strong>${String.fromCharCode(65 + i)}.</strong> ${escapeHtml(c)}</div>
+                  <div><strong>${String.fromCharCode(
+                    65 + i
+                  )}.</strong> ${escapeHtml(c)}</div>
                 </label>
-              `).join("")}
+              `
+                )
+                .join("")}
             </div>
           `;
         }
@@ -463,12 +611,18 @@
         if (normalizedType === "multi") {
           inputHtml = `
             <div class="choices">
-              ${q.choices.map((c, i) => `
+              ${q.choices
+                .map(
+                  (c, i) => `
                 <label class="choice">
                   <input type="checkbox" name="q-${q.id}" value="${i}">
-                  <div><strong>${String.fromCharCode(65 + i)}.</strong> ${escapeHtml(c)}</div>
+                  <div><strong>${String.fromCharCode(
+                    65 + i
+                  )}.</strong> ${escapeHtml(c)}</div>
                 </label>
-              `).join("")}
+              `
+                )
+                .join("")}
             </div>
           `;
         }
@@ -478,9 +632,13 @@
             <div class="row">
               <select data-qid="${q.id}" data-kind="dropdown">
                 <option value="" selected disabled>Select one…</option>
-                ${q.options.map(opt => `
+                ${q.options
+                  .map(
+                    (opt) => `
                   <option value="${escapeHtml(opt)}">${escapeHtml(opt)}</option>
-                `).join("")}
+                `
+                  )
+                  .join("")}
               </select>
             </div>
           `;
@@ -489,17 +647,31 @@
         if (normalizedType === "double") {
           inputHtml = `
             <div class="row">
-              ${q.fields.map((f, fi) => `
+              ${q.fields
+                .map(
+                  (f, fi) => `
                 <div>
-                  <div class="tiny" style="font-weight:900; margin:0 0 6px;">${escapeHtml(f.label)}</div>
-                  <select data-qid="${q.id}" data-kind="double" data-field="${fi}">
+                  <div class="tiny" style="font-weight:900; margin:0 0 6px;">${escapeHtml(
+                    f.label
+                  )}</div>
+                  <select data-qid="${
+                    q.id
+                  }" data-kind="double" data-field="${fi}">
                     <option value="" selected disabled>Select one…</option>
-                    ${f.options.map(opt => `
-                      <option value="${escapeHtml(opt)}">${escapeHtml(opt)}</option>
-                    `).join("")}
+                    ${f.options
+                      .map(
+                        (opt) => `
+                      <option value="${escapeHtml(opt)}">${escapeHtml(
+                          opt
+                        )}</option>
+                    `
+                      )
+                      .join("")}
                   </select>
                 </div>
-              `).join("")}
+              `
+                )
+                .join("")}
             </div>
           `;
         }
@@ -513,7 +685,9 @@
         // Explanation ONLY when correct
         const explanationHtml =
           mark === "right" && q.explanation
-            ? `<div class="explain"><strong>Explanation:</strong> ${escapeHtml(q.explanation)}</div>`
+            ? `<div class="explain"><strong>Explanation:</strong> ${escapeHtml(
+                q.explanation
+              )}</div>`
             : "";
 
         const meta = `
@@ -554,7 +728,9 @@
         const normalizedType = isTrueFalse ? "single" : q.type;
 
         if (normalizedType === "single") {
-          const picked = section.querySelector(`input[name="q-${qid}"]:checked`);
+          const picked = section.querySelector(
+            `input[name="q-${qid}"]:checked`
+          );
           if (!picked) return alert("Pick an answer first.");
 
           let isRight = false;
@@ -572,8 +748,9 @@
         }
 
         if (normalizedType === "multi") {
-          const picked = [...section.querySelectorAll(`input[name="q-${qid}"]:checked`)]
-            .map(x => Number(x.value));
+          const picked = [
+            ...section.querySelectorAll(`input[name="q-${qid}"]:checked`),
+          ].map((x) => Number(x.value));
           if (picked.length === 0) return alert("Select your answers first.");
           if (q.answerIndices && picked.length !== q.answerIndices.length) {
             return alert(`Select exactly ${q.answerIndices.length} option(s).`);
@@ -592,14 +769,18 @@
         }
 
         if (normalizedType === "double") {
-          const sels = [...section.querySelectorAll(`select[data-kind="double"]`)];
-          if (sels.some(s => !s.value)) return alert("Select an option for each dropdown first.");
+          const sels = [
+            ...section.querySelectorAll(`select[data-kind="double"]`),
+          ];
+          if (sels.some((s) => !s.value))
+            return alert("Select an option for each dropdown first.");
 
           const picked = sels
             .sort((a, b) => Number(a.dataset.field) - Number(b.dataset.field))
-            .map(s => s.value);
+            .map((s) => s.value);
 
-          const isRight = picked[0] === q.answers[0] && picked[1] === q.answers[1];
+          const isRight =
+            picked[0] === q.answers[0] && picked[1] === q.answers[1];
           state.checked[qid] = isRight ? "right" : "wrong";
           return renderCurrentQuestion();
         }
@@ -633,15 +814,17 @@
       }
 
       function clearSelection() {
-        state.selectedSubject = null;
-        state.selectedTopic = null;
-        state.selectedLecture = null;
+        state.selectedSubjects = [];
+        state.selectedTopics = [];
+        state.selectedLectures = [];
+
         updateSelectionUI();
 
         activeQuestions = [];
         state.checked = {};
         state.index = 0;
         state.total = 0;
+
         renderEmptyState();
       }
 
