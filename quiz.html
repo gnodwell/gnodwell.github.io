@@ -367,27 +367,27 @@
         );
       }
 
-      function getBankSubjects() {
-        return uniqueSorted(QUESTIONS.map((q) => q.subject));
-      }
+    //   function getBankSubjects() {
+    //     return uniqueSorted(QUESTIONS.map((q) => q.subject));
+    //   }
 
-      function getBankTopics(subject) {
-        return uniqueSorted(
-          QUESTIONS.filter((q) => !subject || q.subject === subject).map(
-            (q) => q.topic
-          )
-        );
-      }
+    //   function getBankTopics(subject) {
+    //     return uniqueSorted(
+    //       QUESTIONS.filter((q) => !subject || q.subject === subject).map(
+    //         (q) => q.topic
+    //       )
+    //     );
+    //   }
 
-      function getBankLectures(subject, topic) {
-        return uniqueSorted(
-          QUESTIONS.filter(
-            (q) =>
-              (!subject || q.subject === subject) &&
-              (!topic || q.topic === topic)
-          ).map((q) => q.lecture)
-        );
-      }
+    //   function getBankLectures(subject, topic) {
+    //     return uniqueSorted(
+    //       QUESTIONS.filter(
+    //         (q) =>
+    //           (!subject || q.subject === subject) &&
+    //           (!topic || q.topic === topic)
+    //       ).map((q) => q.lecture)
+    //     );
+    //   }
 
       function filterQuestions() {
         return QUESTIONS.filter((q) => {
