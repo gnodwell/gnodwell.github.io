@@ -1,88 +1,856 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Study Directory</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Questions</title>
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f4f6f8;
-            margin: 0;
-            padding: 20px;
-        }
+      :root {
+        --bg: #f4f6f8;
+        --card: #fff;
+        --ink: #111;
+        --muted: #58606a;
+        --line: #e6e9ee;
+        --soft: #f7f9fb;
+        --soft2: #e9eef3;
+        --good: #137333;
+        --bad: #b00020;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        margin: 0;
+        padding: 20px;
+        color: var(--ink);
+      }
+      header {
+        max-width: 980px;
+        margin: 0 auto 18px;
+      }
+      h1 {
+        margin: 0 0 6px;
+      }
+      .sub {
+        margin: 0;
+        color: var(--muted);
+      }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        background: var(--card);
+        border-radius: 12px;
+        padding: 18px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      }
 
-        p {
-            text-align: center;
-            color: #555;
-        }
+      .divider {
+        height: 1px;
+        background: var(--line);
+        margin: 14px 0;
+      }
 
-        .directory {
-            max-width: 700px;
-            margin: 40px auto;
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+      .topbar {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 12px;
+      }
 
-        .directory ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+      .btn {
+        border: 0;
+        border-radius: 10px;
+        padding: 10px 12px;
+        cursor: pointer;
+        font-weight: 900;
+        background: var(--soft2);
+      }
+      .btn:hover {
+        filter: brightness(0.97);
+      }
+      .btn.primary {
+        background: #d6e3f3;
+      }
+      .btn.small {
+        padding: 8px 10px;
+        font-weight: 800;
+      }
+      .btn.selected {
+        outline: 3px solid #bcd2f7;
+      }
 
-        .directory li {
-            margin-bottom: 15px;
-        }
+      .pill {
+        padding: 10px 12px;
+        border-radius: 999px;
+        background: #f1f3f5;
+        font-weight: 900;
+      }
+      .pill span {
+        font-variant-numeric: tabular-nums;
+      }
 
-        .directory a {
-            display: block;
-            padding: 15px;
-            background: #e9eef3;
-            border-radius: 6px;
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-            transition: background 0.2s ease;
-        }
+      .q {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 16px;
+        margin: 0;
+      }
+      .q h2 {
+        font-size: 1.05rem;
+        margin: 0 0 10px;
+      }
 
-        .directory a:hover {
-            background: #d6e3f3;
-        }
+      .choices {
+        display: grid;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      label.choice {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        padding: 10px;
+        border-radius: 10px;
+        background: var(--soft);
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+      label.choice:hover {
+        background: #f0f5ff;
+        border-color: #d8e2ff;
+      }
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #777;
-        }
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-top: 2px;
+      }
+
+      .row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        margin-top: 10px;
+      }
+      select {
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        background: #fff;
+        min-width: 260px;
+      }
+
+      .tiny {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .status {
+        margin-top: 10px;
+        font-weight: 900;
+      }
+      .good {
+        color: var(--good);
+      }
+      .bad {
+        color: var(--bad);
+      }
+      .explain {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .nav {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 14px;
+      }
+      .nav .left,
+      .nav .right {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+
+      /* Selector UI */
+      .selector {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 12px;
+        background: #fbfcfd;
+      }
+      .selector h3 {
+        margin: 0 0 8px;
+        font-size: 1rem;
+      }
+      .chips {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .metaLine {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .warn {
+        margin-top: 10px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: #fff3cd;
+        border: 1px solid #ffe69c;
+        color: #6b5600;
+        font-weight: 800;
+      }
     </style>
-</head>
-<body>
+  </head>
 
-    <h1>📚 Study Question Directory</h1>
-    <p>Select a topic to begin studying</p>
+  <body>
+    <header>
+      <h1>Study Questions</h1>
+      <p class="sub">
+        Pick a subject/topic/lecture, then study one question at a time.
+      </p>
+    </header>
 
-    <div class="directory">
-        <ul>
-            <li>
-                <a href="/quiz.html">
-                    Start Quiz
-                </a>
-            </li>
-        </ul>
+    <div class="wrap">
+      <!-- NEW: Dynamic selectors -->
+      <div class="selector">
+        <h3>Choose what to study</h3>
+
+        <div class="tiny" style="font-weight: 900; margin-bottom: 6px">
+          Subject
+        </div>
+        <div class="chips" id="subjectChips"></div>
+
+        <div class="tiny" style="font-weight: 900; margin: 12px 0 6px">
+          Topic
+        </div>
+        <div class="chips" id="topicChips"></div>
+
+        <div class="tiny" style="font-weight: 900; margin: 12px 0 6px">
+          Lecture
+        </div>
+        <div class="chips" id="lectureChips"></div>
+
+        <div class="metaLine" id="selectionSummary">No quiz selected yet.</div>
+
+        <div
+          style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap"
+        >
+          <button class="btn primary" id="startBtn" type="button">
+            Start Quiz
+          </button>
+          <button class="btn" id="clearSelectionBtn" type="button">
+            Clear Selection
+          </button>
+        </div>
+
+        <div class="warn" id="noMatchesWarn" style="display: none">
+          No questions match this selection. Pick different filters.
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="topbar">
+        <button class="btn" id="resetBtn" type="button">Reset Quiz</button>
+        <button class="btn" id="shuffleBtn" type="button">Shuffle Quiz</button>
+
+        <div class="pill">Correct: <span id="correctCount">0</span></div>
+        <div class="pill">Wrong: <span id="wrongCount">0</span></div>
+        <div class="pill">
+          Checked: <span id="checkedCount">0</span> /
+          <span id="totalCount">0</span>
+        </div>
+        <div class="pill">
+          Question: <span id="posCount">0</span> /
+          <span id="totalCount2">0</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div id="questionHost"></div>
+
+      <div class="nav">
+        <div class="left">
+          <button class="btn" id="prevBtn" type="button">← Prev</button>
+          <button class="btn" id="nextBtn" type="button">Next →</button>
+        </div>
+        <div class="right">
+          <button class="btn primary" id="checkBtn" type="button">Check</button>
+        </div>
+      </div>
     </div>
 
-    <footer>
-        © 2025 Study Notes • For personal use
-    </footer>
+    <script src="./question-bank.js"></script>
 
-</body>
+    <script>
+      // =========================
+      // 2) ELEMENTS
+      // =========================
+      const els = {
+        host: document.getElementById("questionHost"),
+        correctCount: document.getElementById("correctCount"),
+        wrongCount: document.getElementById("wrongCount"),
+        checkedCount: document.getElementById("checkedCount"),
+        totalCount: document.getElementById("totalCount"),
+        totalCount2: document.getElementById("totalCount2"),
+        posCount: document.getElementById("posCount"),
+
+        resetBtn: document.getElementById("resetBtn"),
+        shuffleBtn: document.getElementById("shuffleBtn"),
+        prevBtn: document.getElementById("prevBtn"),
+        nextBtn: document.getElementById("nextBtn"),
+        checkBtn: document.getElementById("checkBtn"),
+
+        subjectChips: document.getElementById("subjectChips"),
+        topicChips: document.getElementById("topicChips"),
+        lectureChips: document.getElementById("lectureChips"),
+        selectionSummary: document.getElementById("selectionSummary"),
+        startBtn: document.getElementById("startBtn"),
+        clearSelectionBtn: document.getElementById("clearSelectionBtn"),
+        noMatchesWarn: document.getElementById("noMatchesWarn"),
+      };
+
+      // =========================
+      // 3) STATE
+      // =========================
+      let activeQuestions = []; // <- filtered quiz lives here
+
+      const state = {
+        index: 0,
+        checked: {}, // qid -> "right"|"wrong"
+        total: 0,
+        selectedSubjects: [],
+        selectedTopics: [],
+        selectedLectures: [],
+      };
+
+      // =========================
+      // 4) HELPERS
+      // =========================
+      function escapeHtml(str) {
+        return String(str)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function toggleInArray(arr, value) {
+        const i = arr.indexOf(value);
+        if (i === -1) arr.push(value);
+        else arr.splice(i, 1);
+      }
+
+      function shuffleInPlace(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+      }
+
+      function uniqueSorted(values) {
+        return [...new Set(values.filter(Boolean))].sort((a, b) =>
+          a.localeCompare(b)
+        );
+      }
+
+    //   function getBankSubjects() {
+    //     return uniqueSorted(QUESTIONS.map((q) => q.subject));
+    //   }
+
+    //   function getBankTopics(subject) {
+    //     return uniqueSorted(
+    //       QUESTIONS.filter((q) => !subject || q.subject === subject).map(
+    //         (q) => q.topic
+    //       )
+    //     );
+    //   }
+
+    //   function getBankLectures(subject, topic) {
+    //     return uniqueSorted(
+    //       QUESTIONS.filter(
+    //         (q) =>
+    //           (!subject || q.subject === subject) &&
+    //           (!topic || q.topic === topic)
+    //       ).map((q) => q.lecture)
+    //     );
+    //   }
+
+      function filterQuestions() {
+        return QUESTIONS.filter((q) => {
+          if (
+            state.selectedSubjects.length &&
+            !state.selectedSubjects.includes(q.subject)
+          )
+            return false;
+
+          if (
+            state.selectedTopics.length &&
+            !state.selectedTopics.includes(q.topic)
+          )
+            return false;
+
+          if (
+            state.selectedLectures.length &&
+            !state.selectedLectures.includes(q.lecture)
+          )
+            return false;
+
+          return true;
+        });
+      }
+
+      function setDisabled(btn, disabled) {
+        btn.disabled = disabled;
+        btn.classList.toggle("disabled", disabled);
+      }
+
+      function setChipContainer(containerEl, items, selectedArray, onToggle) {
+        containerEl.innerHTML = "";
+
+        items.forEach((val) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className =
+            "btn small" + (selectedArray.includes(val) ? " selected" : "");
+          b.textContent = val;
+
+          b.addEventListener("click", () => onToggle(val));
+
+          containerEl.appendChild(b);
+        });
+
+        if (items.length === 0) {
+          const span = document.createElement("div");
+          span.className = "tiny";
+          span.textContent = "(none)";
+          containerEl.appendChild(span);
+        }
+      }
+
+      function updateSelectionUI() {
+        // SUBJECTS (always from full bank)
+        const subjects = uniqueSorted(QUESTIONS.map((q) => q.subject));
+        setChipContainer(
+          els.subjectChips,
+          subjects,
+          state.selectedSubjects,
+          (val) => {
+            toggleInArray(state.selectedSubjects, val);
+
+            // Reset dependent selections
+            state.selectedTopics = [];
+            state.selectedLectures = [];
+
+            updateSelectionUI();
+          }
+        );
+
+        // TOPICS (filtered by selected subjects if any)
+        const topics = uniqueSorted(
+          QUESTIONS.filter(
+            (q) =>
+              state.selectedSubjects.length === 0 ||
+              state.selectedSubjects.includes(q.subject)
+          ).map((q) => q.topic)
+        );
+
+        setChipContainer(
+          els.topicChips,
+          topics,
+          state.selectedTopics,
+          (val) => {
+            toggleInArray(state.selectedTopics, val);
+            state.selectedLectures = [];
+            updateSelectionUI();
+          }
+        );
+
+        // LECTURES (filtered by subject + topic selections)
+        const lectures = uniqueSorted(
+          QUESTIONS.filter(
+            (q) =>
+              (state.selectedSubjects.length === 0 ||
+                state.selectedSubjects.includes(q.subject)) &&
+              (state.selectedTopics.length === 0 ||
+                state.selectedTopics.includes(q.topic))
+          ).map((q) => q.lecture)
+        );
+
+        setChipContainer(
+          els.lectureChips,
+          lectures,
+          state.selectedLectures,
+          (val) => {
+            toggleInArray(state.selectedLectures, val);
+            updateSelectionUI();
+          }
+        );
+
+        const matches = filterQuestions();
+        els.noMatchesWarn.style.display =
+          matches.length === 0 ? "block" : "none";
+
+        els.selectionSummary.textContent =
+          `Subjects: ${state.selectedSubjects.length || "any"} • ` +
+          `Topics: ${state.selectedTopics.length || "any"} • ` +
+          `Lectures: ${state.selectedLectures.length || "any"} • ` +
+          `Matches: ${matches.length}`;
+      }
+
+      function startQuiz() {
+        const matches = filterQuestions();
+        if (matches.length === 0) {
+          els.noMatchesWarn.style.display = "block";
+          return;
+        }
+
+        activeQuestions = matches.map((q) => ({ ...q })); // shallow copy
+        shuffleInPlace(activeQuestions);
+
+        state.checked = {};
+        state.index = 0;
+        state.total = activeQuestions.length;
+
+        renderCurrentQuestion();
+      }
+
+      // =========================
+      // 5) QUIZ RENDERING
+      // =========================
+      function updateCounters() {
+        let correct = 0,
+          wrong = 0,
+          checked = 0;
+
+        for (const q of activeQuestions) {
+          const m = state.checked[q.id];
+          if (!m) continue;
+          checked++;
+          if (m === "right") correct++;
+          if (m === "wrong") wrong++;
+        }
+
+        els.correctCount.textContent = correct;
+        els.wrongCount.textContent = wrong;
+        els.checkedCount.textContent = checked;
+
+        els.totalCount.textContent = state.total;
+        els.totalCount2.textContent = state.total;
+        els.posCount.textContent = state.total ? state.index + 1 : 0;
+
+        const atStart = state.index === 0;
+        const atEnd = state.index === state.total - 1;
+
+        setDisabled(els.prevBtn, state.total === 0 || atStart);
+        setDisabled(els.nextBtn, state.total === 0 || atEnd);
+        setDisabled(els.checkBtn, state.total === 0);
+        setDisabled(els.resetBtn, state.total === 0);
+        setDisabled(els.shuffleBtn, state.total === 0);
+      }
+
+      function renderEmptyState() {
+        els.host.innerHTML = `
+          <section class="q">
+            <h2>Select a quiz above and click <strong>Start Quiz</strong>.</h2>
+            <div class="tiny">Your question bank can be huge — this page will filter it by subject/topic/lecture.</div>
+          </section>
+        `;
+        updateCounters();
+      }
+
+      function renderCurrentQuestion() {
+        if (!activeQuestions.length) {
+          renderEmptyState();
+          return;
+        }
+
+        const q = activeQuestions[state.index];
+        const mark = state.checked[q.id] || null;
+
+        let inputHtml = "";
+
+        // Support a "truefalse" type as radio True/False
+        const normalizedType = q.type === "truefalse" ? "single" : q.type;
+
+        if (normalizedType === "single") {
+          const choices =
+            q.type === "truefalse" ? ["True", "False"] : q.choices;
+
+          inputHtml = `
+            <div class="choices">
+              ${choices
+                .map(
+                  (c, i) => `
+                <label class="choice">
+                  <input type="radio" name="q-${q.id}" value="${i}">
+                  <div><strong>${String.fromCharCode(
+                    65 + i
+                  )}.</strong> ${escapeHtml(c)}</div>
+                </label>
+              `
+                )
+                .join("")}
+            </div>
+          `;
+        }
+
+        if (normalizedType === "multi") {
+          inputHtml = `
+            <div class="choices">
+              ${q.choices
+                .map(
+                  (c, i) => `
+                <label class="choice">
+                  <input type="checkbox" name="q-${q.id}" value="${i}">
+                  <div><strong>${String.fromCharCode(
+                    65 + i
+                  )}.</strong> ${escapeHtml(c)}</div>
+                </label>
+              `
+                )
+                .join("")}
+            </div>
+          `;
+        }
+
+        if (normalizedType === "dropdown") {
+          inputHtml = `
+            <div class="row">
+              <select data-qid="${q.id}" data-kind="dropdown">
+                <option value="" selected disabled>Select one…</option>
+                ${q.options
+                  .map(
+                    (opt) => `
+                  <option value="${escapeHtml(opt)}">${escapeHtml(opt)}</option>
+                `
+                  )
+                  .join("")}
+              </select>
+            </div>
+          `;
+        }
+
+        if (normalizedType === "double") {
+          inputHtml = `
+            <div class="row">
+              ${q.fields
+                .map(
+                  (f, fi) => `
+                <div>
+                  <div class="tiny" style="font-weight:900; margin:0 0 6px;">${escapeHtml(
+                    f.label
+                  )}</div>
+                  <select data-qid="${
+                    q.id
+                  }" data-kind="double" data-field="${fi}">
+                    <option value="" selected disabled>Select one…</option>
+                    ${f.options
+                      .map(
+                        (opt) => `
+                      <option value="${escapeHtml(opt)}">${escapeHtml(
+                          opt
+                        )}</option>
+                    `
+                      )
+                      .join("")}
+                  </select>
+                </div>
+              `
+                )
+                .join("")}
+            </div>
+          `;
+        }
+
+        const statusHtml = mark
+          ? `<div class="status ${mark === "right" ? "good" : "bad"}">
+               ${mark === "right" ? "Correct ✅" : "Wrong ❌"}
+             </div>`
+          : `<div class="status" style="color:var(--muted);">Not checked yet</div>`;
+
+        // Explanation ONLY when correct
+        const explanationHtml =
+          mark === "right" && q.explanation
+            ? `<div class="explain"><strong>Explanation:</strong> ${escapeHtml(
+                q.explanation
+              )}</div>`
+            : "";
+
+        const meta = `
+          <div class="tiny" style="margin-top:10px;">
+            <strong>${escapeHtml(q.subject || "")}</strong> •
+            ${escapeHtml(q.topic || "")} •
+            ${escapeHtml(q.lecture || "")}
+          </div>
+        `;
+
+        els.host.innerHTML = `
+          <section class="q" data-qid="${q.id}">
+            <h2>${state.index + 1}. ${escapeHtml(q.prompt)}</h2>
+            ${inputHtml}
+            ${statusHtml}
+            ${explanationHtml}
+            ${meta}
+          </section>
+        `;
+
+        updateCounters();
+      }
+
+      function arraysEqualAsSets(a, b) {
+        if (a.length !== b.length) return false;
+        return [...a].sort().join("|") === [...b].sort().join("|");
+      }
+
+      function checkCurrent() {
+        if (!activeQuestions.length) return;
+
+        const q = activeQuestions[state.index];
+        const section = els.host.querySelector("section[data-qid]");
+        const qid = q.id;
+
+        // normalize truefalse
+        const isTrueFalse = q.type === "truefalse";
+        const normalizedType = isTrueFalse ? "single" : q.type;
+
+        if (normalizedType === "single") {
+          const picked = section.querySelector(
+            `input[name="q-${qid}"]:checked`
+          );
+          if (!picked) return alert("Pick an answer first.");
+
+          let isRight = false;
+
+          if (isTrueFalse) {
+            // choices: ["True","False"] => True=0, False=1
+            const pickedBool = Number(picked.value) === 0;
+            isRight = pickedBool === Boolean(q.answer);
+          } else {
+            isRight = Number(picked.value) === q.answerIndex;
+          }
+
+          state.checked[qid] = isRight ? "right" : "wrong";
+          return renderCurrentQuestion();
+        }
+
+        if (normalizedType === "multi") {
+          const picked = [
+            ...section.querySelectorAll(`input[name="q-${qid}"]:checked`),
+          ].map((x) => Number(x.value));
+          if (picked.length === 0) return alert("Select your answers first.");
+          if (q.answerIndices && picked.length !== q.answerIndices.length) {
+            return alert(`Select exactly ${q.answerIndices.length} option(s).`);
+          }
+          const isRight = arraysEqualAsSets(picked, q.answerIndices);
+          state.checked[qid] = isRight ? "right" : "wrong";
+          return renderCurrentQuestion();
+        }
+
+        if (normalizedType === "dropdown") {
+          const sel = section.querySelector(`select[data-kind="dropdown"]`);
+          if (!sel || !sel.value) return alert("Select an option first.");
+          const isRight = sel.value === q.answerValue;
+          state.checked[qid] = isRight ? "right" : "wrong";
+          return renderCurrentQuestion();
+        }
+
+        if (normalizedType === "double") {
+          const sels = [
+            ...section.querySelectorAll(`select[data-kind="double"]`),
+          ];
+          if (sels.some((s) => !s.value))
+            return alert("Select an option for each dropdown first.");
+
+          const picked = sels
+            .sort((a, b) => Number(a.dataset.field) - Number(b.dataset.field))
+            .map((s) => s.value);
+
+          const isRight =
+            picked[0] === q.answers[0] && picked[1] === q.answers[1];
+          state.checked[qid] = isRight ? "right" : "wrong";
+          return renderCurrentQuestion();
+        }
+      }
+
+      function prev() {
+        if (state.index === 0) return;
+        state.index--;
+        renderCurrentQuestion();
+      }
+
+      function next() {
+        if (state.index >= state.total - 1) return;
+        state.index++;
+        renderCurrentQuestion();
+      }
+
+      function resetQuiz() {
+        if (!activeQuestions.length) return;
+        state.checked = {};
+        state.index = 0;
+        renderCurrentQuestion();
+      }
+
+      function shuffleQuiz() {
+        if (!activeQuestions.length) return;
+        state.checked = {};
+        state.index = 0;
+        shuffleInPlace(activeQuestions);
+        renderCurrentQuestion();
+      }
+
+      function clearSelection() {
+        state.selectedSubjects = [];
+        state.selectedTopics = [];
+        state.selectedLectures = [];
+
+        updateSelectionUI();
+
+        activeQuestions = [];
+        state.checked = {};
+        state.index = 0;
+        state.total = 0;
+
+        renderEmptyState();
+      }
+
+      // =========================
+      // 6) WIRES
+      // =========================
+      els.checkBtn.addEventListener("click", checkCurrent);
+      els.prevBtn.addEventListener("click", prev);
+      els.nextBtn.addEventListener("click", next);
+      els.resetBtn.addEventListener("click", resetQuiz);
+      els.shuffleBtn.addEventListener("click", shuffleQuiz);
+
+      els.startBtn.addEventListener("click", startQuiz);
+      els.clearSelectionBtn.addEventListener("click", clearSelection);
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") prev();
+        if (e.key === "ArrowRight") next();
+        if (e.key === "Enter") checkCurrent();
+      });
+
+      // =========================
+      // 7) INIT
+      // =========================
+      updateSelectionUI();
+      renderEmptyState();
+    </script>
+  </body>
 </html>
