@@ -548,7 +548,7 @@ const QUESTIONS = [
     choices: [
       "Investigate offences",
       "Determine court jurisdiction",
-      "Recognize, classify, and apply authority",
+      "Recognize, classify, authority",
       "Assess credibility of witnesses",
     ],
     answerIndex: 2,
