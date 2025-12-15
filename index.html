@@ -737,6 +737,7 @@
         setDisabled(els.checkBtn, state.total === 0);
         setDisabled(els.resetBtn, state.total === 0);
         setDisabled(els.shuffleBtn, state.total === 0);
+        setDisabled(els.checkAllBtn, state.total === 0);
       }
 
       function renderEmptyState() {
@@ -1089,6 +1090,7 @@
 
         activeQuestions = [];
         state.checked = {};
+        state.answers = {}; // ✅ add this
         state.index = 0;
         state.total = 0;
 
