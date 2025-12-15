@@ -569,4 +569,128 @@ const QUESTIONS = [
     topic: "Court Process / Police Authority",
     lecture: "FedLaw: Workbook Qs Session 1&2",
   },
+  {
+    id: "uf1",
+    type: "truefalse",
+    prompt:
+      "Section 25 of the Criminal Code allows an officer to use force if they are authorized to act, are acting on reasonable grounds, and use no more force than necessary.",
+    answer: true,
+    explanation:
+      "Section 25 requires lawful authority, reasonable grounds, and proportional/necessary force.",
+    subject: "Federal",
+    topic: "Use of Force",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "uf2",
+    type: "truefalse",
+    prompt:
+      "The concept of necessity in use-of-force situations includes imminence, no reasonable alternatives, and proportionality.",
+    answer: true,
+    explanation:
+      "Force must be imminent, unavoidable, and proportionate to the threat.",
+    subject: "Federal",
+    topic: "Use of Force",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "uf3",
+    type: "truefalse",
+    prompt:
+      "Imminence is assessed by considering intent, means, and opportunity.",
+    answer: true,
+    explanation:
+      "Imminent threat analysis considers intent, means, and opportunity.",
+    subject: "Federal",
+    topic: "Use of Force",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "uf4",
+    type: "truefalse",
+    prompt:
+      "Section 26 of the Criminal Code addresses liability for excessive use of force.",
+    answer: true,
+    explanation: "Section 26 removes protection when force used is excessive.",
+    subject: "Federal",
+    topic: "Use of Force",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "uf5",
+    type: "truefalse",
+    prompt:
+      "Section 25(4) outlines additional requirements that must be met when force is used against a fleeing subject.",
+    answer: true,
+    explanation:
+      "Section 25(4) adds heightened requirements when dealing with fleeing suspects.",
+    subject: "Federal",
+    topic: "Use of Force",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "uf6",
+    type: "single",
+    prompt:
+      "When the term 'justified' is used in relation to section 25 of the Criminal Code, what does it generally mean?",
+    choices: [
+      "Protected from criminal liability only",
+      "Able to use unlimited force",
+      "Protected from civil liability only",
+      "Protected from both criminal and civil liability",
+    ],
+    answerIndex: 3,
+    explanation:
+      "Justification under s.25 protects against both criminal and civil liability when force is lawful.",
+    subject: "Federal",
+    topic: "Use of Force",
+     lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "uf7",
+    type: "single",
+    prompt: "Acting in good faith means:",
+    choices: [
+      "Acting to the best of your ability",
+      "Having an honest intention",
+      "Acting free from irregularity",
+      "Acting with honest intention and without knowledge of irregularity",
+    ],
+    answerIndex: 3,
+    explanation:
+      "Good faith combines honest intent with the absence of known irregularity.",
+    subject: "Federal",
+    topic: "Use of Force",
+     lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "uf8",
+    type: "single",
+    prompt:
+      "Under section 25 of the Criminal Code, a person must be acting on:",
+    choices: [
+      "Suspicion",
+      "Reasonable suspicion",
+      "Reasonable grounds",
+      "A reasonable hunch",
+    ],
+    answerIndex: 2,
+    explanation:
+      "Section 25 requires reasonable grounds, not suspicion or hunches.",
+    subject: "Federal",
+    topic: "Use of Force",
+     lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "uf9",
+    type: "truefalse",
+    prompt:
+      "An officer who is authorized to use force can never be held criminally liable, even if excessive force is used.",
+    answer: false,
+    explanation:
+      "Excessive force removes the protection of section 25 and may result in liability.",
+    subject: "Federal",
+    topic: "Use of Force",
+     lecture: "FedLaw4: Use of Force and The Charter",
+  },
 ];
