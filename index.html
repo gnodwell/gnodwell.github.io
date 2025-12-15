@@ -288,6 +288,9 @@
         </div>
         <div class="right">
           <button class="btn primary" id="checkBtn" type="button">Check</button>
+          <button class="btn" id="checkAllBtn" type="button">
+            Check All Answered
+          </button>
         </div>
       </div>
     </div>
@@ -312,6 +315,7 @@
         prevBtn: document.getElementById("prevBtn"),
         nextBtn: document.getElementById("nextBtn"),
         checkBtn: document.getElementById("checkBtn"),
+        checkAllBtn: document.getElementById("checkAllBtn"),
 
         subjectChips: document.getElementById("subjectChips"),
         topicChips: document.getElementById("topicChips"),
@@ -334,11 +338,183 @@
         selectedSubjects: [],
         selectedTopics: [],
         selectedLectures: [],
+        answers: {}, // qid -> user answer (shape depends on type)
       };
 
       // =========================
       // 4) HELPERS
       // =========================
+
+      function gradeQuestion(q, userAnswer) {
+        const isTrueFalse = q.type === "truefalse";
+        const type = isTrueFalse ? "single" : q.type;
+
+        if (userAnswer == null) return null; // unanswered
+
+        if (type === "single") {
+          if (isTrueFalse) {
+            const pickedBool = Number(userAnswer) === 0; // True=0, False=1
+            return pickedBool === Boolean(q.answer);
+          }
+          return Number(userAnswer) === q.answerIndex;
+        }
+
+        if (type === "multi") {
+          if (!Array.isArray(userAnswer)) return null;
+          return arraysEqualAsSets(userAnswer, q.answerIndices);
+        }
+
+        if (type === "dropdown") {
+          return String(userAnswer) === String(q.answerValue);
+        }
+
+        if (type === "double") {
+          if (!Array.isArray(userAnswer) || userAnswer.length < 2) return null;
+          return (
+            userAnswer[0] === q.answers[0] && userAnswer[1] === q.answers[1]
+          );
+        }
+
+        return null;
+      }
+
+      function checkAllAnswered() {
+        if (!activeQuestions.length) return;
+
+        let answered = 0,
+          correct = 0,
+          wrong = 0,
+          unanswered = 0;
+        const wrongList = [];
+        const unansweredList = [];
+
+        for (const q of activeQuestions) {
+          const ua = state.answers[q.id];
+
+          const result = gradeQuestion(q, ua);
+
+          if (result === null) {
+            unanswered++;
+            unansweredList.push(q);
+            continue;
+          }
+
+          answered++;
+          if (result) {
+            correct++;
+            state.checked[q.id] = "right";
+          } else {
+            wrong++;
+            state.checked[q.id] = "wrong";
+            wrongList.push(q);
+          }
+        }
+
+        // Refresh current screen status + counters
+        renderCurrentQuestion();
+
+        showReportModal({
+          answered,
+          correct,
+          wrong,
+          unanswered,
+          wrongList,
+          unansweredList,
+        });
+      }
+
+      function showReportModal(data) {
+        // remove existing modal if any
+        const existing = document.getElementById("reportModalOverlay");
+        if (existing) existing.remove();
+
+        const overlay = document.createElement("div");
+        overlay.id = "reportModalOverlay";
+        overlay.style.position = "fixed";
+        overlay.style.inset = "0";
+        overlay.style.background = "rgba(0,0,0,0.45)";
+        overlay.style.display = "grid";
+        overlay.style.placeItems = "center";
+        overlay.style.padding = "18px";
+        overlay.style.zIndex = "9999";
+
+        const modal = document.createElement("div");
+        modal.style.width = "min(900px, 100%)";
+        modal.style.maxHeight = "80vh";
+        modal.style.overflow = "auto";
+        modal.style.background = "#fff";
+        modal.style.borderRadius = "14px";
+        modal.style.boxShadow = "0 10px 30px rgba(0,0,0,0.25)";
+        modal.style.padding = "16px";
+
+        const title = document.createElement("div");
+        title.style.display = "flex";
+        title.style.justifyContent = "space-between";
+        title.style.gap = "12px";
+        title.style.alignItems = "center";
+
+        title.innerHTML = `
+    <div>
+      <div style="font-weight:900; font-size:1.1rem;">Session Report</div>
+      <div style="color:#58606a; margin-top:4px;">
+        Answered: <strong>${data.answered}</strong> • Correct: <strong>${data.correct}</strong> • Wrong: <strong>${data.wrong}</strong> • Unanswered: <strong>${data.unanswered}</strong>
+      </div>
+    </div>
+  `;
+
+        const closeBtn = document.createElement("button");
+        closeBtn.className = "btn";
+        closeBtn.textContent = "Close";
+        closeBtn.addEventListener("click", () => overlay.remove());
+        title.appendChild(closeBtn);
+
+        const section = document.createElement("div");
+        section.style.marginTop = "14px";
+
+        const wrongHtml = data.wrongList.length
+          ? `<div style="font-weight:900; margin:10px 0 6px; color:#b00020;">Wrong (${
+              data.wrongList.length
+            })</div>
+       <ol style="margin:0 0 10px 18px;">
+         ${data.wrongList
+           .map((q) => `<li style="margin:6px 0;">${escapeHtml(q.prompt)}</li>`)
+           .join("")}
+       </ol>`
+          : `<div style="font-weight:900; margin:10px 0; color:#137333;">No wrong answers ✅</div>`;
+
+        const unHtml = data.unansweredList.length
+          ? `<div style="font-weight:900; margin:10px 0 6px;">Unanswered (${
+              data.unansweredList.length
+            })</div>
+       <ol style="margin:0 0 6px 18px;">
+         ${data.unansweredList
+           .map((q) => `<li style="margin:6px 0;">${escapeHtml(q.prompt)}</li>`)
+           .join("")}
+       </ol>`
+          : `<div style="font-weight:900; margin:10px 0; color:#137333;">No unanswered ✅</div>`;
+
+        section.innerHTML = wrongHtml + unHtml;
+
+        modal.appendChild(title);
+        modal.appendChild(section);
+        overlay.appendChild(modal);
+
+        // click outside closes
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) overlay.remove();
+        });
+
+        // ESC closes
+        document.addEventListener("keydown", function escClose(ev) {
+          if (ev.key === "Escape") {
+            overlay.remove();
+            document.removeEventListener("keydown", escClose);
+          }
+        });
+
+        document.body.appendChild(overlay);
+      }
+
       function escapeHtml(str) {
         return String(str)
           .replaceAll("&", "&amp;")
@@ -367,27 +543,27 @@
         );
       }
 
-    //   function getBankSubjects() {
-    //     return uniqueSorted(QUESTIONS.map((q) => q.subject));
-    //   }
+      //   function getBankSubjects() {
+      //     return uniqueSorted(QUESTIONS.map((q) => q.subject));
+      //   }
 
-    //   function getBankTopics(subject) {
-    //     return uniqueSorted(
-    //       QUESTIONS.filter((q) => !subject || q.subject === subject).map(
-    //         (q) => q.topic
-    //       )
-    //     );
-    //   }
+      //   function getBankTopics(subject) {
+      //     return uniqueSorted(
+      //       QUESTIONS.filter((q) => !subject || q.subject === subject).map(
+      //         (q) => q.topic
+      //       )
+      //     );
+      //   }
 
-    //   function getBankLectures(subject, topic) {
-    //     return uniqueSorted(
-    //       QUESTIONS.filter(
-    //         (q) =>
-    //           (!subject || q.subject === subject) &&
-    //           (!topic || q.topic === topic)
-    //       ).map((q) => q.lecture)
-    //     );
-    //   }
+      //   function getBankLectures(subject, topic) {
+      //     return uniqueSorted(
+      //       QUESTIONS.filter(
+      //         (q) =>
+      //           (!subject || q.subject === subject) &&
+      //           (!topic || q.topic === topic)
+      //       ).map((q) => q.lecture)
+      //     );
+      //   }
 
       function filterQuestions() {
         return QUESTIONS.filter((q) => {
@@ -522,6 +698,7 @@
         shuffleInPlace(activeQuestions);
 
         state.checked = {};
+        state.answers = {}; // NEW
         state.index = 0;
         state.total = activeQuestions.length;
 
@@ -708,13 +885,101 @@
           </section>
         `;
 
+        restoreAnswerToUI();
         updateCounters();
+      }
+
+      function restoreAnswerToUI() {
+        if (!activeQuestions.length) return;
+
+        const q = activeQuestions[state.index];
+        const section = els.host.querySelector("section[data-qid]");
+        if (!section) return;
+
+        const saved = state.answers[q.id];
+        if (saved == null) return;
+
+        const isTrueFalse = q.type === "truefalse";
+        const normalizedType = isTrueFalse ? "single" : q.type;
+
+        if (normalizedType === "single") {
+          const input = section.querySelector(
+            `input[name="q-${q.id}"][value="${saved}"]`
+          );
+          if (input) input.checked = true;
+        }
+
+        if (normalizedType === "multi" && Array.isArray(saved)) {
+          saved.forEach((v) => {
+            const input = section.querySelector(
+              `input[name="q-${q.id}"][value="${v}"]`
+            );
+            if (input) input.checked = true;
+          });
+        }
+
+        if (normalizedType === "dropdown") {
+          const sel = section.querySelector(`select[data-kind="dropdown"]`);
+          if (sel) sel.value = saved;
+        }
+
+        if (normalizedType === "double" && Array.isArray(saved)) {
+          const sels = [
+            ...section.querySelectorAll(`select[data-kind="double"]`),
+          ].sort((a, b) => Number(a.dataset.field) - Number(b.dataset.field));
+          sels.forEach((sel, i) => {
+            sel.value = saved[i] || "";
+          });
+        }
       }
 
       function arraysEqualAsSets(a, b) {
         if (a.length !== b.length) return false;
         return [...a].sort().join("|") === [...b].sort().join("|");
       }
+
+      function captureAnswerFromUI() {
+        if (!activeQuestions.length) return;
+
+        const q = activeQuestions[state.index];
+        const section = els.host.querySelector("section[data-qid]");
+        if (!section) return;
+
+        const qid = q.id;
+        const isTrueFalse = q.type === "truefalse";
+        const normalizedType = isTrueFalse ? "single" : q.type;
+
+        if (normalizedType === "single") {
+          const picked = section.querySelector(
+            `input[name="q-${qid}"]:checked`
+          );
+          state.answers[qid] = picked ? Number(picked.value) : null;
+        }
+
+        if (normalizedType === "multi") {
+          const picked = [
+            ...section.querySelectorAll(`input[name="q-${qid}"]:checked`),
+          ].map((x) => Number(x.value));
+          state.answers[qid] = picked; // array
+        }
+
+        if (normalizedType === "dropdown") {
+          const sel = section.querySelector(`select[data-kind="dropdown"]`);
+          state.answers[qid] = sel && sel.value ? sel.value : null;
+        }
+
+        if (normalizedType === "double") {
+          const sels = [
+            ...section.querySelectorAll(`select[data-kind="double"]`),
+          ]
+            .sort((a, b) => Number(a.dataset.field) - Number(b.dataset.field))
+            .map((s) => s.value || "");
+          state.answers[qid] = sels; // ["STATUTE","OFFENCE"]
+        }
+      }
+
+      // Capture whenever user changes inputs on the current question
+      els.host.addEventListener("change", captureAnswerFromUI);
 
       function checkCurrent() {
         if (!activeQuestions.length) return;
@@ -801,6 +1066,7 @@
       function resetQuiz() {
         if (!activeQuestions.length) return;
         state.checked = {};
+        state.answers = {}; // NEW
         state.index = 0;
         renderCurrentQuestion();
       }
@@ -808,6 +1074,7 @@
       function shuffleQuiz() {
         if (!activeQuestions.length) return;
         state.checked = {};
+        state.answers = {}; // NEW
         state.index = 0;
         shuffleInPlace(activeQuestions);
         renderCurrentQuestion();
@@ -836,6 +1103,7 @@
       els.nextBtn.addEventListener("click", next);
       els.resetBtn.addEventListener("click", resetQuiz);
       els.shuffleBtn.addEventListener("click", shuffleQuiz);
+      els.checkAllBtn.addEventListener("click", checkAllAnswered);
 
       els.startBtn.addEventListener("click", startQuiz);
       els.clearSelectionBtn.addEventListener("click", clearSelection);
