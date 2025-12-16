@@ -217,7 +217,7 @@
     <header>
       <h1>Study Questions</h1>
       <p class="sub">
-        Pick a subject/topic/lecture, then study one question at a time.
+        Pick a subject<!--/topic-->/lecture, then study one question at a time.
       </p>
     </header>
 
@@ -320,7 +320,7 @@
         checkAllBtn: document.getElementById("checkAllBtn"),
 
         subjectChips: document.getElementById("subjectChips"),
-        topicChips: document.getElementById("topicChips"),
+        // topicChips: document.getElementById("topicChips"),
         lectureChips: document.getElementById("lectureChips"),
         selectionSummary: document.getElementById("selectionSummary"),
         startBtn: document.getElementById("startBtn"),
@@ -338,7 +338,7 @@
         checked: {}, // qid -> "right"|"wrong"
         total: 0,
         selectedSubjects: [],
-        selectedTopics: [],
+        // selectedTopics: [],
         selectedLectures: [],
         answers: {}, // qid -> user answer (shape depends on type)
       };
@@ -575,11 +575,11 @@
           )
             return false;
 
-          if (
-            state.selectedTopics.length &&
-            !state.selectedTopics.includes(q.topic)
-          )
-            return false;
+        //   if (
+        //     state.selectedTopics.length &&
+        //     !state.selectedTopics.includes(q.topic)
+        //   )
+        //     return false;
 
           if (
             state.selectedLectures.length &&
@@ -630,7 +630,7 @@
             toggleInArray(state.selectedSubjects, val);
 
             // Reset dependent selections
-            state.selectedTopics = [];
+            // state.selectedTopics = [];
             state.selectedLectures = [];
 
             updateSelectionUI();
@@ -638,33 +638,34 @@
         );
 
         // TOPICS (filtered by selected subjects if any)
-        const topics = uniqueSorted(
-          QUESTIONS.filter(
-            (q) =>
-              state.selectedSubjects.length === 0 ||
-              state.selectedSubjects.includes(q.subject)
-          ).map((q) => q.topic)
-        );
+        // const topics = uniqueSorted(
+        //   QUESTIONS.filter(
+        //     (q) =>
+        //       state.selectedSubjects.length === 0 ||
+        //       state.selectedSubjects.includes(q.subject)
+        //   ).map((q) => q.topic)
+        // );
 
-        setChipContainer(
-          els.topicChips,
-          topics,
-          state.selectedTopics,
-          (val) => {
-            toggleInArray(state.selectedTopics, val);
-            state.selectedLectures = [];
-            updateSelectionUI();
-          }
-        );
+        // setChipContainer(
+        //   els.topicChips,
+        //   topics,
+        //   state.selectedTopics,
+        //   (val) => {
+        //     toggleInArray(state.selectedTopics, val);
+        //     state.selectedLectures = [];
+        //     updateSelectionUI();
+        //   }
+        // );
 
         // LECTURES (filtered by subject + topic selections)
         const lectures = uniqueSorted(
           QUESTIONS.filter(
             (q) =>
               (state.selectedSubjects.length === 0 ||
-                state.selectedSubjects.includes(q.subject)) &&
-              (state.selectedTopics.length === 0 ||
-                state.selectedTopics.includes(q.topic))
+                state.selectedSubjects.includes(q.subject)) 
+                // &&
+            //   (state.selectedTopics.length === 0 ||
+            //     state.selectedTopics.includes(q.topic))
           ).map((q) => q.lecture)
         );
 
@@ -684,7 +685,7 @@
 
         els.selectionSummary.textContent =
           `Subjects: ${state.selectedSubjects.length || "any"} • ` +
-          `Topics: ${state.selectedTopics.length || "any"} • ` +
+        //   `Topics: ${state.selectedTopics.length || "any"} • ` +
           `Lectures: ${state.selectedLectures.length || "any"} • ` +
           `Matches: ${matches.length}`;
       }
@@ -746,7 +747,7 @@
         els.host.innerHTML = `
           <section class="q">
             <h2>Select a quiz above and click <strong>Start Quiz</strong>.</h2>
-            <div class="tiny">Your question bank can be huge — this page will filter it by subject/topic/lecture.</div>
+            <div class="tiny">Your question bank can be huge — this page will filter it by subject/lecture.</div>
           </section>
         `;
         updateCounters();
@@ -873,7 +874,6 @@
         const meta = `
           <div class="tiny" style="margin-top:10px;">
             <strong>${escapeHtml(q.subject || "")}</strong> •
-            ${escapeHtml(q.topic || "")} •
             ${escapeHtml(q.lecture || "")}
           </div>
         `;
@@ -1085,7 +1085,7 @@
 
       function clearSelection() {
         state.selectedSubjects = [];
-        state.selectedTopics = [];
+        // state.selectedTopics = [];
         state.selectedLectures = [];
 
         updateSelectionUI();
