@@ -5047,7 +5047,7 @@ const QUESTIONS = [
       "Facts in issue generally include when, who, where, and the specific elements for the charge (what).",
     subject: "Highway Traffic Act",
     topic: "Facts in Issue",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_fii_2",
@@ -5059,7 +5059,7 @@ const QUESTIONS = [
       "The deck lists 'T.I.P.P.' as part of the facts-in-issue review.",
     subject: "Highway Traffic Act",
     topic: "Facts in Issue",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5080,7 +5080,7 @@ const QUESTIONS = [
       "This session focuses on HTA authorities, especially stopping vehicles and other police powers under the HTA.",
     subject: "Highway Traffic Act",
     topic: "Objectives",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_sources_1",
@@ -5098,7 +5098,7 @@ const QUESTIONS = [
       "The deck points to the HTA/Regs and the Macbeth Short Form Wording book as sources used in this context.",
     subject: "Highway Traffic Act",
     topic: "Authorities Sources",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5119,7 +5119,7 @@ const QUESTIONS = [
       "HTA 216(1) provides authority to require a driver to stop when the officer is in lawful execution of duties and readily identifiable.",
     subject: "Highway Traffic Act",
     topic: "Authority to Stop",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_stop_216_2",
@@ -5131,7 +5131,7 @@ const QUESTIONS = [
       "The section requires an immediate safe stop when properly signaled/requested by a readily identifiable officer acting lawfully.",
     subject: "Highway Traffic Act",
     topic: "Authority to Stop",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5153,7 +5153,7 @@ const QUESTIONS = [
       "HTA 48(1) is tied to impairment demand grounds (Criminal Code screening/demand provisions).",
     subject: "Highway Traffic Act",
     topic: "Authority to Stop (Impairment)",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_stop_48_2",
@@ -5171,7 +5171,7 @@ const QUESTIONS = [
       "The deck describes RIDE-style spot checks and stops where impairment evidence exists.",
     subject: "Highway Traffic Act",
     topic: "Authority to Stop (Impairment)",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_stop_48_3",
@@ -5184,7 +5184,7 @@ const QUESTIONS = [
       "The slide notes MV definition for this section includes a street car and a motorized snow vehicle.",
     subject: "Highway Traffic Act",
     topic: "Authority to Stop (Impairment)",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5201,7 +5201,7 @@ const QUESTIONS = [
       "The deck stresses you must articulate/explain your reason so the stop is not arbitrary.",
     subject: "Highway Traffic Act",
     topic: "Case Law – Traffic Stops",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_case_2",
@@ -5219,7 +5219,7 @@ const QUESTIONS = [
       "The deck explains you need a reason for the stop, and it doesn't have to be an unlawful reason (public safety qualifies).",
     subject: "Highway Traffic Act",
     topic: "Case Law – Traffic Stops",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5235,7 +5235,7 @@ const QUESTIONS = [
       "Arrest authorities are under HTA sections; release framework is referenced under POA 149.",
     subject: "Highway Traffic Act",
     topic: "Arrest & Release",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_release_2",
@@ -5253,7 +5253,7 @@ const QUESTIONS = [
       "POA 149 emphasizes release as soon as practicable after serving a summons/offence notice, unless exceptions apply.",
     subject: "Highway Traffic Act",
     topic: "Arrest & Release",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_release_3",
@@ -5271,7 +5271,7 @@ const QUESTIONS = [
       "The listed reasons include identity, evidence, and preventing continuation/repetition/another offence.",
     subject: "Highway Traffic Act",
     topic: "Arrest & Release",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_release_4",
@@ -5289,7 +5289,7 @@ const QUESTIONS = [
       "An exception is where the person is ordinarily resident outside Ontario and will not respond to a summons/offence notice.",
     subject: "Highway Traffic Act",
     topic: "Arrest & Release",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_release_5",
@@ -5309,7 +5309,7 @@ const QUESTIONS = [
       "The deck contrasts federal PRICES with provincial PRIER (Public Interest, Repetition, Identity, Evidence, Resides outside Ontario).",
     subject: "Highway Traffic Act",
     topic: "Release Criteria",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5330,7 +5330,7 @@ const QUESTIONS = [
       "The deck explains HTA 217(2) provides arrest authority on RPG for listed offences (not all offences).",
     subject: "Highway Traffic Act",
     topic: "Arrest Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5352,7 +5352,7 @@ const QUESTIONS = [
       "The slide states both conditions must exist to arrest without warrant under 33(3).",
     subject: "Highway Traffic Act",
     topic: "Identification",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_ident_33_2",
@@ -5370,7 +5370,7 @@ const QUESTIONS = [
       "The deck explains reasonable inspection means holding it in hand to determine validity (not viewing through a window).",
     subject: "Highway Traffic Act",
     topic: "Identification",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_ident_33_3",
@@ -5388,7 +5388,7 @@ const QUESTIONS = [
       "The deck states reasonable identification includes verbally providing a correct name and address.",
     subject: "Highway Traffic Act",
     topic: "Identification",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5404,7 +5404,7 @@ const QUESTIONS = [
     explanation: "The deck states the general rule is NO, with exceptions.",
     subject: "Highway Traffic Act",
     topic: "Identification",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_passenger_106_1",
@@ -5422,7 +5422,7 @@ const QUESTIONS = [
       "The slide lists the conditions: on highway, appears 16+, reason to believe seatbelt contravention.",
     subject: "Highway Traffic Act",
     topic: "Seatbelts / Passenger ID",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_passenger_106_2",
@@ -5440,7 +5440,7 @@ const QUESTIONS = [
       "The deck states reasonable ID includes correct name, DOB, and address.",
     subject: "Highway Traffic Act",
     topic: "Seatbelts / Passenger ID",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5456,7 +5456,7 @@ const QUESTIONS = [
     explanation: "Careless driving is listed as HTA 130 in the session.",
     subject: "Highway Traffic Act",
     topic: "Arrestable Offences",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_careless_2",
@@ -5474,7 +5474,7 @@ const QUESTIONS = [
       "The slide indicates Careless Driving in a Community Safety Zone is NSF in this context.",
     subject: "Highway Traffic Act",
     topic: "Arrestable Offences",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5496,7 +5496,7 @@ const QUESTIONS = [
       "The slide lists race/contest, stunt, and bet/wager as prohibited conduct under HTA 172.",
     subject: "Highway Traffic Act",
     topic: "Arrestable Offences",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_stunt_2",
@@ -5517,7 +5517,7 @@ const QUESTIONS = [
       "The deck lists these locations as examples of specified places included in HTA 172 coverage.",
     subject: "Highway Traffic Act",
     topic: "Stunt Driving",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5539,7 +5539,7 @@ const QUESTIONS = [
       "The deck states the officer may require the pedestrian to accompany them to a safer location (nearest intersecting highway).",
     subject: "Highway Traffic Act",
     topic: "Pedestrian Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_ped_185_2",
@@ -5551,7 +5551,7 @@ const QUESTIONS = [
       "The deck notes the authority is focused on taking the individual to a safe place rather than punishment.",
     subject: "Highway Traffic Act",
     topic: "Pedestrian Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5573,7 +5573,7 @@ const QUESTIONS = [
       "The slide lists immediate stop requirement when signaled by a readily identifiable officer acting lawfully.",
     subject: "Highway Traffic Act",
     topic: "Fail to Stop",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_failstop_2",
@@ -5591,7 +5591,7 @@ const QUESTIONS = [
       "The slide cautions off-duty enforcement is not recommended except for imminent injury/death (e.g., severely impaired driving).",
     subject: "Highway Traffic Act",
     topic: "Fail to Stop",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5613,7 +5613,7 @@ const QUESTIONS = [
       "The deck references HTA 177(2) as roadway solicitation for commodity/service (example given: squeegee kids).",
     subject: "Highway Traffic Act",
     topic: "Roadway Solicitation",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_21731_1",
@@ -5631,7 +5631,7 @@ const QUESTIONS = [
       "The slide lists contravention + directed to stop, and/or RPG necessity for identity or prevention purposes.",
     subject: "Highway Traffic Act",
     topic: "Arrest Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5652,7 +5652,7 @@ const QUESTIONS = [
       "The slide describes arrest authority tied to picking up passengers for compensation without authorization + failing to provide ID (name/DOB/address).",
     subject: "Highway Traffic Act",
     topic: "Arrest Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5674,7 +5674,7 @@ const QUESTIONS = [
       "The slide states: cyclist contravening HTA/by-law may be required to stop; shall stop and identify.",
     subject: "Highway Traffic Act",
     topic: "Cyclist Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_cyclist_2",
@@ -5692,7 +5692,7 @@ const QUESTIONS = [
       "The slide specifies name and address for cyclist identification under this authority.",
     subject: "Highway Traffic Act",
     topic: "Cyclist Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5713,7 +5713,7 @@ const QUESTIONS = [
       "The slide states driver shall carry licence and surrender for reasonable inspection upon demand.",
     subject: "Highway Traffic Act",
     topic: "Surrender of Documents",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_docs_2",
@@ -5730,7 +5730,7 @@ const QUESTIONS = [
       "The slide identifies 33(2) as the accompanying driver (G1) carrying and surrendering their licence for inspection.",
     subject: "Highway Traffic Act",
     topic: "Surrender of Documents",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_docs_3",
@@ -5749,7 +5749,7 @@ const QUESTIONS = [
       "The slide lists DL, permit/true copy, CVOR, and proof of insurance as demand-surrender documents.",
     subject: "Highway Traffic Act",
     topic: "Surrender of Documents",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_docs_4",
@@ -5761,7 +5761,7 @@ const QUESTIONS = [
       "The slide notes electronic proof of insurance is acceptable (date referenced in the deck).",
     subject: "Highway Traffic Act",
     topic: "Surrender of Documents",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5783,7 +5783,7 @@ const QUESTIONS = [
       "The slide describes radar detector searches/seizure under 79(3).",
     subject: "Highway Traffic Act",
     topic: "Search Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_search_79_2",
@@ -5795,7 +5795,7 @@ const QUESTIONS = [
       "The deck notes no search authority for driver or occupants (vehicle search/seizure only).",
     subject: "Highway Traffic Act",
     topic: "Search Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_search_792_1",
@@ -5813,7 +5813,7 @@ const QUESTIONS = [
       "The slide describes interlock search authority when it has been determined the driver is subject to condition “I”.",
     subject: "Highway Traffic Act",
     topic: "Search Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_search_791_1",
@@ -5830,7 +5830,7 @@ const QUESTIONS = [
       "The slide describes pre-empting traffic control signal device search/seizure under 79.1(3).",
     subject: "Highway Traffic Act",
     topic: "Search Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_search_791_2",
@@ -5842,7 +5842,7 @@ const QUESTIONS = [
       "The deck states the officer may seize any such device found in or upon the vehicle.",
     subject: "Highway Traffic Act",
     topic: "Search Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5864,7 +5864,7 @@ const QUESTIONS = [
       "The slide describes seizure of licence under 35(3) when possession is contrary to 35(1).",
     subject: "Highway Traffic Act",
     topic: "Seizure Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_seize_plate_1",
@@ -5877,7 +5877,7 @@ const QUESTIONS = [
       "The deck lists improper number plate authority under 14(1)(a).",
     subject: "Highway Traffic Act",
     topic: "Seizure Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_seize_plate_2",
@@ -5890,7 +5890,7 @@ const QUESTIONS = [
       "The slide asks and answers 'Yes' for plate seizure in the unsafe motor vehicle context (on a highway).",
     subject: "Highway Traffic Act",
     topic: "Seizure Authorities",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5913,7 +5913,7 @@ const QUESTIONS = [
       "The slides list multiple towing/removal authorities; towing for minor speeding is not listed as an authority.",
     subject: "Highway Traffic Act",
     topic: "Towing / Removal",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_tow_2",
@@ -5931,7 +5931,7 @@ const QUESTIONS = [
       "The slide describes removal/storage for traffic flow and preventing injury/damage when traffic is impeded/blocked.",
     subject: "Highway Traffic Act",
     topic: "Towing / Removal",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5952,7 +5952,7 @@ const QUESTIONS = [
       "The slide states drivers shall immediately bring such vehicle to a standstill under 159(1) (in the appropriate context).",
     subject: "Highway Traffic Act",
     topic: "Emergency Vehicles",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_emerg_2",
@@ -5969,7 +5969,7 @@ const QUESTIONS = [
     explanation: "The slide lists slow down/caution and change lanes if safe.",
     subject: "Highway Traffic Act",
     topic: "Emergency Vehicles",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -5991,7 +5991,7 @@ const QUESTIONS = [
       "Slides list lights, siren, and alternating high beams exemptions; not a general phone exemption.",
     subject: "Highway Traffic Act",
     topic: "Exemptions",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_exempt_2",
@@ -6009,7 +6009,7 @@ const QUESTIONS = [
       "Slides reference exemptions tied to closed highways and backing in certain high-speed divided highway contexts.",
     subject: "Highway Traffic Act",
     topic: "Exemptions",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_exempt_speed_1",
@@ -6027,7 +6027,7 @@ const QUESTIONS = [
       "The slide specifies police/fire/ambulances; it states it does not include conservation vehicles.",
     subject: "Highway Traffic Act",
     topic: "Exemptions",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_exempt_red_1",
@@ -6046,7 +6046,7 @@ const QUESTIONS = [
       "The slide lists these conditions (stop first, proceed only if safe, lawful duty, siren continuous, red flashes all directions).",
     subject: "Highway Traffic Act",
     topic: "Exemptions",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_exempt_red_2",
@@ -6058,7 +6058,7 @@ const QUESTIONS = [
       "The slide notes conservation vehicles are not exempted in this context.",
     subject: "Highway Traffic Act",
     topic: "Exemptions",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_exempt_seatbelt_1",
@@ -6076,7 +6076,7 @@ const QUESTIONS = [
       "The slide states the exemption applies when transporting a person in custody in lawful duty performance.",
     subject: "Highway Traffic Act",
     topic: "Exemptions",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_exempt_seatbelt_2",
@@ -6088,7 +6088,7 @@ const QUESTIONS = [
       "The slide notes peace officer includes a Conservation Officer in that context.",
     subject: "Highway Traffic Act",
     topic: "Exemptions",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
 
   // -------------------------------
@@ -6105,7 +6105,7 @@ const QUESTIONS = [
       "HTA 79(3) is described as authorizing stop/enter/search of the vehicle and seizure of a speed measuring warning device.",
     subject: "Highway Traffic Act",
     topic: "Scenario Applications",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_scn_2",
@@ -6118,7 +6118,7 @@ const QUESTIONS = [
       "The deck lists HTA 106(8.2) as an exception requiring ID from certain passengers where seatbelt contravention is suspected.",
     subject: "Highway Traffic Act",
     topic: "Scenario Applications",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   {
     id: "hta3_scn_3",
@@ -6136,7 +6136,7 @@ const QUESTIONS = [
       "The deck describes the authority as safety-focused—moving the pedestrian to a safe location.",
     subject: "Highway Traffic Act",
     topic: "Scenario Applications",
-    lecture: "Highway Traffic Act 3: Police Authorities",
+    lecture: "HTA 3: Police Authorities",
   },
   // -------------------------------
   // Module Outcomes / Big Picture
