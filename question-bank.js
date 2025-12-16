@@ -7037,4 +7037,3450 @@ const QUESTIONS = [
     topic: "Recognize & Classify",
     lecture: "Federal Law – Definitions & Grounds",
   },
+  // -------------------------------
+  // Module Learning Outcomes
+  // -------------------------------
+  {
+    id: "poa_summons_outcomes_1",
+    type: "multi",
+    prompt:
+      "By the end of this module, learners should be able to: (Select ALL that apply)",
+    choices: [
+      "List differences between Part I and Part III processes",
+      "Identify stages in issuing a Part I summons and Affidavit of Service",
+      "Explain the elements and process of a Part III summons",
+      "Explain how to lay Criminal Code indictable charges",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "The module focuses on Part I vs Part III, issuing Part I summons + Affidavit of Service, and Part III summons process.",
+    subject: "Provincial",
+    topic: "Module Outcomes",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Key Terms (quick checks)
+  // -------------------------------
+  {
+    id: "poa_summons_terms_1",
+    type: "single",
+    prompt: "Which term is most associated with Part I ticketing documents?",
+    choices: ["Information", "Certificate of Offence", "Form 105", "Form 106"],
+    answerIndex: 1,
+    explanation:
+      "Part I uses a Certificate of Offence (with an Offence Notice or Part I Summons).",
+    subject: "Provincial",
+    topic: "Key Terms",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_summons_terms_2",
+    type: "single",
+    prompt:
+      "Which form number is identified as the Short Form Part III summons?",
+    choices: ["Form 104", "Form 105", "Form 106", "Form 107"],
+    answerIndex: 0,
+    explanation: "Short Form Part III summons is Form 104.",
+    subject: "Provincial",
+    topic: "Part III Forms",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_summons_terms_3",
+    type: "single",
+    prompt:
+      "Which form number is identified as the Long Form Part III summons?",
+    choices: ["Form 104", "Form 105", "Form 106", "Form 101"],
+    answerIndex: 2,
+    explanation: "Long Form Part III summons is Form 106.",
+    subject: "Provincial",
+    topic: "Part III Forms",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_summons_terms_4",
+    type: "single",
+    prompt:
+      "Which form number is identified as the Information used in the Part III process?",
+    choices: ["Form 104", "Form 105", "Form 106", "Form 109"],
+    answerIndex: 1,
+    explanation: "The Part III Information is Form 105.",
+    subject: "Provincial",
+    topic: "Part III Forms",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Part I – Summons basics (POA 3(1) & (2))
+  // -------------------------------
+  {
+    id: "poa_part1_auth_1",
+    type: "single",
+    prompt:
+      "Under POA s.3(1) & (2), a provincial offences officer may issue a Certificate of Offence when they:",
+    choices: [
+      "Have reasonable and probable grounds",
+      "Believe an offence has been committed",
+      "Have proof beyond a reasonable doubt",
+      "Receive permission from a Justice first",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Part I begins on the officer’s belief an offence was committed (lower threshold than Part III).",
+    subject: "Provincial",
+    topic: "Part I – Authority",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part1_docs_1",
+    type: "multi",
+    prompt:
+      "With a Part I Certificate of Offence, the officer may issue: (Select ALL that apply)",
+    choices: ["Offence Notice", "Summons", "Information", "Arrest Warrant"],
+    answerIndices: [0, 1],
+    explanation:
+      "Part I allows a Certificate of Offence with either an Offence Notice or a Part I Summons.",
+    subject: "Provincial",
+    topic: "Part I – Documents",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part1_summons_1",
+    type: "multi",
+    prompt: "A Part I summons (as described) means: (Select ALL that apply)",
+    choices: [
+      "Court appearance is required",
+      "There is no out-of-court settlement option",
+      "The court has greater discretion in setting the penalty (within Part I limits)",
+      "Imprisonment is available upon conviction",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "A Part I summons requires court, removes out-of-court settlement, and gives court discretion—but no jail under Part I.",
+    subject: "Provincial",
+    topic: "Part I – Summons",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part1_summons_2",
+    type: "truefalse",
+    prompt:
+      "True or False: A Part I summons must be personally served on the defendant within 30 days of the offence date.",
+    answer: true,
+    explanation:
+      "Part I summons service must be personal and within 30 days of the offence date.",
+    subject: "Provincial",
+    topic: "Part I – Summons",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part1_limits_1",
+    type: "multi",
+    prompt: "Limitations of a Part I summons include: (Select ALL that apply)",
+    choices: [
+      "No set fine can be used",
+      "No imprisonment upon conviction",
+      "Court appearance is mandatory",
+      "Maximum fine is $5,000 for adults",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "Part I summons: no set fine, no jail, mandatory court. Max fine is not $5,000 under Part I.",
+    subject: "Provincial",
+    topic: "Part I – Limitations",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part1_limits_2",
+    type: "single",
+    prompt:
+      "What is the maximum fine for an adult upon conviction under Part I (as described)?",
+    choices: ["$300", "$1,000", "$2,000", "$5,000"],
+    answerIndex: 1,
+    explanation: "The notes state Part I maximum fine is $1,000 for adults.",
+    subject: "Provincial",
+    topic: "Part I – Limitations",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part1_limits_3",
+    type: "single",
+    prompt:
+      "What is the maximum fine for a young person (12–15) upon conviction under Part I (as described)?",
+    choices: ["$300", "$1,000", "$2,000", "$5,000"],
+    answerIndex: 0,
+    explanation:
+      "The notes state Part I maximum fine is $300 for young persons (12–15).",
+    subject: "Provincial",
+    topic: "Youth",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Part I Summons logistics (ticket book / colors)
+  // -------------------------------
+  {
+    id: "poa_part1_colors_1",
+    type: "single",
+    prompt:
+      "Part I summons forms are described as being which color and located where?",
+    choices: [
+      "Pink, at the back of the Provincial Offences Ticket book",
+      "Green, at the front of the Provincial Offences Ticket book",
+      "Blue, issued only by a Justice",
+      "White, printed at the courthouse",
+    ],
+    answerIndex: 0,
+    explanation:
+      "The notes state Part I summons forms are pink and located at the back of the ticket book.",
+    subject: "Provincial",
+    topic: "Part I – Forms",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part1_colors_2",
+    type: "multi",
+    prompt:
+      "When issuing a Part I summons, the officer should: (Select ALL that apply)",
+    choices: [
+      "Remove the green copy",
+      "Insert the pink summons in its place",
+      "Keep the green copy for potential Notice to Parent use for youth",
+      "Discard the entire snap-set",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "The notes describe removing green, inserting pink summons, and using green as Notice to Parent when needed.",
+    subject: "Provincial",
+    topic: "Part I – Forms",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Court date rules (Part I summons)
+  // -------------------------------
+  {
+    id: "poa_part1_courtdate_1",
+    type: "single",
+    prompt:
+      "Issuing a Part I summons eliminates which option for the defendant?",
+    choices: [
+      "Trial",
+      "Early resolution meeting",
+      "Out-of-court settlement",
+      "Disclosure request",
+    ],
+    answerIndex: 2,
+    explanation:
+      "The notes state issuing a summons eliminates the out-of-court settlement option.",
+    subject: "Provincial",
+    topic: "Part I – Court Date",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part1_courtdate_2",
+    type: "single",
+    prompt: "Provincial Offences matters (as described) are heard in the:",
+    choices: [
+      "Superior Court of Justice",
+      "Ontario Court of Justice",
+      "Provincial Offences Court (separate court)",
+      "Federal Court",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The notes state Provincial Offences matters are heard in the Ontario Court of Justice.",
+    subject: "Provincial",
+    topic: "Courts",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part1_courtdate_3",
+    type: "single",
+    prompt:
+      "When selecting a Part I summons court date, the notes recommend allowing at least:",
+    choices: ["1–2 weeks", "2–3 weeks", "4–5 weeks", "10–12 weeks"],
+    answerIndex: 2,
+    explanation:
+      "The notes recommend allowing at least 4–5 weeks between the offence date and court date.",
+    subject: "Provincial",
+    topic: "Part I – Court Date",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part1_courtdate_4",
+    type: "truefalse",
+    prompt:
+      "True or False: The notes state that different jurisdictions may have separate court dates for Part I matters and Part III matters.",
+    answer: true,
+    explanation:
+      "The notes say courts sit on different days and jurisdictions may separate Part I and Part III court dates.",
+    subject: "Provincial",
+    topic: "Part I vs Part III",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Youth Summons rules
+  // -------------------------------
+  {
+    id: "poa_youth_1",
+    type: "single",
+    prompt: "In these notes, a 'youth' is defined as being:",
+    choices: ["10–12", "12–15", "16–17", "Under 18 only"],
+    answerIndex: 1,
+    explanation: "The notes define youth as ages 12–15.",
+    subject: "Provincial",
+    topic: "Youth",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_youth_2",
+    type: "single",
+    prompt: "According to the notes, youth (12–15) can be issued:",
+    choices: [
+      "A Certificate of Offence only",
+      "An Offence Notice with set fine",
+      "A Summons (not a Certificate of Offence)",
+      "A Part III Information only",
+    ],
+    answerIndex: 2,
+    explanation:
+      "The notes state youth cannot be issued a Certificate of Offence; a summons must be issued.",
+    subject: "Provincial",
+    topic: "Youth",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_youth_3",
+    type: "truefalse",
+    prompt:
+      "True or False: When a summons is issued to a youth, a parent must be notified.",
+    answer: true,
+    explanation:
+      "The notes state a parent must be notified when a summons is issued to a youth.",
+    subject: "Provincial",
+    topic: "Youth",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_youth_4",
+    type: "single",
+    prompt:
+      "In the notes, which copy is used as the 'Notice to Parent' when issuing a youth summons?",
+    choices: [
+      "Pink summons",
+      "Offence Notice (green copy)",
+      "Certificate of Offence (white copy)",
+      "Affidavit of Service (yellow copy)",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The notes describe using the green Offence Notice copy as the Notice to Parent for youth summons situations.",
+    subject: "Provincial",
+    topic: "Youth",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Affidavit of Service (issuer vs server) + POA 3(5) / 3(6)
+  // -------------------------------
+  {
+    id: "poa_aos_1",
+    type: "single",
+    prompt: "An Affidavit of Service is required when:",
+    choices: [
+      "The defendant pays early",
+      "The Offence Notice or summons is served by someone other than the issuing officer",
+      "The officer issued a warning",
+      "The offence is indictable",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The notes state an Affidavit of Service is required when the issuer and server are not the same person.",
+    subject: "Provincial",
+    topic: "Affidavit of Service",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_aos_2",
+    type: "single",
+    prompt: "The Affidavit of Service is found on:",
+    choices: [
+      "The front of the Offence Notice",
+      "The reverse side of the Certificate of Offence",
+      "A separate form from the courthouse only",
+      "The back of the driver’s licence",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The notes state the reverse side of the Certificate of Offence is used as the Affidavit of Service.",
+    subject: "Provincial",
+    topic: "Affidavit of Service",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_aos_3",
+    type: "single",
+    prompt: "In the notes, the 'issuer' is:",
+    choices: [
+      "The person who receives the ticket",
+      "The officer who issued the Certificate of Offence",
+      "The prosecutor in court",
+      "The Justice who signs the summons",
+    ],
+    answerIndex: 1,
+    explanation: "Issuer = officer who issued the Certificate of Offence.",
+    subject: "Provincial",
+    topic: "Affidavit of Service",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_aos_4",
+    type: "single",
+    prompt: "In the notes, the 'server' is:",
+    choices: [
+      "The officer (or person) who actually serves the Offence Notice/summons",
+      "The court clerk",
+      "The defendant",
+      "The informant who swears the Information",
+    ],
+    answerIndex: 0,
+    explanation:
+      "Server = the person who actually serves the Offence Notice or summons.",
+    subject: "Provincial",
+    topic: "Affidavit of Service",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_aos_5",
+    type: "truefalse",
+    prompt:
+      "True or False: If the issuing officer personally serves the Offence Notice/summons, they must certify service and record the date of service on the Certificate of Offence (POA s.3(5) concept).",
+    answer: true,
+    explanation:
+      "The notes state personal service by the issuer requires certification on the Certificate and recording the date of service.",
+    subject: "Provincial",
+    topic: "Affidavit of Service",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_aos_6",
+    type: "truefalse",
+    prompt:
+      "True or False: If someone other than the issuing officer serves the document, an Affidavit of Service must be completed (POA s.3(6) concept).",
+    answer: true,
+    explanation:
+      "The notes state service by someone else requires an Affidavit of Service in the prescribed form.",
+    subject: "Provincial",
+    topic: "Affidavit of Service",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Part III Summons – Overview / Differences
+  // -------------------------------
+  {
+    id: "poa_part3_overview_1",
+    type: "multi",
+    prompt: "Part III summons are described as: (Select ALL that apply)",
+    choices: [
+      "Used for more serious provincial offences",
+      "More formal and costly than Part I",
+      "Having more sentencing options upon conviction",
+      "Always involving set fines",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "Part III is for more serious matters, more formal/costly, and allows more sentencing options. It is not based on set fines.",
+    subject: "Provincial",
+    topic: "Part III – Overview",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part3_grounds_1",
+    type: "single",
+    prompt:
+      "The notes compare grounds as: Part I = ________, Part III = ________.",
+    choices: [
+      "Suspicion; Reasonable suspicion",
+      "Belief; Reasonable and probable grounds",
+      "Reasonable grounds; Proof beyond a reasonable doubt",
+      "Belief; Proof beyond a reasonable doubt",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Part I is based on belief; Part III requires reasonable and probable grounds.",
+    subject: "Provincial",
+    topic: "Part I vs Part III",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part3_doc_1",
+    type: "single",
+    prompt: "The charging document that commences Part III proceedings is the:",
+    choices: [
+      "Certificate of Offence",
+      "Information",
+      "Offence Notice",
+      "Notice of Intent",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Part III proceedings are commenced by laying an Information (not a Certificate of Offence).",
+    subject: "Provincial",
+    topic: "Part III – Information",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part3_anyone_1",
+    type: "truefalse",
+    prompt:
+      "True or False: The notes state that any person may lay an Information for Part III proceedings.",
+    answer: true,
+    explanation: "The notes explicitly state anyone may lay an Information.",
+    subject: "Provincial",
+    topic: "Part III – Information",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part3_limits_1",
+    type: "single",
+    prompt:
+      "Unless another statute provides otherwise, an Information must be laid within:",
+    choices: ["30 days", "6 months", "1 year", "No time limit"],
+    answerIndex: 1,
+    explanation:
+      "The notes state an Information must be laid within 6 months unless otherwise stated.",
+    subject: "Provincial",
+    topic: "Part III – Information",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Commencement of Proceedings (Part I vs Part III)
+  // -------------------------------
+  {
+    id: "poa_commence_1",
+    type: "single",
+    prompt: "According to the notes, Part I proceedings commence when:",
+    choices: [
+      "The Offence Notice is served",
+      "The Certificate of Offence is filed before a Justice",
+      "The officer writes notes",
+      "The defendant appears in court",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The notes state Part I commences when the Certificate of Offence is filed before a Justice.",
+    subject: "Provincial",
+    topic: "Commencement of Proceedings",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_commence_2",
+    type: "single",
+    prompt: "According to the notes, Part III proceedings commence when:",
+    choices: [
+      "The summons is served at roadside",
+      "An Information is laid at the court office",
+      "A set fine is paid",
+      "A Justice convicts by default",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The notes state Part III commences when an Information is laid at the court office.",
+    subject: "Provincial",
+    topic: "Commencement of Proceedings",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Minimum requirements of a Part III summons
+  // -------------------------------
+  {
+    id: "poa_part3_minreq_1",
+    type: "multi",
+    prompt:
+      "Minimum requirements of a Part III summons include: (Select ALL that apply)",
+    choices: [
+      "Directed to the defendant",
+      "Describes the alleged offence",
+      "Requires the defendant to attend court on the specified date and as required thereafter",
+      "Includes a set fine amount",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "The notes list these minimum requirements; Part III summons is not based on set fines.",
+    subject: "Provincial",
+    topic: "Part III – Summons Requirements",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Part III Prosecution – two-step process
+  // -------------------------------
+  {
+    id: "poa_part3_2step_1",
+    type: "multi",
+    prompt:
+      "The Part III prosecution process is described as two steps: (Select BOTH)",
+    choices: [
+      "Informant swears a completed Information (Form 105) before a Justice",
+      "Defendant is served with a Summons to attend court",
+      "Defendant pays a set fine to avoid court",
+      "Officer files a Certificate of Offence within 7 days",
+    ],
+    answerIndices: [0, 1],
+    explanation:
+      "The notes describe: swear Information (Form 105), then serve summons requiring attendance.",
+    subject: "Provincial",
+    topic: "Part III – Process",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Two types of Part III summons (Short vs Long)
+  // -------------------------------
+  {
+    id: "poa_part3_types_1",
+    type: "single",
+    prompt:
+      "Which sequence matches the 'Short Form' Part III method described?",
+    choices: [
+      "Information first, then summons",
+      "Summons first, then Information",
+      "Certificate of Offence first, then summons",
+      "Offence Notice first, then Information",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Short Form (Form 104) is described as summons first (immediate service), then Information.",
+    subject: "Provincial",
+    topic: "Part III – Short vs Long",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part3_types_2",
+    type: "single",
+    prompt: "Which sequence matches the 'Long Form' Part III method described?",
+    choices: [
+      "Information first, then summons",
+      "Summons first, then Information",
+      "Offence Notice first, then Certificate",
+      "Ticket first, then early resolution",
+    ],
+    answerIndex: 0,
+    explanation:
+      "Long Form (Form 106) is described as Information first, then summons served after-the-fact.",
+    subject: "Provincial",
+    topic: "Part III – Short vs Long",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_part3_purpose_1",
+    type: "multi",
+    prompt: "The notes describe the purposes as: (Select ALL that apply)",
+    choices: [
+      "Summons: require the defendant to attend court",
+      "Information: place the offence before the court",
+      "Summons: set the fine amount",
+      "Information: acts as a sworn document outlining allegations",
+    ],
+    answerIndices: [0, 1, 3],
+    explanation:
+      "Summons compels attendance; Information puts the offence before court and is sworn outlining allegations.",
+    subject: "Provincial",
+    topic: "Part III – Purpose",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Form 104 (Short Form) specifics
+  // -------------------------------
+  {
+    id: "poa_104_when_1",
+    type: "multi",
+    prompt: "A Short Form 104 Summons is used when: (Select ALL that apply)",
+    choices: [
+      "Defendant is found at or near the place of the offence",
+      "Officer has reasonable and probable grounds the offence was committed",
+      "Follow-up investigation is required months later",
+      "A Part I service deadline has already been missed",
+    ],
+    answerIndices: [0, 1],
+    explanation:
+      "The notes state 104 is used for immediate service near the scene when RPG exist.",
+    subject: "Provincial",
+    topic: "Form 104 – Short Form",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_104_steps_1",
+    type: "multi",
+    prompt: "The Short Form (104) process includes: (Select ALL that apply)",
+    choices: [
+      "Issue and serve the Form 104 summons, complete Affidavit of Service on the back",
+      "Swear the Affidavit of Service and have the summons confirmed by a Justice",
+      "Swear the Information regarding the offence(s)",
+      "File a Certificate of Offence within 7 days",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "The notes list: issue/serve + AOS, swear/confirm by Justice, then swear the Information.",
+    subject: "Provincial",
+    topic: "Form 104 – Process",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_104_date_1",
+    type: "single",
+    prompt:
+      "For a Form 104 summons, the court date should be set far enough in the future primarily to:",
+    choices: [
+      "Allow completion of the remaining steps (confirmation and Information)",
+      "Ensure the defendant forgets the offence",
+      "Ensure a set fine can be added",
+      "Allow the officer to avoid notes",
+    ],
+    answerIndex: 0,
+    explanation:
+      "The notes state the date must be far enough out to complete the remaining steps after service.",
+    subject: "Provincial",
+    topic: "Form 104 – Court Date",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Form 106 (Long Form) specifics
+  // -------------------------------
+  {
+    id: "poa_106_when_1",
+    type: "multi",
+    prompt: "A Long Form 106 Summons is used for: (Select ALL that apply)",
+    choices: [
+      "Follow-up investigation for NSF offences where charges aren’t laid at/near the scene",
+      "Less serious offences where Part I timeline is exceeded (use Part III up to 6 months)",
+      "Immediate roadside service when offender is present",
+      "Offences that must always have a set fine",
+    ],
+    answerIndices: [0, 1],
+    explanation:
+      "The notes describe long form use for follow-up/NSF and when Part I timing has been exceeded (extending up to 6 months).",
+    subject: "Provincial",
+    topic: "Form 106 – Long Form",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_106_issued_1",
+    type: "single",
+    prompt: "A Form 106 Long Form summons is issued by a Justice after:",
+    choices: [
+      "A Certificate of Offence is served",
+      "An Information is sworn",
+      "A set fine is paid",
+      "Disclosure is requested",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The notes state Form 106 is issued by a Justice after an Information is sworn.",
+    subject: "Provincial",
+    topic: "Form 106 – Long Form",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_106_service_1",
+    type: "multi",
+    prompt:
+      "According to the notes, a Form 106 summons may be served: (Select ALL that apply)",
+    choices: [
+      "Personally",
+      "Substitutionally (left with an 'inmate' who resides with the defendant and is 16+)",
+      "By registered mail if the defendant does not reside in Ontario",
+      "By registered mail if the defendant is a corporation",
+      "By leaving it on the windshield",
+    ],
+    answerIndices: [0, 1, 2, 3],
+    explanation:
+      "The notes list personal service, substituted service with a 16+ co-resident, and registered mail for out-of-province defendants or corporations.",
+    subject: "Provincial",
+    topic: "Form 106 – Service",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_106_process_1",
+    type: "multi",
+    prompt: "The Long Form (106) process includes: (Select ALL that apply)",
+    choices: [
+      "Swear Form 105 (Information) before a Justice",
+      "Justice endorses Form 105 and issues Form 106 if satisfied RPG exist",
+      "Serve Form 106 and swear the Affidavit of Service (back of the summons)",
+      "Issue a Certificate of Offence within 30 days",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "The notes list: swear Information, Justice issues summons if RPG exist, then service and sworn AOS.",
+    subject: "Provincial",
+    topic: "Form 106 – Process",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Comparison questions (Part I vs Part III)
+  // -------------------------------
+  {
+    id: "poa_compare_1",
+    type: "double",
+    prompt: "MATCH: Process → Grounds threshold",
+    fields: [
+      {
+        label: "PART I",
+        options: [
+          "Belief",
+          "Reasonable and probable grounds",
+          "Proof beyond a reasonable doubt",
+          "Suspicion",
+        ],
+      },
+      {
+        label: "PART III",
+        options: [
+          "Belief",
+          "Reasonable and probable grounds",
+          "Proof beyond a reasonable doubt",
+          "Suspicion",
+        ],
+      },
+    ],
+    answers: ["Belief", "Reasonable and probable grounds"],
+    explanation:
+      "The notes describe Part I as belief, Part III as reasonable and probable grounds.",
+    subject: "Provincial",
+    topic: "Part I vs Part III",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_compare_2",
+    type: "double",
+    prompt: "MATCH: Process → Document that commences proceedings",
+    fields: [
+      {
+        label: "PART I",
+        options: [
+          "Certificate of Offence",
+          "Information",
+          "Subpoena",
+          "Warrant",
+        ],
+      },
+      {
+        label: "PART III",
+        options: [
+          "Certificate of Offence",
+          "Information",
+          "Offence Notice",
+          "Warning",
+        ],
+      },
+    ],
+    answers: ["Certificate of Offence", "Information"],
+    explanation:
+      "Part I proceedings begin with filing a Certificate of Offence; Part III begins by laying an Information.",
+    subject: "Provincial",
+    topic: "Commencement of Proceedings",
+    lecture: "Provincial Law 1",
+  },
+
+  // -------------------------------
+  // Scenario questions
+  // -------------------------------
+  {
+    id: "poa_scn_1",
+    type: "single",
+    prompt:
+      "SCENARIO: You have a minor provincial offence but want mandatory court attendance and no set fine option. Which Part I document best fits?",
+    choices: [
+      "Offence Notice",
+      "Part I Summons",
+      "Form 104 Summons",
+      "Form 106 Summons",
+    ],
+    answerIndex: 1,
+    explanation:
+      "A Part I summons requires court attendance and does not use a set fine.",
+    subject: "Provincial",
+    topic: "Scenario Applications",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_scn_2",
+    type: "single",
+    prompt:
+      "SCENARIO: Officer A issued the Part I summons, but Officer B personally served it. What extra step is required?",
+    choices: [
+      "No extra step",
+      "Affidavit of Service (prescribed form) must be completed",
+      "Serve it again within 7 days",
+      "Lay an Information instead",
+    ],
+    answerIndex: 1,
+    explanation:
+      "If issuer and server are different, an Affidavit of Service is required (per notes).",
+    subject: "Provincial",
+    topic: "Affidavit of Service",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_scn_3",
+    type: "single",
+    prompt:
+      "SCENARIO: You need to proceed on a more serious provincial offence and must commence by laying a sworn document before the court. What is that document called?",
+    choices: [
+      "Certificate of Offence",
+      "Information",
+      "Offence Notice",
+      "Early Resolution Request",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Part III proceedings start with laying an Information (sworn).",
+    subject: "Provincial",
+    topic: "Part III – Information",
+    lecture: "Provincial Law 1",
+  },
+  {
+    id: "poa_scn_4",
+    type: "single",
+    prompt:
+      "SCENARIO: You missed the 30-day Part I time limit after a minor offence, but you still want to lay a charge within a longer window (up to 6 months). Which approach from the notes fits best?",
+    choices: [
+      "Part I Offence Notice",
+      "Part I Summons",
+      "Part III process (Long Form 106)",
+      "Withdraw the matter automatically",
+    ],
+    answerIndex: 2,
+    explanation:
+      "The notes state long-form Part III (106) can extend time to lay a charge up to 6 months when Part I timeline is exceeded.",
+    subject: "Provincial",
+    topic: "Form 106 – Long Form",
+    lecture: "Provincial Law 1",
+  },
+  // =========================
+  // POA #3 (Session #3a) Review
+  // =========================
+
+  {
+    id: "poa3-1",
+    type: "single",
+    prompt:
+      "Under this lesson, the Provincial Offences Act (POA) is best described as:",
+    choices: [
+      "A substantive act",
+      "A procedural act",
+      "A municipal by-law",
+      "A federal statute",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The POA is taught as a regulatory/procedural act (the “rule book” for provincial offence processes).",
+    subject: "Provincial",
+    topic: "POA Review",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-2",
+    type: "truefalse",
+    prompt:
+      "The POA provides general arrest authority for provincial offences.",
+    answer: false,
+    explanation:
+      "The POA review notes state there is no general arrest authority in the POA.",
+    subject: "Provincial",
+    topic: "POA Review",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-3",
+    type: "truefalse",
+    prompt:
+      "The POA provides general search authority for provincial offences.",
+    answer: false,
+    explanation:
+      "The POA review notes state there is no general search authority in the POA.",
+    subject: "Provincial",
+    topic: "POA Review",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-4",
+    type: "single",
+    prompt:
+      "In plain language, “commencement of proceedings” was described in class as:",
+    choices: [
+      "The officer writing notes in their notebook",
+      "The wheels of justice starting to turn",
+      "The defendant being warned roadside",
+      "The Crown reviewing disclosure",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The slide describes commencement as “the wheels of justice starting to turn.”",
+    subject: "Provincial",
+    topic: "Commencement of Proceedings",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-5",
+    type: "single",
+    prompt: "When do proceedings commence under POA Part I?",
+    choices: [
+      "When the officer issues the ticket",
+      "When the officer serves the ticket",
+      "When the Certificate of Offence is filed with the court",
+      "When the defendant pays the set fine",
+    ],
+    answerIndex: 2,
+    explanation:
+      "Part I commencement begins when the Certificate of Offence is filed with the court.",
+    subject: "Provincial",
+    topic: "Commencement of Proceedings",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-6",
+    type: "single",
+    prompt: "When do proceedings commence under POA Part III?",
+    choices: [
+      "When a summons is printed",
+      "When an Information is laid before a Justice",
+      "When the defendant is warned",
+      "When the set fine is paid",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Part III commencement begins when an Information is laid before a Justice.",
+    subject: "Provincial",
+    topic: "Commencement of Proceedings",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-7",
+    type: "single",
+    prompt: "In the POA ticket set described, the white copy is called:",
+    choices: [
+      "Offence Notice",
+      "Certificate of Offence",
+      "Part I Summons",
+      "Information",
+    ],
+    answerIndex: 1,
+    explanation: "The white copy is the Certificate of Offence.",
+    subject: "Provincial",
+    topic: "Forms & Copies",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-8",
+    type: "single",
+    prompt: "In the POA ticket set described, the green/blue copy is called:",
+    choices: [
+      "Offence Notice",
+      "Certificate of Offence",
+      "Information",
+      "Affidavit of Service",
+    ],
+    answerIndex: 0,
+    explanation: "The green/blue copy is the Offence Notice.",
+    subject: "Provincial",
+    topic: "Forms & Copies",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-9",
+    type: "single",
+    prompt: "In the POA ticket set described, the pink copy is used for:",
+    choices: [
+      "A set fine payment receipt",
+      "A Part I summons",
+      "A Part III information",
+      "A warning notice",
+    ],
+    answerIndex: 1,
+    explanation: "The pink copy is used as the Part I summons.",
+    subject: "Provincial",
+    topic: "Forms & Copies",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-10",
+    type: "dropdown",
+    prompt:
+      "POA Part I — Grounds required to lay/issue (as taught in these slides)",
+    options: [
+      "Suspicion",
+      "Belief",
+      "Reasonable and probable grounds",
+      "Beyond a reasonable doubt",
+    ],
+    answerValue: "Belief",
+    explanation: "The slides state a “belief” is grounds for laying Part I.",
+    subject: "Provincial",
+    topic: "Grounds & Thresholds",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-11",
+    type: "dropdown",
+    prompt:
+      "POA Part III — Grounds required to lay an Information (as taught in these slides)",
+    options: [
+      "Belief",
+      "Reasonable and probable grounds",
+      "Suspicion",
+      "Proof beyond a reasonable doubt",
+    ],
+    answerValue: "Reasonable and probable grounds",
+    explanation:
+      "The slides use “Reasonable and Probable (P for Provincial) Grounds” for Part III.",
+    subject: "Provincial",
+    topic: "Grounds & Thresholds",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-12",
+    type: "single",
+    prompt: "Who may lay an Information under the POA (per the lesson)?",
+    choices: [
+      "Only Provincial Offences Officers",
+      "Only police officers",
+      "Anyone",
+      "Only Justices of the Peace",
+    ],
+    answerIndex: 2,
+    explanation:
+      "The slides state anyone may lay an Information to a JP under the POA.",
+    subject: "Provincial",
+    topic: "Part III Foundations",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-13",
+    type: "truefalse",
+    prompt:
+      "For a Part III summons, you must swear/affirm an Affidavit of Service after serving the defendant.",
+    answer: true,
+    explanation:
+      "The POA review Q/A indicates an Affidavit of Service must be sworn/remembered for Part III service.",
+    subject: "Provincial",
+    topic: "Service & Affidavits",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-14",
+    type: "single",
+    prompt:
+      "For substitutional service of a Part III summons (directed to someone else), the person accepting service must be apparently:",
+    choices: [
+      "12+ years old",
+      "15+ years old",
+      "16+ years old",
+      "18+ years old",
+    ],
+    answerIndex: 2,
+    explanation:
+      "The review notes indicate the person must be apparently 16 or more for substitutional service.",
+    subject: "Provincial",
+    topic: "Service & Affidavits",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-15",
+    type: "single",
+    prompt:
+      "Under Part I in these slides, how many days does an officer have to issue an offence notice or summons?",
+    choices: ["7 days", "15 days", "30 days", "45 days"],
+    answerIndex: 2,
+    explanation: "The review question identifies 30 days for Part I issuing.",
+    subject: "Provincial",
+    topic: "Part I Timelines",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-16",
+    type: "single",
+    prompt: "After serving a Part I offence notice or summons, filing must be:",
+    choices: [
+      "Within 48 hours",
+      "Within 15 days",
+      "As soon as practicable but no later than 7 days",
+      "Any time before trial",
+    ],
+    answerIndex: 2,
+    explanation:
+      "The slides list “file ASAP but no later than 7 days after service” as the filing requirement for Part I forms.",
+    subject: "Provincial",
+    topic: "Part I Timelines",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-17",
+    type: "single",
+    prompt:
+      "If no limitation period is prescribed for a POA offence, proceedings must not be commenced after:",
+    choices: ["Six months", "Twelve months", "Two years", "Three years"],
+    answerIndex: 0,
+    explanation:
+      "The review question indicates six months where no limitation period is prescribed.",
+    subject: "Provincial",
+    topic: "Limitation Periods",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-18",
+    type: "multi",
+    prompt:
+      "Which of the following are listed as Offence Notice (Part I) limitations in these slides? (Select ALL that apply)",
+    choices: [
+      "Must have a set fine",
+      "30 days to serve after offence date",
+      "Must file in court ASAP but no later than 7 days after service",
+      "Imprisonment is available on conviction",
+      "Fine not to exceed $1,000 (before surcharges)",
+      "Can be used for anyone aged 12–15",
+    ],
+    answerIndices: [0, 1, 2, 4],
+    explanation:
+      "The slide lists: must have set fine, 30 days to serve, file ASAP/no later than 7 days, fine cap $1,000, and no imprisonment; also notes it can’t be used for ages 12–15.",
+    subject: "Provincial",
+    topic: "Part I Offence Notice",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-19",
+    type: "multi",
+    prompt:
+      "Which of the following are listed as Part I Summons (Pink) limitations in these slides? (Select ALL that apply)",
+    choices: [
+      "Requires court appearance",
+      "Has a set fine",
+      "30 days to serve after offence date",
+      "Must file ASAP but no later than 7 days after service",
+      "Adult fine cap $1,000; youth (12–15) cap $300",
+      "Imprisonment is available on conviction",
+    ],
+    answerIndices: [0, 2, 3, 4],
+    explanation:
+      "The slide notes the Part I summons requires court, has 30 days to serve, filing ASAP/no later than 7 days, fine caps ($1,000 adult / $300 youth), and no imprisonment.",
+    subject: "Provincial",
+    topic: "Part I Summons",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-20",
+    type: "truefalse",
+    prompt:
+      "In these slides, the Part I summons (pink) is described as having no set fine and requiring a court date.",
+    answer: true,
+    explanation:
+      "The slide says the Part I summons has no set fine and the defendant must be issued a court date.",
+    subject: "Provincial",
+    topic: "Part I Summons",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-21",
+    type: "single",
+    prompt:
+      "In the “more serious POA offences” diagram, who can issue the Part III short-form summons at or near the scene?",
+    choices: [
+      "Any person",
+      "Only Provincial Offences Officers",
+      "Only Crown Attorneys",
+      "Only court staff",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The diagram notes Part III short-form at/near scene is Provincial Offences Officer only.",
+    subject: "Provincial",
+    topic: "Part III Paths",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-22",
+    type: "truefalse",
+    prompt:
+      "Under POA Part III (either path), the time limit is 6 months unless the act creating the offence specifies otherwise.",
+    answer: true,
+    explanation:
+      "The diagram lists a “6 month time limit unless specified in act creating offence.”",
+    subject: "Provincial",
+    topic: "Part III Limitations",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-23",
+    type: "single",
+    prompt:
+      "Under POA Part III (either path), maximum fines/jail are determined by:",
+    choices: [
+      "A universal POA $1,000 cap",
+      "The officer’s discretion",
+      "The act creating the offence",
+      "Municipal policy manuals",
+    ],
+    answerIndex: 2,
+    explanation:
+      "The diagram states maximum fines/jail are as specified in the act creating the offence.",
+    subject: "Provincial",
+    topic: "Part III Limitations",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "poa3-24",
+    type: "single",
+    prompt:
+      "In the practical exercise shown, what offence is the driver charged with using a Part III Short Form Summons?",
+    choices: [
+      "Careless driving (HTA 130)",
+      "Drive motor vehicle without insurance",
+      "Driving while under suspension (HTA 53(1))",
+      "Fail to surrender licence (HTA 33(3))",
+    ],
+    answerIndex: 2,
+    explanation:
+      "The slide’s practical directs charging Driving While Under Suspension under HTA 53(1).",
+    subject: "Provincial",
+    topic: "Part III Practical",
+    lecture: "Provincial Law 3",
+  },
+
+  // =========================
+  // Residential Tenancies Act (Session #3b)
+  // =========================
+
+  {
+    id: "rta-1",
+    type: "single",
+    prompt:
+      "In this lesson, police role in the Residential Tenancies Act (RTA) is compared to:",
+    choices: [
+      "A judge in court",
+      "A referee in hockey",
+      "A landlord’s representative",
+      "A Crown prosecutor",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The slide says the police role in the RTA is similar to a referee in hockey (keep the peace, remain objective, referrals).",
+    subject: "Provincial",
+    topic: "RTA: Police Role",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-2",
+    type: "multi",
+    prompt:
+      "Which tasks are listed as part of the police role in RTA calls? (Select ALL that apply)",
+    choices: [
+      "Keep the peace",
+      "Remain objective",
+      "Give legal advice to the landlord",
+      "Make sure parties are safe and property is protected",
+      "Ask to see pertinent documentation",
+      "Provide referrals",
+    ],
+    answerIndices: [0, 1, 3, 4, 5],
+    explanation:
+      "Slides list: keep the peace, remain objective, avoid giving legal advice, ensure safety/property protection, ask for documentation, provide referrals.",
+    subject: "Provincial",
+    topic: "RTA: Police Role",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-3",
+    type: "truefalse",
+    prompt:
+      "The slides suggest police should avoid giving legal advice during RTA disputes.",
+    answer: true,
+    explanation:
+      "“Avoid giving legal advice” is explicitly listed under Role of Police.",
+    subject: "Provincial",
+    topic: "RTA: Police Role",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-4",
+    type: "truefalse",
+    prompt:
+      "Police evidence/notes may be required at the tribunal and/or court in RTA matters.",
+    answer: true,
+    explanation:
+      "Slides state police evidence may be required at tribunal/court—make good notes.",
+    subject: "Provincial",
+    topic: "RTA: Police Role",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-5",
+    type: "single",
+    prompt:
+      "Which body is listed as resolving disputes about rights/responsibilities like rent increases, evictions, and privacy issues?",
+    choices: [
+      "Ontario Court of Justice",
+      "Landlord and Tenant Board (LTB)",
+      "Ministry of Transportation",
+      "Provincial Offences Court",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The referral slide lists the Landlord and Tenant Board as resolving disputes regarding rights/responsibilities (rent increases, evictions, privacy issues).",
+    subject: "Provincial",
+    topic: "RTA: Referrals",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-6",
+    type: "single",
+    prompt:
+      "The slides identify which unit as responsible for ensuring compliance/enforcement under the RTA (contact when considering charges)?",
+    choices: [
+      "Ministry of Municipal Affairs and Housing – Investigative Unit",
+      "Ministry of the Attorney General – Crown Office",
+      "Municipal Licensing Office",
+      "Ontario Human Rights Commission",
+    ],
+    answerIndex: 0,
+    explanation:
+      "The “Investigative Unit” slide references the Ministry of Municipal Affairs and Housing as responsible for compliance/enforcement under the RTA.",
+    subject: "Provincial",
+    topic: "RTA: Referrals",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-7",
+    type: "multi",
+    prompt:
+      "According to the slides, the purpose of the RTA includes: (Select ALL that apply)",
+    choices: [
+      "Ensure rights/obligations between landlords and tenants are clearly understood",
+      "Balance power to encourage security of tenure (right to remain) where possible",
+      "Eliminate the need for any eviction process",
+      "Guarantee landlords can enter whenever they want",
+    ],
+    answerIndices: [0, 1],
+    explanation:
+      "Purpose slide lists understanding rights/obligations + balancing power to encourage security of tenure.",
+    subject: "Provincial",
+    topic: "RTA: Purpose",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-8",
+    type: "single",
+    prompt:
+      "The slides describe the RTA as creating two regimes. Which pair matches the slides?",
+    choices: [
+      "Criminal regime and sentencing regime",
+      "Civil regime (LTB) and compliance regime (provincial offences under RTA)",
+      "Municipal regime and federal regime",
+      "Insurance regime and licensing regime",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Slides list: 1) Civil Regime via LTB; 2) Compliance Regime (Provincial Offences under RTA) enforced under POA Part III.",
+    subject: "Provincial",
+    topic: "RTA: Structure",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-9",
+    type: "truefalse",
+    prompt:
+      "A matter may be pursued in both the LTB (civil) forum and the compliance (provincial offence) forum at the same time.",
+    answer: true,
+    explanation:
+      "The slide notes a matter may be pursued in both forums at the same time.",
+    subject: "Provincial",
+    topic: "RTA: Structure",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-10",
+    type: "single",
+    prompt:
+      "Under the slides, the landlord’s right of entry WITH notice requires:",
+    choices: [
+      "No notice if it’s daytime",
+      "24 hours written notice",
+      "48 hours verbal notice",
+      "Only police presence",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The slide states “WITH NOTICE: 24 hrs written notice to enter – s 27(1).”",
+    subject: "Provincial",
+    topic: "RTA: Entry",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-11",
+    type: "multi",
+    prompt:
+      "Which reasons are listed under landlord entry WITH NOTICE (s.27(1))? (Select ALL that apply)",
+    choices: [
+      "Repair or replacement work",
+      "Mortgagee or insurer to view",
+      "Engineer or architect to inspect (Condominium Act)",
+      "Carry out health/safety/housing/maintenance inspections",
+      "To seize tenant property for unpaid rent",
+    ],
+    answerIndices: [0, 1, 2, 3],
+    explanation:
+      "The slide lists these four examples under entry with notice; seizing tenant property is not listed as a valid entry reason.",
+    subject: "Provincial",
+    topic: "RTA: Entry",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-12",
+    type: "multi",
+    prompt:
+      "Which situations are listed for landlord entry WITHOUT NOTICE (s.26(1))? (Select ALL that apply)",
+    choices: [
+      "On consent",
+      "In an emergency (e.g., water/fire) — enter any time",
+      "To clean or as specified in the lease agreement",
+      "To show the unit to potential renters (with conditions)",
+      "Any time the landlord wants if rent is late",
+    ],
+    answerIndices: [0, 1, 2, 3],
+    explanation:
+      "The slide lists consent, emergency, cleaning/lease-specified, and showing unit to potential renters (with conditions).",
+    subject: "Provincial",
+    topic: "RTA: Entry",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-13",
+    type: "single",
+    prompt:
+      "When showing a unit to potential renters without notice (as listed), entry must occur between:",
+    choices: ["0600–1800", "0700–1900", "0800–2000", "0900–2100"],
+    answerIndex: 2,
+    explanation:
+      "The slide specifies entry between 0800–2000 hours for that scenario.",
+    subject: "Provincial",
+    topic: "RTA: Entry",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-14",
+    type: "truefalse",
+    prompt:
+      "The slides list that withholding vital services is prohibited (s.21(1)).",
+    answer: true,
+    explanation:
+      "The “Vital Services” slide states withholding services is prohibited (s.21(1)).",
+    subject: "Provincial",
+    topic: "RTA: Vital Services & Restrictions",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-15",
+    type: "truefalse",
+    prompt:
+      "According to the slides, if rent is paid and up to date, the unit is NOT considered abandoned.",
+    answer: true,
+    explanation:
+      "The slide notes: if rent is paid and up to date, it’s not abandoned.",
+    subject: "Provincial",
+    topic: "RTA: Vital Services & Restrictions",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-16",
+    type: "truefalse",
+    prompt:
+      "The slides indicate seizing a tenant’s property is prohibited (s.40).",
+    answer: true,
+    explanation: "The slide lists: seizing tenants property prohibited – s.40.",
+    subject: "Provincial",
+    topic: "RTA: Vital Services & Restrictions",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-17",
+    type: "single",
+    prompt:
+      "According to the slides, a lease/contract can supersede the RTA if both parties agree.",
+    choices: ["True", "False"],
+    answerIndex: 1,
+    explanation:
+      "The slide states a lease/contract cannot supersede provisions of the RTA.",
+    subject: "Provincial",
+    topic: "RTA: Vital Services & Restrictions",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-18",
+    type: "single",
+    prompt: "According to the slides, a landlord may not change locks without:",
+    choices: [
+      "Calling police first",
+      "Giving the tenant a key",
+      "Posting a notice on the door for 7 days",
+      "LTB approval in every situation",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The slide states landlord may not change locks without giving tenant key (s.24).",
+    subject: "Provincial",
+    topic: "RTA: Locks",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-19",
+    type: "single",
+    prompt: "According to the slides, a tenant may not change locks without:",
+    choices: [
+      "Police permission",
+      "Landlord consent",
+      "A court order",
+      "A written warning",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The slide states tenant may not change lock without consent (s.35(1)).",
+    subject: "Provincial",
+    topic: "RTA: Locks",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-20",
+    type: "multi",
+    prompt:
+      "Which are listed as examples of accommodation the RTA applies to? (Select ALL that apply)",
+    choices: [
+      "Mobile home",
+      "Units in care homes (e.g., seniors facility)",
+      "Rooming/boarding houses",
+      "Non-profit housing",
+      "Motels/hotels/inns when used as a primary residence (at times)",
+    ],
+    answerIndices: [0, 1, 2, 3, 4],
+    explanation:
+      "The “RTA applies to” slide lists all of these as included examples (with the hotel/motel caveat).",
+    subject: "Provincial",
+    topic: "RTA: Application",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-21",
+    type: "multi",
+    prompt:
+      "Which situations are listed as RTA exemptions? (Select ALL that apply)",
+    choices: [
+      "Transient accommodation in a hotel/motel/inn/B&B",
+      "Occupancy conditional upon employment (e.g., farm labour, apt over store)",
+      "Occupancy for correctional purposes",
+      "Roommate of a tenant",
+      "Short-term emergency shelters",
+      "Occupancy provided by an educational institution (e.g., university campus, OPC)",
+      "Shared occupancy where boarder shares bathroom/kitchen with owner/spouse/child",
+    ],
+    answerIndices: [0, 1, 2, 3, 4, 5, 6],
+    explanation:
+      "The exemption slides list all of these as exemption situations.",
+    subject: "Provincial",
+    topic: "RTA: Exemptions",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-22",
+    type: "single",
+    prompt:
+      "According to the slide, the first step for a lawful eviction is to:",
+    choices: [
+      "Change the locks immediately",
+      "Serve tenant a valid Notice of Termination",
+      "Call police to remove the tenant",
+      "Apply directly to the Sheriff",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The eviction steps slide begins with serving a valid Notice of Termination.",
+    subject: "Provincial",
+    topic: "RTA: Eviction Process",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-23",
+    type: "single",
+    prompt: "According to the slide, who enforces the eviction order?",
+    choices: [
+      "The landlord",
+      "Police",
+      "The Sheriff’s office",
+      "The LTB Chair",
+    ],
+    answerIndex: 2,
+    explanation:
+      "The slide states the order is enforced by the Sheriff’s office (police may assist).",
+    subject: "Provincial",
+    topic: "RTA: Eviction Process",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-24",
+    type: "truefalse",
+    prompt:
+      "The slides indicate police may be called upon to assist the Sheriff during an eviction enforcement.",
+    answer: true,
+    explanation:
+      "Eviction slide notes police may be called upon to assist Sheriff.",
+    subject: "Provincial",
+    topic: "RTA: Eviction Process",
+    lecture: "Provincial Law 3",
+  },
+  {
+    id: "rta-25",
+    type: "double",
+    prompt:
+      "EVENT: A landlord shows up with police and tries to physically remove a tenant without an eviction order.",
+    fields: [
+      {
+        label: "BEST POLICE ROLE",
+        options: [
+          "Remove the tenant for the landlord",
+          "Keep the peace and refer to LTB / proper process",
+          "Give the landlord legal advice on forms",
+          "Arrest the tenant for trespass (always)",
+        ],
+      },
+      {
+        label: "KEY IDEA (FROM SLIDES)",
+        options: [
+          "Police act like a referee; stay objective",
+          "Landlord can evict anytime with 24h notice",
+          "Seizing tenant property is permitted",
+          "Lease terms override the RTA",
+        ],
+      },
+    ],
+    answers: [
+      "Keep the peace and refer to LTB / proper process",
+      "Police act like a referee; stay objective",
+    ],
+    explanation:
+      "The RTA slides stress police act like a referee: keep the peace, remain objective, avoid legal advice, and provide referrals.",
+    subject: "Provincial",
+    topic: "RTA: Police Response Scenarios",
+    lecture: "Provincial Law 3",
+  },
+  // -------------------------------
+  // Learning Outcomes / Key Terms
+  // -------------------------------
+  {
+    id: "fedlaw4_outcomes_1",
+    type: "multi",
+    prompt:
+      "By the end of FedLaw4, learners should be able to: (Select ALL that apply)",
+    choices: [
+      "Articulate statutory requirements and limitations related to applying force",
+      "Explain criminal and civil responsibility surrounding use of force and the Charter",
+      "Explain POA Part I timelines for serving tickets",
+      "Explain how to file a Certificate of Offence within 7 days",
+    ],
+    answerIndices: [0, 1],
+    explanation:
+      "This module focuses on use of force authority/limits and the criminal/civil responsibility + Charter impacts.",
+    subject: "Federal",
+    topic: "Module Outcomes",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_terms_1",
+    type: "multi",
+    prompt:
+      "Which of the following are listed as key terms in this module? (Select ALL that apply)",
+    choices: [
+      "Reasonable Grounds",
+      "Subjective Justification",
+      "Objective Justification",
+      "Authorized or Required by Law",
+      "Set Fines",
+      "Imminent",
+      "Proportional",
+      "Charter of Rights",
+    ],
+    answerIndices: [0, 1, 2, 3, 5, 6, 7],
+    explanation:
+      "Key terms include RG, subjective/objective justification, authorized/required by law, necessary, good faith, imminent, proportional, and Charter rights.",
+    subject: "Federal",
+    topic: "Key Terms",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // Reasonable Grounds fundamentals
+  // -------------------------------
+  {
+    id: "fedlaw4_rg_1",
+    type: "single",
+    prompt: "Reasonable grounds are best described as:",
+    choices: [
+      "Less than suspicion but more than proof",
+      "More than reasonable suspicion but less than proof beyond a reasonable doubt",
+      "The same as proof beyond a reasonable doubt",
+      "A hunch based on experience",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Reasonable grounds sit above reasonable suspicion and below proof beyond a reasonable doubt, based on the totality of circumstances.",
+    subject: "Federal",
+    topic: "Reasonable Grounds",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_rg_2",
+    type: "truefalse",
+    prompt:
+      "Reasonable grounds require absolute proof that an offence occurred.",
+    answer: false,
+    explanation:
+      "Reasonable grounds do not require certainty or absolute proof—only an objectively justifiable basis plus the officer’s honest belief.",
+    subject: "Federal",
+    topic: "Reasonable Grounds",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_rg_3",
+    type: "truefalse",
+    prompt:
+      "Suspicious circumstances alone are never sufficient to establish reasonable grounds.",
+    answer: true,
+    explanation:
+      "Suspicion alone isn’t enough—grounds must be based on facts and circumstances that are objectively justifiable.",
+    subject: "Federal",
+    topic: "Reasonable Grounds",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_rg_4",
+    type: "multi",
+    prompt:
+      "Reasonable grounds should NOT be based on: (Select ALL that apply)",
+    choices: [
+      "Mere suspicion",
+      "Conjecture",
+      "Hypothesis",
+      "Fishing expeditions",
+      "Totality of circumstances",
+      "Corroborated facts",
+    ],
+    answerIndices: [0, 1, 2, 3],
+    explanation:
+      "Grounds must be based on facts/circumstances, not guessing or searching without a basis.",
+    subject: "Federal",
+    topic: "Reasonable Grounds",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_rg_5",
+    type: "multi",
+    prompt: "Reasonable grounds may arise from: (Select ALL that apply)",
+    choices: [
+      "A confession",
+      "A credible witness",
+      "Circumstantial evidence",
+      "A gut feeling with no facts",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "The notes list confession, credible witness, and circumstantial evidence as sources of grounds.",
+    subject: "Federal",
+    topic: "Reasonable Grounds",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // Subjective + Objective (R. v. Storrey concept)
+  // -------------------------------
+  {
+    id: "fedlaw4_so_1",
+    type: "single",
+    prompt: "The reasonable-grounds test requires:",
+    choices: [
+      "Only the officer’s honest belief (subjective)",
+      "Only what a reasonable person would believe (objective)",
+      "Both subjective belief and objective justification",
+      "Proof beyond a reasonable doubt",
+    ],
+    answerIndex: 2,
+    explanation:
+      "Both are required: the officer must honestly believe grounds exist AND the belief must be objectively justifiable.",
+    subject: "Federal",
+    topic: "Subjective vs Objective",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_so_2",
+    type: "single",
+    prompt: "Objective justification means:",
+    choices: [
+      "The officer feels strongly something happened",
+      "Facts/circumstances would cause a reasonable person to believe an offence was committed or about to be committed",
+      "Any suspicion equals grounds",
+      "A supervisor agrees with the officer",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Objective justification is about whether the facts would convince a reasonable person.",
+    subject: "Federal",
+    topic: "Subjective vs Objective",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_so_3",
+    type: "single",
+    prompt: "Subjective justification means:",
+    choices: [
+      "The officer personally (honestly) believes they have reasonable grounds",
+      "The officer has proof beyond a reasonable doubt",
+      "The suspect admits guilt in court",
+      "The officer can’t explain their decision",
+    ],
+    answerIndex: 0,
+    explanation:
+      "Subjective = the officer’s honest belief, actually held, that grounds exist.",
+    subject: "Federal",
+    topic: "Subjective vs Objective",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_so_4",
+    type: "truefalse",
+    prompt:
+      "If an officer honestly believes grounds exist, that alone is enough—even if the facts would not convince a reasonable person.",
+    answer: false,
+    explanation:
+      "Subjective belief alone isn’t enough; the belief must also be objectively justifiable.",
+    subject: "Federal",
+    topic: "Subjective vs Objective",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // Interaction continuum + standards
+  // -------------------------------
+  {
+    id: "fedlaw4_continuum_1",
+    type: "single",
+    prompt:
+      "Which option best matches the concept of a police interaction continuum taught in these notes?",
+    choices: [
+      "Authority decreases as evidence increases",
+      "Authority increases as grounds develop (no grounds → suspicion → RG → arrest)",
+      "Detention always requires proof beyond a reasonable doubt",
+      "Conversation is never permitted without grounds",
+    ],
+    answerIndex: 1,
+    explanation:
+      "As information develops, an officer may move along the continuum, increasing lawful authority as grounds strengthen.",
+    subject: "Federal",
+    topic: "Police Interaction Continuum",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_rs_1",
+    type: "single",
+    prompt: "Reasonable suspicion primarily authorizes:",
+    choices: [
+      "Conviction in court",
+      "Investigative detention",
+      "A search warrant",
+      "Automatic arrest",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Reasonable suspicion supports investigative detention, not arrest.",
+    subject: "Federal",
+    topic: "Reasonable Suspicion",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_rs_2",
+    type: "single",
+    prompt: "Reasonable suspicion is described as:",
+    choices: [
+      "A constellation of objectively discernible facts leading an officer to suspect criminal involvement",
+      "Absolute certainty of guilt",
+      "An officer’s intuition",
+      "A finding of guilt by a judge",
+    ],
+    answerIndex: 0,
+    explanation:
+      "It’s a fact-based suspicion grounded in objectively discernible facts.",
+    subject: "Federal",
+    topic: "Reasonable Suspicion",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_brd_1",
+    type: "single",
+    prompt: "Beyond a reasonable doubt is:",
+    choices: [
+      "The officer’s standard to arrest",
+      "The Crown’s burden of proof at trial for conviction",
+      "The standard for investigative detention",
+      "The same as suspicion",
+    ],
+    answerIndex: 1,
+    explanation:
+      "BRD is the trial standard required to convict, and it’s higher than reasonable grounds.",
+    subject: "Federal",
+    topic: "Standards of Proof",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_compare_1",
+    type: "double",
+    prompt: "MATCH: Standard → Typical legal action (as taught here)",
+    fields: [
+      {
+        label: "REASONABLE SUSPICION",
+        options: [
+          "Conviction",
+          "Investigative detention",
+          "Arrest/search/use of force",
+          "No police interaction allowed",
+        ],
+      },
+      {
+        label: "REASONABLE GROUNDS",
+        options: [
+          "Conviction",
+          "Investigative detention",
+          "Arrest/search/use of force",
+          "No police interaction allowed",
+        ],
+      },
+    ],
+    answers: ["Investigative detention", "Arrest/search/use of force"],
+    explanation:
+      "Reasonable suspicion supports investigative detention; reasonable grounds supports stronger powers like arrest/search/use of force.",
+    subject: "Federal",
+    topic: "Standards Comparison",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // Use of Force authority (s.25(1) concept)
+  // -------------------------------
+  {
+    id: "fedlaw4_s25_core_1",
+    type: "single",
+    prompt:
+      "In Canada, the primary Criminal Code authority for police use of force is:",
+    choices: ["s.24 Charter", "s.25 Criminal Code", "s.61 POA", "s.494 HTA"],
+    answerIndex: 1,
+    explanation:
+      "The notes identify Criminal Code s.25 as the authority to use force.",
+    subject: "Federal",
+    topic: "Use of Force Authority",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_justified_1",
+    type: "single",
+    prompt: "In this module, “justified” generally means:",
+    choices: [
+      "Protected from criminal liability only",
+      "Protected from civil liability only",
+      "Protected from both criminal and civil liability (if requirements are met)",
+      "Allowed to use unlimited force",
+    ],
+    answerIndex: 2,
+    explanation:
+      "Justified = protected from criminal and civil liability when acting lawfully on RG and using only necessary force.",
+    subject: "Federal",
+    topic: "Justification",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // Three-Branch Test (s.25 framework)
+  // -------------------------------
+  {
+    id: "fedlaw4_threebranch_1",
+    type: "multi",
+    prompt:
+      "The three-branch test for lawful force under s.25 (as taught here) requires: (Select ALL that apply)",
+    choices: [
+      "Authorized/required by law",
+      "Reasonable grounds",
+      "As much force as necessary",
+      "Proof beyond a reasonable doubt",
+      "A supervisor’s approval",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation: "All three branches must be met to maintain s.25 protection.",
+    subject: "Federal",
+    topic: "Three-Branch Test",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_threebranch_2",
+    type: "truefalse",
+    prompt:
+      "If any one branch of the three-branch test fails, an officer may lose s.25 protection.",
+    answer: true,
+    explanation:
+      "All branches must be satisfied; failure of any branch can remove justification under s.25.",
+    subject: "Federal",
+    topic: "Three-Branch Test",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_threebranch_3",
+    type: "single",
+    prompt:
+      "In the three-branch test, the “necessary force” requirement means:",
+    choices: [
+      "Use the maximum force allowed to end it quickly",
+      "Use force that is objectively reasonable and the minimum necessary to achieve the lawful objective",
+      "Use force only after a conviction",
+      "Use force only if the suspect is armed",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Force must be objectively reasonable and limited to what is necessary to achieve the lawful purpose.",
+    subject: "Federal",
+    topic: "Necessary Force",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // De-escalation and articulation
+  // -------------------------------
+  {
+    id: "fedlaw4_deesc_1",
+    type: "truefalse",
+    prompt:
+      "The notes emphasize that de-escalation is often the priority, but if it fails, officers may still need to apply force to ensure safety.",
+    answer: true,
+    explanation:
+      "De-escalation is preferred, but force may be necessary if safety is at risk and other efforts fail.",
+    subject: "Federal",
+    topic: "De-escalation",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_articulation_1",
+    type: "single",
+    prompt:
+      "Why is articulation (what you say and write in notes) emphasized in use-of-force decisions?",
+    choices: [
+      "Because notes replace body-worn video",
+      "Because articulation becomes the basis of evidence and must justify decisions to courts/supervisors/public",
+      "Because officers must use legal terms only, not facts",
+      "Because it guarantees charges are laid",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Your notes and articulation are evidence and must explain lawful authority, grounds, and necessity of force.",
+    subject: "Federal",
+    topic: "Articulation",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_template_1",
+    type: "multi",
+    prompt:
+      "Which lines best match the “articulation template” from the notes? (Select ALL that apply)",
+    choices: [
+      "I was authorized to ____ because ____.",
+      "My reasonable grounds were ____ which led me to believe ____.",
+      "I used force that was necessary because ____; I attempted/considered de-escalation by ____.",
+      "I used force because the person annoyed me.",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "The template: authority → grounds (facts + belief) → necessary force + de-escalation considerations.",
+    subject: "Federal",
+    topic: "Articulation",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // Good faith (acting in good faith)
+  // -------------------------------
+  {
+    id: "fedlaw4_goodfaith_def_1",
+    type: "single",
+    prompt: "Acting in good faith means acting:",
+    choices: [
+      "With honest intention and free from any knowledge of irregularity",
+      "With perfect judgment in every situation",
+      "With a supervisor’s permission",
+      "With force as long as you are stressed",
+    ],
+    answerIndex: 0,
+    explanation:
+      "Good faith = honest intention + no knowledge of irregularity.",
+    subject: "Federal",
+    topic: "Good Faith",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_goodfaith_1",
+    type: "truefalse",
+    prompt:
+      "Good faith protection can apply even if a process or sentence was defective or issued without jurisdiction, as long as the officer acted in good faith (as taught here).",
+    answer: true,
+    explanation:
+      "The notes describe good faith protection when executing process/sentence despite defects, if acting honestly without knowledge of irregularity.",
+    subject: "Federal",
+    topic: "Good Faith",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_mistake_1",
+    type: "single",
+    prompt: "Good faith generally protects officers for reasonable:",
+    choices: [
+      "Mistakes of law",
+      "Mistakes of fact",
+      "Intentional violations",
+      "Any use of force",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The notes emphasize good faith protects reasonable mistakes of fact, not mistakes of law.",
+    subject: "Federal",
+    topic: "Good Faith",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_mistake_2",
+    type: "single",
+    prompt:
+      "A warrant still showing active on CPIC due to a court error is best described as:",
+    choices: [
+      "Mistake of law",
+      "Mistake of fact",
+      "Proof beyond a reasonable doubt",
+      "No error at all",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Reliance on incorrect system information is a mistake of fact; good faith may apply if the officer had no reason to know it was wrong.",
+    subject: "Federal",
+    topic: "Good Faith",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_mistake_3",
+    type: "single",
+    prompt:
+      "An officer arrests someone for a strictly summary offence two days after it happened (when find-committing is required). This is best categorized as:",
+    choices: [
+      "Mistake of fact",
+      "Mistake of law",
+      "Reasonable suspicion",
+      "Objective justification",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Misunderstanding or not knowing arrest authority is a mistake of law and is not protected the same way as mistake of fact.",
+    subject: "Federal",
+    topic: "Good Faith",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // Deadly force: s.25(4) fleeing subject (5 criteria / ANDs)
+  // -------------------------------
+  {
+    id: "fedlaw4_254_1",
+    type: "truefalse",
+    prompt:
+      "Deadly force under s.25(4) is justified only if ALL listed criteria are satisfied (every 'AND' must be met).",
+    answer: true,
+    explanation:
+      "The notes stress strict compliance: each element must be satisfied or deadly force is not justified.",
+    subject: "Federal",
+    topic: "Deadly Force – Fleeing Subject",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_254_2",
+    type: "multi",
+    prompt:
+      "Which are required criteria for deadly force against a fleeing subject under s.25(4) (as taught here)? (Select ALL that apply)",
+    choices: [
+      "Lawful arrest is being made",
+      "The person may be lawfully arrested without a warrant",
+      "The person takes flight to avoid arrest",
+      "Officer has RG deadly force is necessary to protect from imminent or future death/GBH",
+      "The flight cannot be prevented by reasonable means in a less violent manner",
+      "A set fine exists",
+    ],
+    answerIndices: [0, 1, 2, 3, 4],
+    explanation:
+      "The module lists these five requirements (and stresses all must be met).",
+    subject: "Federal",
+    topic: "Deadly Force – Fleeing Subject",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_254_3",
+    type: "single",
+    prompt:
+      "Under the notes, deadly force under s.25(4) must be necessary to protect against:",
+    choices: [
+      "Any minor injury",
+      "Property damage only",
+      "Death or grievous bodily harm",
+      "Embarrassment or disrespect",
+    ],
+    answerIndex: 2,
+    explanation:
+      "Deadly force is tied to preventing death or grievous bodily harm (imminent or future), not minor harm.",
+    subject: "Federal",
+    topic: "Deadly Force – Fleeing Subject",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // Escaping inmate (penitentiary) deadly force criteria
+  // -------------------------------
+  {
+    id: "fedlaw4_inmate_1",
+    type: "multi",
+    prompt:
+      "Deadly force for an escaping penitentiary inmate (as taught) requires: (Select BOTH)",
+    choices: [
+      "RG the inmate poses a threat of death or grievous bodily harm to officer or any person",
+      "The escape cannot be prevented by reasonable means in a less violent manner",
+      "The inmate committed a summary offence",
+      "A warrant is endorsed by a Justice",
+    ],
+    answerIndices: [0, 1],
+    explanation:
+      "The notes describe a narrow authority: threat of death/GBH + no lesser reasonable option.",
+    subject: "Federal",
+    topic: "Deadly Force – Escaping Inmate",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_inmate_2",
+    type: "truefalse",
+    prompt:
+      "This 'escaping inmate' deadly-force authority applies to any prisoner in any detention setting.",
+    answer: false,
+    explanation:
+      "The notes describe it as narrow and tied to penitentiary inmates (not all prisoners).",
+    subject: "Federal",
+    topic: "Deadly Force – Escaping Inmate",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // s.25(3) necessity + family of terms
+  // -------------------------------
+  {
+    id: "fedlaw4_253_1",
+    type: "single",
+    prompt:
+      "Under the notes, s.25(3) emphasizes that deadly force is NOT justified unless it is necessary for:",
+    choices: [
+      "Arresting any fleeing suspect",
+      "Self-preservation or preserving anyone under the officer’s protection from death/GBH",
+      "Preventing any property offence",
+      "Punishing violent behaviour",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The notes describe deadly force as last resort: necessary to preserve life/prevent death or grievous bodily harm.",
+    subject: "Federal",
+    topic: "Deadly Force – Necessity",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_necessity_1",
+    type: "multi",
+    prompt:
+      "In this module, 'necessity' requires ALL THREE: (Select ALL that apply)",
+    choices: [
+      "Imminent peril or danger",
+      "No reasonable legal alternatives",
+      "Proportionality between harm caused and harm avoided",
+      "Supervisor approval",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "Necessity is broken down into imminence, no reasonable alternatives, and proportionality.",
+    subject: "Federal",
+    topic: "Necessity",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_imminence_1",
+    type: "multi",
+    prompt: "Imminence is assessed by considering: (Select ALL that apply)",
+    choices: ["Intent", "Means", "Opportunity", "Rank", "Uniform type"],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "Imminence is evaluated through intent, means, and opportunity—danger capable of being carried out now.",
+    subject: "Federal",
+    topic: "Imminence",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_proportionality_1",
+    type: "single",
+    prompt: "Proportionality in deadly force means the harm caused must:",
+    choices: [
+      "Always be greater than the harm avoided",
+      "Not exceed the harm avoided",
+      "Match the suspect’s attitude",
+      "Be based on public opinion",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Proportionality means the harm caused should not exceed the harm avoided (and deadly force is tied to preventing death/GBH).",
+    subject: "Federal",
+    topic: "Proportionality",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // s.26 excess force (credit card analogy + reassess)
+  // -------------------------------
+  {
+    id: "fedlaw4_s26_1",
+    type: "single",
+    prompt: "Criminal Code s.26 is best summarized as:",
+    choices: [
+      "Permission to use unlimited force",
+      "Criminal responsibility for any excess force used",
+      "Authority to arrest without warrant",
+      "Rules for serving summons",
+    ],
+    answerIndex: 1,
+    explanation:
+      "s.26 means even if you’re authorized to use force, you’re criminally responsible for any excess.",
+    subject: "Federal",
+    topic: "Excess Force",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_s26_2",
+    type: "truefalse",
+    prompt:
+      "Protection under s.25 can end mid-interaction if force becomes excessive.",
+    answer: true,
+    explanation:
+      "The notes emphasize continuous reassessment; once force becomes excessive, s.26 applies and protection can be lost.",
+    subject: "Federal",
+    topic: "Excess Force",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_creditcard_1",
+    type: "single",
+    prompt:
+      "The “credit card” analogy in the notes describes s.25 as the permission to use force and s.26 as:",
+    choices: [
+      "The police budget",
+      "The credit limit (no exceeding what’s reasonable/necessary)",
+      "The arrest warrant",
+      "The disclosure package",
+    ],
+    answerIndex: 1,
+    explanation:
+      "s.26 is framed as the limit: you can’t exceed what is reasonable and necessary.",
+    subject: "Federal",
+    topic: "Excess Force",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // s.27 prevention of offence
+  // -------------------------------
+  {
+    id: "fedlaw4_s27_1",
+    type: "single",
+    prompt: "Criminal Code s.27 is primarily about using force to:",
+    choices: [
+      "Punish an offender after the fact",
+      "Prevent the commission of certain serious offences (or what you reasonably believe will become such an offence)",
+      "Serve a summons",
+      "Convict an accused",
+    ],
+    answerIndex: 1,
+    explanation:
+      "s.27 is framed as prevention-focused, with force limited to what is reasonably necessary.",
+    subject: "Federal",
+    topic: "Preventing an Offence",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_s27_2",
+    type: "multi",
+    prompt:
+      "Under the notes, s.27 justifies force to prevent an offence when: (Select ALL that apply)",
+    choices: [
+      "The offence would allow arrest without warrant",
+      "The offence would likely cause immediate and serious injury to a person or property",
+      "The person reasonably believes something would become such an offence",
+      "A set fine exists",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "The notes outline these conditions and emphasize force must still be reasonable/necessary/proportionate.",
+    subject: "Federal",
+    topic: "Preventing an Offence",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // Self-defence s.34(1) + s.34(2) factors
+  // -------------------------------
+  {
+    id: "fedlaw4_s34_test_1",
+    type: "multi",
+    prompt:
+      "Self-defence under s.34(1) requires ALL THREE elements: (Select ALL that apply)",
+    choices: [
+      "Reasonable belief that force or threat of force is being used (against self or another)",
+      "Purpose of defending self or another (not vindictive)",
+      "Response was reasonable in the circumstances",
+      "The accused must retreat in every situation",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "The notes use the trigger → motive → response structure: belief, defensive purpose, reasonable response.",
+    subject: "Federal",
+    topic: "Self-Defence",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_s34_defothers_1",
+    type: "truefalse",
+    prompt:
+      "Defence of others under s.34 is limited only to people 'under the defender’s protection.'",
+    answer: false,
+    explanation:
+      "The notes state defence of others can apply to any other person; relationship is a factor courts consider.",
+    subject: "Federal",
+    topic: "Self-Defence",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_s34_factors_1",
+    type: "multi",
+    prompt:
+      "When assessing reasonableness under s.34(2), courts consider (as taught): (Select ALL that apply)",
+    choices: [
+      "Nature of the force or threat",
+      "Imminence and availability of other options",
+      "Person’s role in the incident (conduct from beginning to end)",
+      "Size/age/gender/physical capabilities",
+      "History/nature of relationship (including prior violence)",
+      "Whether the response was proportional",
+      "Whether the accused’s uniform was visible",
+    ],
+    answerIndices: [0, 1, 2, 3, 4, 5],
+    explanation:
+      "The notes describe a holistic assessment of all relevant circumstances; uniform visibility isn’t listed as a factor here.",
+    subject: "Federal",
+    topic: "Self-Defence",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // Charter impacts on s.25 protection + remedies (s.24)
+  // -------------------------------
+  {
+    id: "fedlaw4_charter_1",
+    type: "truefalse",
+    prompt:
+      "A Charter violation can cause an officer to lose protection under s.25 of the Criminal Code.",
+    answer: true,
+    explanation:
+      "The notes state Charter breaches can remove s.25 protection and expose criminal/civil liability.",
+    subject: "Federal",
+    topic: "Charter & Use of Force",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_charter_2",
+    type: "multi",
+    prompt:
+      "Which Charter rights are commonly engaged in police encounters (as listed)? (Select ALL that apply)",
+    choices: [
+      "s.8 unreasonable search or seizure",
+      "s.9 arbitrary detention or imprisonment",
+      "s.10(a) informed promptly of reason for arrest/detention",
+      "s.10(b) right to counsel without delay",
+      "s.11 right to vote",
+    ],
+    answerIndices: [0, 1, 2, 3],
+    explanation:
+      "The notes list s.8, s.9, and s.10 rights as common in police encounters.",
+    subject: "Federal",
+    topic: "Charter Rights",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_charter_12",
+    type: "single",
+    prompt: "Charter s.12 protects against:",
+    choices: [
+      "Unreasonable search",
+      "Cruel and unusual treatment or punishment",
+      "Arbitrary detention",
+      "Loss of privacy in public",
+    ],
+    answerIndex: 1,
+    explanation:
+      "s.12 is the protection from cruel and unusual treatment or punishment.",
+    subject: "Federal",
+    topic: "Charter Rights",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_241_1",
+    type: "single",
+    prompt:
+      "Charter s.24(1) allows a person whose rights were infringed/denied to:",
+    choices: [
+      "Automatically get all evidence excluded",
+      "Apply to a court for a remedy that is appropriate and just in the circumstances",
+      "Demand a jury trial in every case",
+      "Force police to withdraw charges immediately",
+    ],
+    answerIndex: 1,
+    explanation:
+      "s.24(1) is the general remedy provision for Charter breaches.",
+    subject: "Federal",
+    topic: "Charter Remedies",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_242_1",
+    type: "single",
+    prompt: "Charter s.24(2) deals with:",
+    choices: [
+      "Arrest powers",
+      "Excluding evidence obtained through a Charter breach when admission would bring the administration of justice into disrepute",
+      "Civil lawsuits against police",
+      "Court scheduling rules",
+    ],
+    answerIndex: 1,
+    explanation:
+      "s.24(2) is the exclusionary rule based on disrepute to the administration of justice.",
+    subject: "Federal",
+    topic: "Charter Remedies",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_lsda_1",
+    type: "single",
+    prompt:
+      "The memory aid 'LSDA' in the notes points you to which Charter section for remedies?",
+    choices: ["s.1", "s.7", "s.24", "s.52"],
+    answerIndex: 2,
+    explanation:
+      "LSDA (Liberty, Search, Detention, Arrest) → remedies under s.24.",
+    subject: "Federal",
+    topic: "Exam Memory Aids",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+
+  // -------------------------------
+  // Scenario-style application questions
+  // -------------------------------
+  {
+    id: "fedlaw4_scn_1",
+    type: "single",
+    prompt:
+      "SCENARIO: You are lawfully arresting a subject, have reasonable grounds, and apply only the minimum force needed to safely handcuff. Under s.25, you are most likely:",
+    choices: [
+      "Not justified because any force is illegal",
+      "Justified (protected criminally and civilly) if all 3 branches are met",
+      "Automatically guilty under s.26",
+      "Justified even if the arrest was unlawful",
+    ],
+    answerIndex: 1,
+    explanation:
+      "If authorized/required by law + RG + necessary force are satisfied, s.25 justification applies.",
+    subject: "Federal",
+    topic: "Scenario Applications",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_scn_2",
+    type: "single",
+    prompt:
+      "SCENARIO: You continue striking a subject after they are fully controlled and no longer resisting. Which principle is most directly engaged?",
+    choices: [
+      "s.26 excess force liability",
+      "s.24(1) remedies",
+      "Reasonable suspicion",
+      "Investigative detention",
+    ],
+    answerIndex: 0,
+    explanation:
+      "Even if initial force was justified, continued force can become excessive → s.26 criminal responsibility.",
+    subject: "Federal",
+    topic: "Scenario Applications",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  {
+    id: "fedlaw4_scn_3",
+    type: "single",
+    prompt:
+      "SCENARIO: You psychologically detain a person but fail to advise them of the reason and right to counsel. The most relevant Charter sections are:",
+    choices: [
+      "s.8 and s.12",
+      "s.10(a) and s.10(b)",
+      "s.24(2) only",
+      "s.1 only",
+    ],
+    answerIndex: 1,
+    explanation:
+      "On arrest/detention, the person must be informed promptly of reasons (10a) and right to counsel (10b).",
+    subject: "Federal",
+    topic: "Scenario Applications",
+    lecture: "FedLaw4: Use of Force and The Charter",
+  },
+  // -------------------------------
+  // Core Concepts Review
+  // -------------------------------
+  {
+    id: "fed5_arrest_1",
+    type: "single",
+    prompt: "Arrest is accomplished when you:",
+    choices: [
+      "Ask a person questions in public",
+      "Take or get physical control of a person with intent to detain",
+      "Suspect someone committed an offence",
+      "Tell someone they are under arrest, without taking control",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Arrest is accomplished when you take/get physical control of a person with intent to detain. :contentReference[oaicite:1]{index=1}",
+    subject: "Federal",
+    topic: "Arrest vs Detention",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_detention_1",
+    type: "single",
+    prompt: "Detention is best described as:",
+    choices: [
+      "A restraint of liberty short of arrest",
+      "Physical control with intent to detain",
+      "A conviction in court",
+      "A search incident to arrest",
+    ],
+    answerIndex: 0,
+    explanation:
+      "Detention is a restraint of liberty short of arrest. :contentReference[oaicite:2]{index=2}",
+    subject: "Federal",
+    topic: "Arrest vs Detention",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_psychdet_1",
+    type: "single",
+    prompt: "“Psychological detention” is:",
+    choices: [
+      "A suspension of an individual's liberty by psychological restraint",
+      "Only detention that involves handcuffs",
+      "Any time police speak to someone",
+      "Only possible inside a police station",
+    ],
+    answerIndex: 0,
+    explanation:
+      "The slide defines psychological detention as a suspension of liberty by psychological restraint. :contentReference[oaicite:3]{index=3}",
+    subject: "Federal",
+    topic: "Psychological Detention",
+    lecture: "Federal Law 5",
+  },
+
+  // -------------------------------
+  // Charter s.10 on Arrest/Detention
+  // -------------------------------
+  {
+    id: "fed5_charter10_1",
+    type: "multi",
+    prompt:
+      "On arrest or detention, a person has the right to: (Select ALL that apply)",
+    choices: [
+      "Be informed promptly of the reason for the arrest/detention",
+      "Retain and instruct counsel without delay and be informed of that right",
+      "Refuse to identify themselves in every situation",
+      "Demand the officer’s notes immediately",
+    ],
+    answerIndices: [0, 1],
+    explanation:
+      "Charter s.10 rights on arrest/detention include being informed promptly of the reason and right to counsel without delay. :contentReference[oaicite:4]{index=4}",
+    subject: "Federal",
+    topic: "Charter Rights",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_charter10_tf1",
+    type: "truefalse",
+    prompt:
+      "True or False: Charter s.10 rights apply only on arrest, not on detention.",
+    answer: false,
+    explanation:
+      "The slide states rights apply on arrest OR detention. :contentReference[oaicite:5]{index=5}",
+    subject: "Federal",
+    topic: "Charter Rights",
+    lecture: "Federal Law 5",
+  },
+
+  // -------------------------------
+  // Find Committing vs Reasonable Grounds
+  // -------------------------------
+  {
+    id: "fed5_fc_rg_1",
+    type: "single",
+    prompt: "“Find committing” is accomplished when:",
+    choices: [
+      "A person observes another commit the criminal offence",
+      "A person thinks someone committed an offence with no observation",
+      "A person reads about an offence online",
+      "A person hears a rumor about an offence",
+    ],
+    answerIndex: 0,
+    explanation:
+      "Find committing is when a person observes another commit the criminal offence. :contentReference[oaicite:6]{index=6}",
+    subject: "Federal",
+    topic: "Find Committing vs Reasonable Grounds",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_rg_standard_1",
+    type: "single",
+    prompt:
+      "Reasonable grounds (to believe) is best described as a standard that is:",
+    choices: [
+      "Greater than reasonable suspicion but less than balance of probabilities (considering totality of circumstances)",
+      "Equal to proof beyond a reasonable doubt",
+      "The same as a prima facie case",
+      "Lower than a hunch",
+    ],
+    answerIndex: 0,
+    explanation:
+      "The slide describes RG as greater than reasonable suspicion but less than balance of probabilities, and not equivalent to BRD or prima facie case. :contentReference[oaicite:7]{index=7}",
+    subject: "Federal",
+    topic: "Reasonable Grounds",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_rg_tf1",
+    type: "truefalse",
+    prompt:
+      "True or False: Reasonable grounds to believe is equivalent to proof beyond a reasonable doubt.",
+    answer: false,
+    explanation:
+      "The slide explicitly notes RG is not equivalent to proof beyond a reasonable doubt. :contentReference[oaicite:8]{index=8}",
+    subject: "Federal",
+    topic: "Reasonable Grounds",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_storrey_1",
+    type: "single",
+    prompt:
+      "R v. Storrey establishes that for arrest, reasonable grounds must be:",
+    choices: [
+      "Only subjectively believed by the officer",
+      "Only objectively justifiable to a reasonable person",
+      "Both subjectively held AND objectively justifiable",
+      "Proven beyond a reasonable doubt",
+    ],
+    answerIndex: 2,
+    explanation:
+      "Storrey requires subjective grounds + objective justification (reasonable person test). :contentReference[oaicite:9]{index=9}",
+    subject: "Federal",
+    topic: "Reasonable Grounds",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_rg_principles_1",
+    type: "multi",
+    prompt:
+      "Which statements about reasonable grounds are TRUE? (Select ALL that apply)",
+    choices: [
+      "Reasonable grounds is always a question of fact depending on the circumstances",
+      "Suspicious circumstances will never be enough on their own",
+      "Reasonable grounds requires facts that would cause a reasonable person to believe an offence was committed or about to be committed",
+      "Reasonable grounds is purely subjective and cannot be tested objectively",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "The slides emphasize RG is fact-based, suspicion alone is insufficient, and RG must be objectively and subjectively justifiable. :contentReference[oaicite:10]{index=10}",
+    subject: "Federal",
+    topic: "Reasonable Grounds",
+    lecture: "Federal Law 5",
+  },
+
+  // -------------------------------
+  // “3+ C’s” for getting to RG
+  // -------------------------------
+  {
+    id: "fed5_3cs_1",
+    type: "multi",
+    prompt:
+      "The “3+ C’s” ways to be led into reasonable grounds include: (Select ALL that apply)",
+    choices: [
+      "Confession",
+      "Credible Witness (+ Communicated)",
+      "Circumstantial",
+      "Convenience",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "The slides list Confession, Credible Witness (+ Communicated), and Circumstantial evidence. :contentReference[oaicite:11]{index=11}",
+    subject: "Federal",
+    topic: "Building Reasonable Grounds",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_confession_tipp_1",
+    type: "single",
+    prompt:
+      "In the “Confession” pathway to reasonable grounds, the slides connect the objective element to checking whether what is met?",
+    choices: ["TIPP", "Hearsay", "Prima facie", "Balance of probabilities"],
+    answerIndex: 0,
+    explanation:
+      "The slide notes the substance of the confession is the objective element (is TIPP met?). :contentReference[oaicite:12]{index=12}",
+    subject: "Federal",
+    topic: "Building Reasonable Grounds",
+    lecture: "Federal Law 5",
+  },
+
+  // -------------------------------
+  // Definitions
+  // -------------------------------
+  {
+    id: "fed5_defs_justified_1",
+    type: "single",
+    prompt: "In these slides, “Justified” means:",
+    choices: [
+      "Protected from criminal liability only",
+      "Protected from civil liability only",
+      "Protected from criminal and civil liability",
+      "Allowed to do anything without consequences",
+    ],
+    answerIndex: 2,
+    explanation:
+      "The definitions slide states: Justified = protected from criminal and civil liability. :contentReference[oaicite:13]{index=13}",
+    subject: "Federal",
+    topic: "Definitions",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_defs_executed_1",
+    type: "single",
+    prompt: "In these slides, “Executed” means:",
+    choices: [
+      "Completed, carried to full effect (act/course of conduct carried to completion)",
+      "Started but not finished",
+      "Only refers to executing a warrant",
+      "Only refers to court testimony",
+    ],
+    answerIndex: 0,
+    explanation:
+      "Executed is defined as completed/carried to full effect. :contentReference[oaicite:14]{index=14}",
+    subject: "Federal",
+    topic: "Definitions",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_defs_execduty_1",
+    type: "single",
+    prompt: "“Execution of Duty” refers to:",
+    choices: [
+      "Doing any task your supervisor suggests",
+      "Lawfully performing an identifiable and specific duty authorized by statute or common law",
+      "Doing anything you think is helpful",
+      "Only duties done while in uniform",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Execution of Duty is defined as lawfully performing an identifiable/specific duty authorized by statute or common law. :contentReference[oaicite:15]{index=15}",
+    subject: "Federal",
+    topic: "Definitions",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_defs_lawfulauth_1",
+    type: "single",
+    prompt: "“Lawful Authority” means:",
+    choices: [
+      "Authorized by law",
+      "Authorized by a citizen",
+      "Authorized by rumor",
+      "Authorized by convenience",
+    ],
+    answerIndex: 0,
+    explanation:
+      "Lawful Authority = authorized by law. :contentReference[oaicite:16]{index=16}",
+    subject: "Federal",
+    topic: "Definitions",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_defs_goodfaith_1",
+    type: "single",
+    prompt: "“Acting in Good Faith” means:",
+    choices: [
+      "Doing your best",
+      "With an honest intention and free from any knowledge of irregularity",
+      "Doing what the public wants",
+      "Always avoiding force",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Acting in good faith is defined as honest intention with no knowledge of irregularity. :contentReference[oaicite:17]{index=17}",
+    subject: "Federal",
+    topic: "Definitions",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_defs_forthwith_1",
+    type: "single",
+    prompt: "In these slides, “Forthwith” is defined as:",
+    choices: [
+      "Immediately (always within seconds)",
+      "Within a reasonable time considering the circumstances and the object",
+      "Within 24 hours",
+      "Before the end of the week",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Forthwith = within a reasonable time considering the circumstances and the object. :contentReference[oaicite:18]{index=18}",
+    subject: "Federal",
+    topic: "Definitions",
+    lecture: "Federal Law 5",
+  },
+
+  // -------------------------------
+  // Citizen’s Arrest: Purpose + Safety Warning
+  // -------------------------------
+  {
+    id: "fed5_warning_1",
+    type: "truefalse",
+    prompt:
+      "True or False: The slides emphasize that a citizen’s arrest is a serious and potentially dangerous undertaking.",
+    answer: true,
+    explanation:
+      "The slides include a warning that citizen’s arrest is serious and potentially dangerous, and citizens are not trained like police. :contentReference[oaicite:19]{index=19}",
+    subject: "Federal",
+    topic: "Citizen’s Arrest Overview",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_citizenwhy_1",
+    type: "multi",
+    prompt:
+      "According to the slides, citizens may make arrests because: (Select ALL that apply)",
+    choices: [
+      "To protect someone and/or property",
+      "They are frustrated with lack of police resources and want to effect 'justice'",
+      "They have the same duty as police to preserve public peace",
+      "They must arrest anyone who commits a crime",
+    ],
+    answerIndices: [0, 1],
+    explanation:
+      "The slides list protection of people/property and frustration with police resources as reasons. :contentReference[oaicite:20]{index=20}",
+    subject: "Federal",
+    topic: "Citizen’s Arrest Overview",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_gov_advice_1",
+    type: "multi",
+    prompt:
+      "Gov’t advice in the slides for making a citizen’s arrest includes: (Select ALL that apply)",
+    choices: [
+      "Tell the suspect plainly you are making a citizen’s arrest and holding them until police arrive",
+      "Call police",
+      "Avoid using force if possible and use the minimum if needed",
+      "Question and search the suspect to gather evidence",
+      "Do not question or search the suspect or their possessions (purpose is temporary detention until police arrive)",
+    ],
+    answerIndices: [0, 1, 2, 4],
+    explanation:
+      "The slides list steps including calling police, minimizing force, and not questioning/searching. :contentReference[oaicite:21]{index=21}",
+    subject: "Federal",
+    topic: "Citizen’s Arrest Safety",
+    lecture: "Federal Law 5",
+  },
+
+  // -------------------------------
+  // Criminal Code s.494 – Any Person (Citizen Arrest)
+  // -------------------------------
+  {
+    id: "fed5_494_1a_1",
+    type: "single",
+    prompt:
+      "Under s.494(1)(a) (as taught on the slides), anyone may arrest without warrant:",
+    choices: [
+      "A person they find committing an indictable offence",
+      "A person they suspect committed a summary offence last week",
+      "Any person with a criminal record",
+      "Any person who refuses to answer questions",
+    ],
+    answerIndex: 0,
+    explanation:
+      "s.494(1)(a) is the “find committing” clause for indictable offences. :contentReference[oaicite:22]{index=22}",
+    subject: "Federal",
+    topic: "s.494(1)(a) – Find Committing Clause",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_hybrid_indictable_1",
+    type: "truefalse",
+    prompt:
+      "True or False: The slides state that all dual procedure (hybrid) offences are treated as indictable for arrest purposes.",
+    answer: true,
+    explanation:
+      "The slide notes dual procedure offences are indictable for arrest purposes. :contentReference[oaicite:23]{index=23}",
+    subject: "Federal",
+    topic: "Hybrid Offences (Arrest Purposes)",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_494_1b_1",
+    type: "multi",
+    prompt:
+      "s.494(1)(b) (the “helper clause”) requires: (Select ALL that apply)",
+    choices: [
+      "Reasonable grounds belief the person committed a criminal offence",
+      "The person is escaping from persons who have lawful authority to arrest",
+      "The person is freshly pursued",
+      "The arrest must be on or in relation to the arrester’s property",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "The helper clause includes RG belief + escaping from + freshly pursued by those with lawful authority. :contentReference[oaicite:24]{index=24}",
+    subject: "Federal",
+    topic: "s.494(1)(b) – Helper Clause",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_494_2_owner_1",
+    type: "multi",
+    prompt:
+      "Under s.494(2) (the “owner clause”), who MAY arrest without warrant? (Select ALL that apply)",
+    choices: [
+      "Owner of property",
+      "Person in lawful possession of property",
+      "Person authorized by the owner/person in lawful possession",
+      "Any bystander who saw a theft last week",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "s.494(2) applies to owner/lawful possessor/authorized person. :contentReference[oaicite:25]{index=25}",
+    subject: "Federal",
+    topic: "s.494(2) – Owner Clause",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_494_2_conditions_1",
+    type: "multi",
+    prompt:
+      "Under s.494(2) (owner clause), the arrest may be made: (Select ALL that apply)",
+    choices: [
+      "At the time the offence is committed on or in relation to the property",
+      "Within a reasonable time after the offence, AND RG it was not feasible for a peace officer to make the arrest",
+      "Any time within 6 months, as long as the owner is angry",
+      "Only if the suspect confesses",
+    ],
+    answerIndices: [0, 1],
+    explanation:
+      "The owner clause allows arrest at the time OR within a reasonable time after, with the added ‘not feasible for peace officer’ requirement. :contentReference[oaicite:26]{index=26}",
+    subject: "Federal",
+    topic: "s.494(2) – Owner Clause",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_luckymoose_1",
+    type: "single",
+    prompt:
+      "The “Lucky Moose” example in the slides is used to illustrate what key change/idea?",
+    choices: [
+      "That citizens can search suspects for evidence",
+      "That s.494(2) was extended to allow owners a reasonable time after an offence (but police should be called ASAP)",
+      "That only police can arrest for property offences",
+      "That citizens can arrest for any indictable offence after a delay",
+    ],
+    answerIndex: 1,
+    explanation:
+      "The slides explain the Lucky Moose case and that s.494(2)(b) was added to provide owners a reasonable time, while still needing police ASAP. :contentReference[oaicite:27]{index=27}",
+    subject: "Federal",
+    topic: "Case/Example: Lucky Moose",
+    lecture: "Federal Law 5",
+  },
+
+  // -------------------------------
+  // s.494(3) + s.494(4)
+  // -------------------------------
+  {
+    id: "fed5_494_3_1",
+    type: "single",
+    prompt:
+      "Under s.494(3), a person (other than a peace officer) who arrests without warrant SHALL:",
+    choices: [
+      "Question the suspect and write a statement",
+      "Search the suspect for weapons and evidence",
+      "Forthwith deliver the person to a peace officer",
+      "Hold the suspect until morning",
+    ],
+    answerIndex: 2,
+    explanation:
+      "s.494(3) states the arrester shall forthwith deliver the person to a peace officer. :contentReference[oaicite:28]{index=28}",
+    subject: "Federal",
+    topic: "s.494(3) – Delivery to Peace Officer",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_494_4_1",
+    type: "single",
+    prompt:
+      "s.494(4) clarifies that a person authorized to arrest under s.494 is authorized by law for the purposes of which section?",
+    choices: [
+      "s.10 Charter",
+      "s.25 Criminal Code",
+      "s.27 Criminal Code",
+      "s.34 Criminal Code",
+    ],
+    answerIndex: 1,
+    explanation:
+      "s.494(4) states an authorized arrester under this section is authorized by law for s.25 purposes. :contentReference[oaicite:29]{index=29}",
+    subject: "Federal",
+    topic: "s.494(4) & Use of Force",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_s25_link_1",
+    type: "truefalse",
+    prompt:
+      "True or False: The slides include s.25(1) to connect lawful authority to using as much force as is necessary (if acting on reasonable grounds).",
+    answer: true,
+    explanation:
+      "The deck shows s.25(1) wording to connect authority + RG + necessary force. :contentReference[oaicite:30]{index=30}",
+    subject: "Federal",
+    topic: "s.25 Connection",
+    lecture: "Federal Law 5",
+  },
+
+  // -------------------------------
+  // “Questions to Ask” framework (investigating citizen arrest)
+  // -------------------------------
+  {
+    id: "fed5_qs_ask_1",
+    type: "multi",
+    prompt:
+      "When assessing a citizen arrest, the slides suggest asking: (Select ALL that apply)",
+    choices: [
+      "What were the circumstances of the crime?",
+      "What was the offence?",
+      "Who witnessed the offence?",
+      "Was the witness one of the authorized group of individuals?",
+      "Did they effect the arrest?",
+      "Did the citizen search the suspect and seize items?",
+    ],
+    answerIndices: [0, 1, 2, 3, 4],
+    explanation:
+      "The deck lists questions about circumstances, offence, witness, authorized group, and whether they effected the arrest. :contentReference[oaicite:31]{index=31}",
+    subject: "Federal",
+    topic: "Assessing Citizen Arrest",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_qs_ask_2",
+    type: "multi",
+    prompt:
+      "The slides also suggest asking timing/location/delay questions like: (Select ALL that apply)",
+    choices: [
+      "When in relation to the offence was the arrest made?",
+      "Where in relation to the offence was the arrest made?",
+      "If there was a delay, why was there a delay and what were the circumstances?",
+      "Were police called for the original commission of the offence?",
+      "Was the suspect rude to the citizen?",
+    ],
+    answerIndices: [0, 1, 2, 3],
+    explanation:
+      "Timing, location, delay reasons, feasibility, and whether police were called are highlighted. :contentReference[oaicite:32]{index=32}",
+    subject: "Federal",
+    topic: "Assessing Citizen Arrest",
+    lecture: "Federal Law 5",
+  },
+
+  // -------------------------------
+  // Police obligations when citizen arrests
+  // -------------------------------
+  {
+    id: "fed5_police_obligations_1",
+    type: "multi",
+    prompt:
+      "According to the slides, when police are called after a citizen arrest, officers should: (Select ALL that apply)",
+    choices: [
+      "Listen carefully to ensure the citizen was acting under s.494",
+      "Determine whether to continue the arrest or release",
+      "Read Rights to Counsel regardless if you arrest or not (unless it is an unlawful arrest, then release immediately)",
+      "Automatically charge the citizen for arresting someone",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "The slide lists these steps as police obligations when responding to citizen arrests. :contentReference[oaicite:33]{index=33}",
+    subject: "Federal",
+    topic: "Police Response to Citizen Arrest",
+    lecture: "Federal Law 5",
+  },
+
+  // -------------------------------
+  // Scenario Questions (from slides)
+  // -------------------------------
+  {
+    id: "fed5_scn_store_1",
+    type: "single",
+    prompt:
+      "SCENARIO (store security): Security believes a person stole a game but did NOT see them take it. They arrested the person outside and brought them back. Based on the slide’s emphasis, what is the BIGGEST legal concern for citizen arrest authority?",
+    choices: [
+      "Security lacked 'find committing' observation of the theft",
+      "Security must always use handcuffs",
+      "Security must search the suspect immediately",
+      "Security must wait until police tell them to arrest",
+    ],
+    answerIndex: 0,
+    explanation:
+      "The deck emphasizes citizen arrest often requires find committing; not seeing the theft is a major issue to analyze under s.494. :contentReference[oaicite:34]{index=34}",
+    subject: "Federal",
+    topic: "Scenario Applications",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_scn_store_2",
+    type: "truefalse",
+    prompt:
+      "SCENARIO (store security): If the suspect consents to a search after being arrested by security, that automatically fixes any issue with whether the original citizen arrest was lawful.",
+    answer: false,
+    explanation:
+      "Consent doesn’t automatically cure an unlawful arrest; the first question is whether the citizen was acting under proper s.494 authority. :contentReference[oaicite:35]{index=35}",
+    subject: "Federal",
+    topic: "Scenario Applications",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_scn_homeowner_1",
+    type: "single",
+    prompt:
+      "SCENARIO (homeowner + shed): The homeowner sees a male in the shed removing a chainsaw and detains him as he tries to leave. Which citizen arrest authority is most directly suggested by the slide?",
+    choices: [
+      "s.494(1)(a) find committing indictable clause OR s.494(2) owner clause",
+      "s.494(1)(b) helper clause only",
+      "No citizen arrest authority can ever apply on private property",
+      "Only a warrant-based arrest is possible",
+    ],
+    answerIndex: 0,
+    explanation:
+      "The slide explicitly points to 494(1)(a) and/or 494(2) for the homeowner property scenario. :contentReference[oaicite:36]{index=36}",
+    subject: "Federal",
+    topic: "Scenario Applications",
+    lecture: "Federal Law 5",
+  },
+
+  // -------------------------------
+  // Quick exam-style definitions and “musts”
+  // -------------------------------
+  {
+    id: "fed5_musts_1",
+    type: "multi",
+    prompt:
+      "Which words/ideas in the slides signal mandatory requirements? (Select ALL that apply)",
+    choices: [
+      "SHALL forthwith deliver the person to a peace officer",
+      "MAY arrest (owner clause wording)",
+      "Forthwith (defined as within a reasonable time considering circumstances/object)",
+      "Optional delivery to police at the citizen’s convenience",
+    ],
+    answerIndices: [0, 2],
+    explanation:
+      "s.494(3) uses SHALL (mandatory), and forthwith is defined with a reasonableness context. ",
+    subject: "Federal",
+    topic: "Exam Keywords",
+    lecture: "Federal Law 5",
+  },
+
+  // -------------------------------
+  // Dropdown classification-style (clause identification)
+  // -------------------------------
+  {
+    id: "fed5_clause_dd_1",
+    type: "dropdown",
+    prompt:
+      "Identify the clause: “Find committing an indictable offence” (s.494(1)(a))",
+    options: [
+      "Find Committing Clause",
+      "Helper Clause",
+      "Owner Clause",
+      "Delivery Clause",
+    ],
+    answerValue: "Find Committing Clause",
+    explanation:
+      "s.494(1)(a) is labeled the find committing clause on the slides. :contentReference[oaicite:38]{index=38}",
+    subject: "Federal",
+    topic: "s.494 Clauses",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_clause_dd_2",
+    type: "dropdown",
+    prompt:
+      "Identify the clause: “RG committed offence AND escaping from AND freshly pursued by persons with lawful authority” (s.494(1)(b))",
+    options: [
+      "Find Committing Clause",
+      "Helper Clause",
+      "Owner Clause",
+      "Delivery Clause",
+    ],
+    answerValue: "Helper Clause",
+    explanation:
+      "s.494(1)(b) is labeled the helper clause on the slides. :contentReference[oaicite:39]{index=39}",
+    subject: "Federal",
+    topic: "s.494 Clauses",
+    lecture: "Federal Law 5",
+  },
+  {
+    id: "fed5_clause_dd_3",
+    type: "dropdown",
+    prompt:
+      "Identify the clause: “Owner/lawful possessor/authorized person may arrest on or in relation to property; at the time OR within reasonable time + not feasible for peace officer” (s.494(2))",
+    options: [
+      "Find Committing Clause",
+      "Helper Clause",
+      "Owner Clause",
+      "Delivery Clause",
+    ],
+    answerValue: "Owner Clause",
+    explanation:
+      "s.494(2) is presented as the owner clause in the slides. :contentReference[oaicite:40]{index=40}",
+    subject: "Federal",
+    topic: "s.494 Clauses",
+    lecture: "Federal Law 5",
+  },
 ];
