@@ -10483,4 +10483,959 @@ const QUESTIONS = [
     topic: "s.494 Clauses",
     lecture: "Federal Law 5",
   },
+  // -------------------------------
+  // Licence as Privilege + Purpose
+  // -------------------------------
+  {
+    id: "hta4_priv_1",
+    type: "single",
+    prompt: "In Ontario, a driver’s licence is best described as:",
+    choices: [
+      "A right",
+      "A privilege",
+      "A contract",
+      "A constitutional guarantee",
+    ],
+    answerIndex: 1,
+    explanation:
+      "In Ontario, driving is a privilege (HTA s.31), meaning it can be granted, restricted, suspended, or revoked by the province.",
+    subject: "Highway Traffic Act",
+    topic: "Nature of a Driver’s Licence",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_purpose_1",
+    type: "multi",
+    prompt:
+      "Which are purposes of Ontario’s driver’s licence system? (Select ALL that apply)",
+    choices: [
+      "Protect the public",
+      "Maintain highway safety",
+      "Identify and correct unsafe drivers",
+      "Guarantee everyone the ability to drive",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "Ontario’s licensing system exists to protect the public, maintain safety, and identify/correct unsafe drivers.",
+    subject: "Highway Traffic Act",
+    topic: "Purpose of Licensing",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_methods_1",
+    type: "multi",
+    prompt:
+      "Which methods are used to maintain safety in Ontario’s licensing system? (Select ALL that apply)",
+    choices: [
+      "Demerit point system",
+      "Administrative penalties (suspensions/restrictions)",
+      "Graduated licensing",
+      "Unlimited warnings for repeat offenders",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "Ontario uses demerit points, admin penalties, and graduated licensing to promote safe driving and monitor behaviour.",
+    subject: "Highway Traffic Act",
+    topic: "Methods to Maintain Safety",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_novice_1",
+    type: "single",
+    prompt:
+      "Novice/probationary drivers earn full driving privileges primarily by:",
+    choices: [
+      "Paying additional fees",
+      "Gaining experience under controlled conditions over time",
+      "Taking only one road test and no other steps",
+      "Driving only at night for practice",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Full privileges are earned over time through experience, safe habits, and controlled conditions.",
+    subject: "Highway Traffic Act",
+    topic: "Novice & Probationary Drivers",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+
+  // -------------------------------
+  // Age Identifier / Licence Card Facts
+  // -------------------------------
+  {
+    id: "hta4_ageid_1",
+    type: "single",
+    prompt:
+      "Ontario’s age identifier on driver’s licences/photo cards appears on cards issued:",
+    choices: [
+      "Before Jan 1, 2013 only",
+      "On or after Jan 1, 2013 only",
+      "Only for drivers over 25",
+      "Only for commercial classes",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Only driver’s licences and Ontario photo cards issued on or after Jan 1, 2013 include the age identifier.",
+    subject: "Highway Traffic Act",
+    topic: "Licence Card Features",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_ageid_2",
+    type: "single",
+    prompt:
+      "The age identifier was introduced primarily to help with quick verification of legal age for:",
+    choices: [
+      "Driving tests",
+      "Alcohol and tobacco purchases",
+      "Court appearances",
+      "Insurance rates",
+    ],
+    answerIndex: 1,
+    explanation:
+      "It helps officers/retailers quickly verify legal age for alcohol and tobacco without manual DOB calculations.",
+    subject: "Highway Traffic Act",
+    topic: "Licence Card Features",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+
+  // -------------------------------
+  // Improper Licence (HTA s.32)
+  // -------------------------------
+  {
+    id: "hta4_improper_1",
+    type: "single",
+    prompt:
+      "An “improper driver’s licence” offence generally occurs when someone:",
+    choices: [
+      "Drives a vehicle class they are not licensed/qualified to operate",
+      "Has an expired vehicle permit",
+      "Fails to renew insurance",
+      "Drives with a cracked windshield",
+    ],
+    answerIndex: 0,
+    explanation:
+      "Improper licence refers to operating a class of vehicle the person is not authorized/qualified to drive (HTA s.32).",
+    subject: "Highway Traffic Act",
+    topic: "Improper Driver’s Licence",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_32_1",
+    type: "truefalse",
+    prompt:
+      "True or False: If a driver holds the correct vehicle class, they can operate an air-brake vehicle even without an air brake endorsement.",
+    answer: false,
+    explanation:
+      "HTA s.32(3) requires a proper air-brake endorsement even if the driver holds the correct class.",
+    subject: "Highway Traffic Act",
+    topic: "Improper Driver’s Licence",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_minister_1",
+    type: "multi",
+    prompt:
+      "Under HTA s.32(5), the Minister may specify on a driver’s licence: (Select ALL that apply)",
+    choices: [
+      "Authorized vehicle class(es)",
+      "Conditions/endorsements (e.g., air brakes, corrective lenses)",
+      "Validity period",
+      "The driver’s insurance premium",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "Minister may specify classes, conditions/endorsements, and validity period on the licence.",
+    subject: "Highway Traffic Act",
+    topic: "Minister’s Authority",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+
+  // -------------------------------
+  // Demand Licence (HTA s.33)
+  // -------------------------------
+  {
+    id: "hta4_demand_1",
+    type: "single",
+    prompt:
+      "Police authority to demand a driver’s licence from the driver of a motor vehicle or street car is found in:",
+    choices: ["HTA s.31", "HTA s.32", "HTA s.33(1)", "HTA s.114"],
+    answerIndex: 2,
+    explanation:
+      "HTA s.33(1) authorizes an officer to demand the driver’s licence for reasonable inspection.",
+    subject: "Highway Traffic Act",
+    topic: "Demanding a Driver’s Licence",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_carry_1",
+    type: "truefalse",
+    prompt:
+      "True or False: A driver must carry their driver’s licence and surrender it for reasonable inspection upon demand.",
+    answer: true,
+    explanation:
+      "Drivers must carry and surrender their licence for reasonable inspection when demanded (HTA s.33).",
+    subject: "Highway Traffic Act",
+    topic: "Demanding a Driver’s Licence",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_reasonableinspect_1",
+    type: "single",
+    prompt: "“Reasonable inspection” means an officer may:",
+    choices: [
+      "Only look at the licence from a distance",
+      "Hold, feel, and examine it as a legal document",
+      "Keep the licence permanently",
+      "Photocopy the licence without reason",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Reasonable inspection includes holding/feeling/examining the licence as a legal document; it must be surrendered physically.",
+    subject: "Highway Traffic Act",
+    topic: "Demanding a Driver’s Licence",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_upon_demand_1",
+    type: "single",
+    prompt:
+      "If charging “Fail to Surrender Driver’s Licence,” the officer should be able to testify to:",
+    choices: [
+      "That they hinted at wanting the licence",
+      "That they clearly demanded the licence and can describe the words/substance of the demand and the response",
+      "That the driver looked nervous",
+      "That the driver had tinted windows",
+    ],
+    answerIndex: 1,
+    explanation:
+      "“Upon the demand” requires a clear articulated demand; evidence should capture what was said and the driver’s response/non-compliance.",
+    subject: "Highway Traffic Act",
+    topic: "Demanding a Driver’s Licence",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+
+  // -------------------------------
+  // Key Definitions / Street Car Note
+  // -------------------------------
+  {
+    id: "hta4_driver_def_1",
+    type: "single",
+    prompt: "Under HTA s.1(1), a “driver” is:",
+    choices: [
+      "Anyone in a vehicle",
+      "A person who drives a vehicle on a highway",
+      "Anyone who owns a vehicle",
+      "A person who sits in the driver’s seat, engine off",
+    ],
+    answerIndex: 1,
+    explanation:
+      "HTA defines driver as a person who drives a vehicle on a highway.",
+    subject: "Highway Traffic Act",
+    topic: "Definitions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_streetcar_1",
+    type: "truefalse",
+    prompt:
+      "True or False: A street car is defined as a motor vehicle in the HTA.",
+    answer: false,
+    explanation:
+      "A street car is not defined as a motor vehicle in the HTA, but is specifically included in certain sections (e.g., s.33; and “driver” includes street car operator in s.144(1)).",
+    subject: "Highway Traffic Act",
+    topic: "Street Cars",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_streetcar_2",
+    type: "single",
+    prompt:
+      "Which statement is MOST accurate regarding street cars and licensing in the HTA?",
+    choices: [
+      "Street car operators never need to carry a driver’s licence",
+      "Street cars are treated exactly the same as motorcycles",
+      "HTA s.33 requires a street car operator to carry and surrender a driver’s licence",
+      "Street cars are excluded from all HTA driver rules",
+    ],
+    answerIndex: 2,
+    explanation:
+      "HTA s.33 specifically includes street cars for the carry/surrender obligation.",
+    subject: "Highway Traffic Act",
+    topic: "Street Cars",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+
+  // -------------------------------
+  // Licence Classification Framework (O. Reg. 340/94)
+  // -------------------------------
+  {
+    id: "hta4_reg340_1",
+    type: "single",
+    prompt:
+      "Ontario’s driver’s licence classes and what each class can drive are primarily set out in:",
+    choices: [
+      "Criminal Code",
+      "Ontario Regulation 340/94",
+      "Ontario Regulation 628/00",
+      "Highway Traffic Act s.175",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Driver’s licence classifications are set out in Ontario Regulation 340/94 (table in s.1(1)).",
+    subject: "Highway Traffic Act",
+    topic: "Licence Classification",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_class_basis_1",
+    type: "multi",
+    prompt:
+      "Ontario driver’s licence classifications are mainly based on: (Select THREE)",
+    choices: [
+      "Vehicle weight",
+      "Number of passengers",
+      "Motorcycle operation",
+      "Vehicle colour",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "Licence classes are grouped by weight, passengers, and motorcycle operation.",
+    subject: "Highway Traffic Act",
+    topic: "Licence Classification",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_weight_classes_1",
+    type: "multi",
+    prompt:
+      "Which licence classes are primarily weight-based? (Select ALL that apply)",
+    choices: ["Class A", "Class D", "Class G", "Class B", "Class F"],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "Weight-based classes: A, D, and G (in this lesson’s grouping).",
+    subject: "Highway Traffic Act",
+    topic: "Licence Classification",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_passenger_classes_1",
+    type: "multi",
+    prompt:
+      "Which licence classes are primarily passenger-based? (Select ALL that apply)",
+    choices: ["Class B", "Class C", "Class E", "Class F", "Class A"],
+    answerIndices: [0, 1, 2, 3],
+    explanation: "Passenger-based classes: B, C, E, F (bus/ambulance related).",
+    subject: "Highway Traffic Act",
+    topic: "Licence Classification",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_motorcycle_class_1",
+    type: "single",
+    prompt: "The licence class specifically for motorcycles is:",
+    choices: ["Class M", "Class G", "Class D", "Class F"],
+    answerIndex: 0,
+    explanation: "Motorcycle operation is a separate classification, Class M.",
+    subject: "Highway Traffic Act",
+    topic: "Licence Classification",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+
+  // -------------------------------
+  // Weight Terms: Gross Weight / GVW / RGW
+  // -------------------------------
+  {
+    id: "hta4_grossweight_1",
+    type: "single",
+    prompt:
+      "For driver’s licence enforcement, “gross weight” (HTA s.1(1)) means:",
+    choices: [
+      "Vehicle weight alone, no load",
+      "Combined weight of the vehicle and its load",
+      "Weight printed on the plate portion only",
+      "Total passengers multiplied by 70 kg",
+    ],
+    answerIndex: 1,
+    explanation:
+      "For licensing, gross weight is the combined weight of the vehicle and its load (HTA s.1(1)).",
+    subject: "Highway Traffic Act",
+    topic: "Weight Definitions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_gvw_1",
+    type: "single",
+    prompt: "“Gross vehicle weight (GVW)” is best described as:",
+    choices: [
+      "Total weight transmitted to the highway by the vehicle/combination and its load",
+      "The weight printed on the driver’s licence card",
+      "Only the trailer weight",
+      "Only the empty vehicle weight",
+    ],
+    answerIndex: 0,
+    explanation:
+      "GVW refers to total weight transmitted to the highway by the vehicle/combination and load (the concept of “transmits” = weight transferred to highway surface).",
+    subject: "Highway Traffic Act",
+    topic: "Weight Definitions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_rgw_1",
+    type: "single",
+    prompt: "Registered Gross Weight (RGW) is found on the:",
+    choices: [
+      "Vehicle portion of the permit",
+      "Plate portion of the vehicle permit",
+      "Insurance slip",
+      "Driver’s licence back side",
+    ],
+    answerIndex: 1,
+    explanation:
+      "RGW is found on the plate portion of the vehicle permit and is used for registration/fees.",
+    subject: "Highway Traffic Act",
+    topic: "Weight Definitions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_permit_weight_1",
+    type: "single",
+    prompt:
+      "Where can an officer find the vehicle weight information used to determine licence class?",
+    choices: [
+      "On the vehicle portion of the permit",
+      "On the driver’s health card",
+      "On the insurance policy only",
+      "On the offence notice",
+    ],
+    answerIndex: 0,
+    explanation:
+      "Vehicle weight is printed on the vehicle portion of the permit and is used for licence classification decisions.",
+    subject: "Highway Traffic Act",
+    topic: "Enforcement Tools",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+
+  // -------------------------------
+  // Class A / D / G (Weight-based)
+  // -------------------------------
+  {
+    id: "hta4_classA_1",
+    type: "single",
+    prompt:
+      "Class A generally allows operation of combinations where the towed vehicle/trailer exceeds:",
+    choices: ["2,800 kg", "4,600 kg", "6,000 kg", "11,000 kg"],
+    answerIndex: 1,
+    explanation:
+      "Class A covers combinations where the towed vehicle/trailer exceeds 4,600 kg (general rule in this lesson).",
+    subject: "Highway Traffic Act",
+    topic: "Licence Classes (Weight)",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_classA_bus_1",
+    type: "truefalse",
+    prompt:
+      "True or False: A Class A licence permits operation of a bus while carrying passengers.",
+    answer: false,
+    explanation:
+      "Class A does not permit operation of a bus while carrying passengers.",
+    subject: "Highway Traffic Act",
+    topic: "Licence Classes (Weight)",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_classD_1",
+    type: "multi",
+    prompt: "Class D allows operation of: (Select ALL that apply)",
+    choices: [
+      "A motor vehicle exceeding 11,000 kg in gross weight or registered gross weight",
+      "A combination exceeding 11,000 kg where towed vehicles do not exceed 4,600 kg",
+      "A bus carrying passengers",
+      "Any motorcycle",
+    ],
+    answerIndices: [0, 1],
+    explanation:
+      "Class D covers heavy single vehicles and certain combinations, but not a bus carrying passengers.",
+    subject: "Highway Traffic Act",
+    topic: "Licence Classes (Weight)",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_classG_1",
+    type: "multi",
+    prompt: "Class G permits operation of: (Select ALL that apply)",
+    choices: [
+      "A motor vehicle not exceeding 11,000 kg (gross or registered gross weight)",
+      "A combination not exceeding 11,000 kg where towed vehicles do not exceed 4,600 kg",
+      "A bus carrying passengers",
+      "A motorcycle",
+      "An ambulance in the course of providing ambulance service",
+    ],
+    answerIndices: [0, 1],
+    explanation:
+      "Class G covers most standard vehicles up to 11,000 kg and certain trailers, but excludes motorcycle, bus carrying passengers, and ambulance in service.",
+    subject: "Highway Traffic Act",
+    topic: "Licence Classes (Weight)",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_adoug_1",
+    type: "single",
+    prompt:
+      "In this lesson, the acronym ADOUG is used to help remember specifics related to:",
+    choices: [
+      "Bus definitions",
+      "Weight-based licence classes and key thresholds/exclusions",
+      "Only motorcycle restrictions",
+      "Demerit point levels",
+    ],
+    answerIndex: 1,
+    explanation:
+      "ADOUG is presented as a memory aid for licence-class specifics (A/D/O/U/G style memory tool).",
+    subject: "Highway Traffic Act",
+    topic: "Memory Aids",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+
+  // -------------------------------
+  // Air Brakes / Z Endorsement
+  // -------------------------------
+  {
+    id: "hta4_z_1",
+    type: "single",
+    prompt:
+      "The air brake endorsement required to operate air-brake vehicles is known as:",
+    choices: ["X", "Z", "R", "I"],
+    answerIndex: 1,
+    explanation:
+      "The air brake endorsement is the “Z” endorsement and is required regardless of licence class.",
+    subject: "Highway Traffic Act",
+    topic: "Endorsements",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_z_2",
+    type: "truefalse",
+    prompt:
+      "True or False: Some licence classes automatically include authority to operate air-brake vehicles.",
+    answer: false,
+    explanation:
+      "No licence class automatically authorizes air brakes; the licence must bear the Z endorsement.",
+    subject: "Highway Traffic Act",
+    topic: "Endorsements",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_airbrake_offence_1",
+    type: "single",
+    prompt:
+      "Driving a vehicle equipped with air brakes without the required endorsement is most accurately described as:",
+    choices: [
+      "A vehicle permit offence only",
+      "An improper driver’s licence offence under HTA s.32(3)",
+      "A Criminal Code offence",
+      "A parking infraction",
+    ],
+    answerIndex: 1,
+    explanation:
+      "HTA s.32(3) makes it an improper licence offence to operate air-brake vehicles without proper endorsement.",
+    subject: "Highway Traffic Act",
+    topic: "Improper Driver’s Licence",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+
+  // -------------------------------
+  // Class A Restrictions (R, REST/COND G)
+  // -------------------------------
+  {
+    id: "hta4_condR_1",
+    type: "single",
+    prompt: "A Class A licence with Condition R allows the holder to:",
+    choices: [
+      "Tow more than one trailer freely",
+      "Operate a Class A combination but NOT tow more than one trailer or a trailer with air brakes",
+      "Operate buses carrying passengers",
+      "Operate motorcycles only",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Condition R is a restricted Class A: no more than one trailer and no trailer with air brakes.",
+    subject: "Highway Traffic Act",
+    topic: "Restrictions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_condG_1",
+    type: "single",
+    prompt:
+      "REST/COND G (effective July 1, 2022) generally restricts A/AR drivers who tested in automatic transmission from operating:",
+    choices: [
+      "Class G vehicles",
+      "Any vehicle at night",
+      "Class A/AR vehicles with manual transmission",
+      "Vehicles with air brakes",
+    ],
+    answerIndex: 2,
+    explanation:
+      "If the A/AR road test was completed in an automatic, the driver is restricted from operating A/AR vehicles with manual transmission (REST/COND G).",
+    subject: "Highway Traffic Act",
+    topic: "Restrictions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_condG_2",
+    type: "truefalse",
+    prompt:
+      "True or False: REST/COND G applies to lower classes like Class G or D.",
+    answer: false,
+    explanation:
+      "REST/COND G applies only to Class A/AR, not to lower class vehicles like G/D.",
+    subject: "Highway Traffic Act",
+    topic: "Restrictions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+
+  // -------------------------------
+  // Fifth-Wheel Class A Exemption (RV)
+  // -------------------------------
+  {
+    id: "hta4_fifthwheel_1",
+    type: "truefalse",
+    prompt:
+      "True or False: Ontario provides a fifth-wheel RV exemption where some combinations with a trailer over 4,600 kg can be treated as Class G if strict conditions are met.",
+    answer: true,
+    explanation:
+      "Certain fifth-wheel RV combinations can be deemed Class G even if trailer gross weight exceeds 4,600 kg, provided strict conditions are met.",
+    subject: "Highway Traffic Act",
+    topic: "Exemptions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_fifthwheel_req_1",
+    type: "multi",
+    prompt:
+      "Which are core requirements for the fifth-wheel RV exemption? (Select ALL that apply)",
+    choices: [
+      "Trailer is a house trailer/RV",
+      "Combination used for personal purposes only (no compensation)",
+      "Pickup truck has no more than two axles",
+      "Air brakes are permitted as long as driver has Z endorsement",
+      "Combined weight of pickup + RV does not exceed 11,000 kg",
+      "RV attached using a fifth-wheel assembly",
+    ],
+    answerIndices: [0, 1, 2, 4, 5],
+    explanation:
+      "Key requirements include RV/house trailer, personal/no compensation, <=2 axles pickup, combined <=11,000 kg, and fifth-wheel assembly; no air brakes on pickup or trailer.",
+    subject: "Highway Traffic Act",
+    topic: "Exemptions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_fifthwheel_airbrake_1",
+    type: "single",
+    prompt:
+      "For the fifth-wheel RV exemption, which statement about air brakes is correct?",
+    choices: [
+      "Air brakes are allowed if the driver has a Z endorsement",
+      "Air brakes must NOT be on the pickup truck or the house trailer",
+      "Only the trailer may have air brakes",
+      "Only the pickup may have air brakes",
+    ],
+    answerIndex: 1,
+    explanation:
+      "One exemption condition is no air brakes on the pickup truck or the house trailer.",
+    subject: "Highway Traffic Act",
+    topic: "Exemptions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_fifthwheel_compliance_1",
+    type: "single",
+    prompt:
+      "A key compliance requirement for the fifth-wheel RV exemption is that the house trailer must:",
+    choices: [
+      "Have approved compliance labels / meet recognized standards",
+      "Be less than 10 years old",
+      "Be registered outside Ontario",
+      "Have commercial insurance",
+    ],
+    answerIndex: 0,
+    explanation:
+      "The exemption requires approved compliance labels and meeting recognized safety standards (e.g., CSA/NFPA/ANSI standards).",
+    subject: "Highway Traffic Act",
+    topic: "Exemptions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_house_trailer_def_1",
+    type: "multi",
+    prompt:
+      "In this lesson, “house trailer” includes which of the following? (Select ALL that apply)",
+    choices: [
+      "Cabin trailer",
+      "Collapsible cabin trailer",
+      "Tent trailer",
+      "Camping trailer",
+      "Motorcycle trailer only",
+    ],
+    answerIndices: [0, 1, 2, 3],
+    explanation:
+      "House trailer includes cabin trailer, collapsible cabin trailer, tent trailer, and camping trailer.",
+    subject: "Highway Traffic Act",
+    topic: "Exemptions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_pickup_def_1",
+    type: "single",
+    prompt:
+      "For the exemption, a “pick-up truck” is described as a commercial motor vehicle with GVWR of:",
+    choices: [
+      "6,000 kg or less",
+      "11,000 kg or less",
+      "4,600 kg or less",
+      "2,800 kg or less",
+    ],
+    answerIndex: 0,
+    explanation:
+      "Pick-up truck is described as a commercial motor vehicle with GVWR of 6,000 kg or less (with original/unmodified replacement box).",
+    subject: "Highway Traffic Act",
+    topic: "Exemptions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+
+  // -------------------------------
+  // Bus / School Bus + Passenger Classes
+  // -------------------------------
+  {
+    id: "hta4_bus_def_1",
+    type: "single",
+    prompt: "Under HTA s.1(1), a “bus” is designed to carry:",
+    choices: [
+      "8+ passengers",
+      "9+ passengers",
+      "10+ passengers",
+      "12+ passengers",
+    ],
+    answerIndex: 2,
+    explanation:
+      "A bus is designed to carry 10 or more passengers (design capacity).",
+    subject: "Highway Traffic Act",
+    topic: "Bus Definitions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_schoolbus_def_1",
+    type: "multi",
+    prompt:
+      "Which features are part of the definition/identifiers of a school bus in this lesson? (Select ALL that apply)",
+    choices: [
+      "Painted chrome yellow",
+      "Displays 'school bus' on the front and rear",
+      "Displays 'do not pass when signals flashing' on the rear",
+      "Always carries more than 24 passengers",
+    ],
+    answerIndices: [0, 1, 2],
+    explanation:
+      "School bus identifiers include chrome yellow paint and specific wording on front/rear, including 'do not pass when signals flashing' on rear.",
+    subject: "Highway Traffic Act",
+    topic: "Bus Definitions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_classB_1",
+    type: "single",
+    prompt:
+      "Class B is required for a school purposes bus with designed seating capacity:",
+    choices: [
+      "24 passengers or fewer",
+      "More than 24 passengers",
+      "10–15 passengers",
+      "More than 10 passengers but not school purposes",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Class B: school purposes bus with designed seating capacity of more than 24 passengers.",
+    subject: "Highway Traffic Act",
+    topic: "Passenger-Based Classes",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_classC_1",
+    type: "single",
+    prompt: "Class C is required for:",
+    choices: [
+      "Any bus designed for more than 24 passengers, excluding school purposes buses",
+      "Any school bus regardless of passenger capacity",
+      "Ambulances only",
+      "Any bus designed for 24 passengers or fewer",
+    ],
+    answerIndex: 0,
+    explanation:
+      "Class C: any bus designed for more than 24 passengers, excluding school purposes buses (e.g., transit/coach).",
+    subject: "Highway Traffic Act",
+    topic: "Passenger-Based Classes",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_classE_1",
+    type: "single",
+    prompt:
+      "Class E is required for a school purposes bus with designed seating capacity:",
+    choices: [
+      "More than 24 passengers",
+      "Not more than 24 passengers",
+      "10 or more passengers only",
+      "11 passengers or fewer only",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Class E: school purposes bus designed seating capacity of not more than 24 passengers.",
+    subject: "Highway Traffic Act",
+    topic: "Passenger-Based Classes",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_classF_1",
+    type: "multi",
+    prompt: "Class F is required for: (Select ALL that apply)",
+    choices: [
+      "Ambulances",
+      "Any bus designed for 24 passengers or fewer (excluding school purposes buses)",
+      "Any bus designed for more than 24 passengers",
+      "School purposes buses of any size",
+    ],
+    answerIndices: [0, 1],
+    explanation:
+      "Class F: ambulances and any bus designed for not more than 24 passengers, excluding school purposes buses.",
+    subject: "Highway Traffic Act",
+    topic: "Passenger-Based Classes",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_bus_nopassengers_1",
+    type: "single",
+    prompt:
+      "If a bus is NOT carrying passengers, the licence class is determined by:",
+    choices: [
+      "Passenger design capacity",
+      "Vehicle weight",
+      "Colour of the bus",
+      "Whether it is a school bus",
+    ],
+    answerIndex: 1,
+    explanation:
+      "If a bus is not carrying passengers, licensing is determined by vehicle weight (A/D/G).",
+    subject: "Highway Traffic Act",
+    topic: "Passenger vs Weight Rules",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_classF_exemption_1",
+    type: "truefalse",
+    prompt:
+      "True or False: Under O. Reg. 340/94 s.2(5), certain personal-use vehicles with seating capacity of 11 passengers or fewer (no compensation) are deemed Class G motor vehicles.",
+    answer: true,
+    explanation:
+      "There is an exemption deeming certain <=11 passenger personal/no-compensation vehicles as Class G.",
+    subject: "Highway Traffic Act",
+    topic: "Exemptions",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+
+  // -------------------------------
+  // Restrictions & Endorsements list (January 2012)
+  // -------------------------------
+  {
+    id: "hta4_endorsements_1",
+    type: "multi",
+    prompt:
+      "Which of the following are Ontario driver’s licence restrictions/endorsements mentioned in this lesson? (Select ALL that apply)",
+    choices: [
+      "I – Ignition Interlock required",
+      "X – Must have corrective lenses",
+      "Z – Can drive a vehicle equipped with air brakes",
+      "R – Class A restriction (trailer limits)",
+      "P – Must carry a passport",
+      "Q – Quiet vehicle exemption",
+    ],
+    answerIndices: [0, 1, 2, 3],
+    explanation:
+      "The lesson lists I, X, Z, and R among the restrictions/endorsements (along with others like L, M, etc.).",
+    subject: "Highway Traffic Act",
+    topic: "Restrictions & Endorsements",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_X_1",
+    type: "single",
+    prompt: "On an Ontario driver’s licence, the “X” restriction means:",
+    choices: [
+      "Ignition interlock required",
+      "Corrective lenses required",
+      "Air brakes endorsement",
+      "Restricted motorcycle",
+    ],
+    answerIndex: 1,
+    explanation: "X indicates the driver must have corrective lenses.",
+    subject: "Highway Traffic Act",
+    topic: "Restrictions & Endorsements",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_I_1",
+    type: "single",
+    prompt: "On an Ontario driver’s licence, the “I” restriction means:",
+    choices: [
+      "Ignition interlock required",
+      "Hearing device required in the U.S.",
+      "Commercial vehicle in Canada only",
+      "Valid for rehab evaluation only",
+    ],
+    answerIndex: 0,
+    explanation: "I indicates an ignition interlock is required.",
+    subject: "Highway Traffic Act",
+    topic: "Restrictions & Endorsements",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+
+  // -------------------------------
+  // Quick mixed enforcement-style questions
+  // -------------------------------
+  {
+    id: "hta4_enf_1",
+    type: "single",
+    prompt:
+      "A driver holds Class D but is operating a bus carrying passengers. What is the main issue?",
+    choices: [
+      "Class D never allows heavy vehicles",
+      "Class D does not permit operating a bus carrying passengers",
+      "Class D requires a motorcycle endorsement",
+      "Bus rules don’t apply on highways",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Class D is weight-based and does not permit a bus carrying passengers; passenger-based class may be required depending on design capacity.",
+    subject: "Highway Traffic Act",
+    topic: "Enforcement Scenarios",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
+  {
+    id: "hta4_enf_2",
+    type: "single",
+    prompt:
+      "A driver has the correct vehicle class but is missing the Z endorsement and is driving an air-brake vehicle. This is best classified as:",
+    choices: [
+      "A paperwork issue only; no offence",
+      "Improper licence (air brakes endorsement missing)",
+      "A demerit point warning only",
+      "A Criminal Code offence",
+    ],
+    answerIndex: 1,
+    explanation:
+      "Air brakes require the Z endorsement regardless of class; missing it = improper licence offence.",
+    subject: "Highway Traffic Act",
+    topic: "Enforcement Scenarios",
+    lecture: "HTA4: Driver’s Licences 1",
+  },
 ];
