@@ -10,7 +10,7 @@ const QUESTIONS = [
       "This is a private dispute (contract/civil issue) between you and the contractor.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "s2",
@@ -23,7 +23,7 @@ const QUESTIONS = [
       "This can involve criminal/fraud/theft concerns → public law involvement.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "e1",
@@ -54,7 +54,7 @@ const QUESTIONS = [
       "Handicap parking enforcement is commonly handled under municipal bylaw; offence is unauthorized parking.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "e2",
@@ -84,7 +84,7 @@ const QUESTIONS = [
     explanation: "A rude comment alone is not an offence in this scenario.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "e3",
@@ -114,7 +114,7 @@ const QUESTIONS = [
     explanation: "Assault is a Criminal Code offence (federal).",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "e4",
@@ -145,7 +145,7 @@ const QUESTIONS = [
       "Traffic offences like failing to stop for a red light are typically under the HTA (provincial).",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "c1",
@@ -163,7 +163,7 @@ const QUESTIONS = [
       "At arrest/detention: right to counsel without delay + right to be promptly informed of reasons.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "yn1",
@@ -174,7 +174,7 @@ const QUESTIONS = [
     explanation: "Yes.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "yn2",
@@ -185,7 +185,7 @@ const QUESTIONS = [
     explanation: "Yes, you can ask.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "yn3",
@@ -197,7 +197,7 @@ const QUESTIONS = [
     explanation: "No.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "yn4",
@@ -209,7 +209,7 @@ const QUESTIONS = [
     explanation: "No (not just because you asked).",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "yn5",
@@ -222,7 +222,7 @@ const QUESTIONS = [
       "Yes (your focus can amount to detention depending on circumstances).",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "court1",
@@ -239,7 +239,7 @@ const QUESTIONS = [
     explanation: "Ontario Court of Justice.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "class1",
@@ -250,7 +250,7 @@ const QUESTIONS = [
     explanation: "Trespass at Night = Summary Conviction.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "class2",
@@ -261,7 +261,7 @@ const QUESTIONS = [
     explanation: "Cause Disturbance = Summary Conviction.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "class3",
@@ -272,7 +272,7 @@ const QUESTIONS = [
     explanation: "Theft Under = Dual Procedure.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "class4",
@@ -283,7 +283,7 @@ const QUESTIONS = [
     explanation: "Assault = Dual Procedure.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "class5",
@@ -294,7 +294,7 @@ const QUESTIONS = [
     explanation: "Murder = Indictable.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   {
     id: "class6",
@@ -305,7 +305,7 @@ const QUESTIONS = [
     explanation: "Aggravated Assault = Indictable.",
     subject: "Federal",
     topic: "Introduction to Federal Law",
-    lecture: "FedLaw1: Introduction To The Law",
+    lecture: "Federal Law 1: Introduction To The Law",
   },
   // -------------------------------
   // Intro to Law – Concept Questions
@@ -579,7 +579,7 @@ const QUESTIONS = [
       "Section 25 requires lawful authority, reasonable grounds, and proportional/necessary force.",
     subject: "Federal",
     topic: "Use of Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "uf2",
@@ -591,7 +591,7 @@ const QUESTIONS = [
       "Force must be imminent, unavoidable, and proportionate to the threat.",
     subject: "Federal",
     topic: "Use of Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "uf3",
@@ -603,7 +603,7 @@ const QUESTIONS = [
       "Imminent threat analysis considers intent, means, and opportunity.",
     subject: "Federal",
     topic: "Use of Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "uf4",
@@ -614,7 +614,7 @@ const QUESTIONS = [
     explanation: "Section 26 removes protection when force used is excessive.",
     subject: "Federal",
     topic: "Use of Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "uf5",
@@ -626,7 +626,7 @@ const QUESTIONS = [
       "Section 25(4) adds heightened requirements when dealing with fleeing suspects.",
     subject: "Federal",
     topic: "Use of Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "uf6",
@@ -644,7 +644,7 @@ const QUESTIONS = [
       "Justification under s.25 protects against both criminal and civil liability when force is lawful.",
     subject: "Federal",
     topic: "Use of Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "uf7",
@@ -661,7 +661,7 @@ const QUESTIONS = [
       "Good faith combines honest intent with the absence of known irregularity.",
     subject: "Federal",
     topic: "Use of Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "uf8",
@@ -679,7 +679,7 @@ const QUESTIONS = [
       "Section 25 requires reasonable grounds, not suspicion or hunches.",
     subject: "Federal",
     topic: "Use of Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "uf9",
@@ -691,7 +691,7 @@ const QUESTIONS = [
       "Excessive force removes the protection of section 25 and may result in liability.",
     subject: "Federal",
     topic: "Use of Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "hta-locate-1",
@@ -8798,7 +8798,7 @@ const QUESTIONS = [
       "This module focuses on use of force authority/limits and the criminal/civil responsibility + Charter impacts.",
     subject: "Federal",
     topic: "Module Outcomes",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_terms_1",
@@ -8820,7 +8820,7 @@ const QUESTIONS = [
       "Key terms include RG, subjective/objective justification, authorized/required by law, necessary, good faith, imminent, proportional, and Charter rights.",
     subject: "Federal",
     topic: "Key Terms",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -8841,7 +8841,7 @@ const QUESTIONS = [
       "Reasonable grounds sit above reasonable suspicion and below proof beyond a reasonable doubt, based on the totality of circumstances.",
     subject: "Federal",
     topic: "Reasonable Grounds",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_rg_2",
@@ -8853,7 +8853,7 @@ const QUESTIONS = [
       "Reasonable grounds do not require certainty or absolute proof—only an objectively justifiable basis plus the officer’s honest belief.",
     subject: "Federal",
     topic: "Reasonable Grounds",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_rg_3",
@@ -8865,7 +8865,7 @@ const QUESTIONS = [
       "Suspicion alone isn’t enough—grounds must be based on facts and circumstances that are objectively justifiable.",
     subject: "Federal",
     topic: "Reasonable Grounds",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_rg_4",
@@ -8885,7 +8885,7 @@ const QUESTIONS = [
       "Grounds must be based on facts/circumstances, not guessing or searching without a basis.",
     subject: "Federal",
     topic: "Reasonable Grounds",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_rg_5",
@@ -8902,7 +8902,7 @@ const QUESTIONS = [
       "The notes list confession, credible witness, and circumstantial evidence as sources of grounds.",
     subject: "Federal",
     topic: "Reasonable Grounds",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -8923,7 +8923,7 @@ const QUESTIONS = [
       "Both are required: the officer must honestly believe grounds exist AND the belief must be objectively justifiable.",
     subject: "Federal",
     topic: "Subjective vs Objective",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_so_2",
@@ -8940,7 +8940,7 @@ const QUESTIONS = [
       "Objective justification is about whether the facts would convince a reasonable person.",
     subject: "Federal",
     topic: "Subjective vs Objective",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_so_3",
@@ -8957,7 +8957,7 @@ const QUESTIONS = [
       "Subjective = the officer’s honest belief, actually held, that grounds exist.",
     subject: "Federal",
     topic: "Subjective vs Objective",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_so_4",
@@ -8969,7 +8969,7 @@ const QUESTIONS = [
       "Subjective belief alone isn’t enough; the belief must also be objectively justifiable.",
     subject: "Federal",
     topic: "Subjective vs Objective",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -8991,7 +8991,7 @@ const QUESTIONS = [
       "As information develops, an officer may move along the continuum, increasing lawful authority as grounds strengthen.",
     subject: "Federal",
     topic: "Police Interaction Continuum",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_rs_1",
@@ -9008,7 +9008,7 @@ const QUESTIONS = [
       "Reasonable suspicion supports investigative detention, not arrest.",
     subject: "Federal",
     topic: "Reasonable Suspicion",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_rs_2",
@@ -9025,7 +9025,7 @@ const QUESTIONS = [
       "It’s a fact-based suspicion grounded in objectively discernible facts.",
     subject: "Federal",
     topic: "Reasonable Suspicion",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_brd_1",
@@ -9042,7 +9042,7 @@ const QUESTIONS = [
       "BRD is the trial standard required to convict, and it’s higher than reasonable grounds.",
     subject: "Federal",
     topic: "Standards of Proof",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_compare_1",
@@ -9073,7 +9073,7 @@ const QUESTIONS = [
       "Reasonable suspicion supports investigative detention; reasonable grounds supports stronger powers like arrest/search/use of force.",
     subject: "Federal",
     topic: "Standards Comparison",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -9090,7 +9090,7 @@ const QUESTIONS = [
       "The notes identify Criminal Code s.25 as the authority to use force.",
     subject: "Federal",
     topic: "Use of Force Authority",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_justified_1",
@@ -9107,7 +9107,7 @@ const QUESTIONS = [
       "Justified = protected from criminal and civil liability when acting lawfully on RG and using only necessary force.",
     subject: "Federal",
     topic: "Justification",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -9129,7 +9129,7 @@ const QUESTIONS = [
     explanation: "All three branches must be met to maintain s.25 protection.",
     subject: "Federal",
     topic: "Three-Branch Test",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_threebranch_2",
@@ -9141,7 +9141,7 @@ const QUESTIONS = [
       "All branches must be satisfied; failure of any branch can remove justification under s.25.",
     subject: "Federal",
     topic: "Three-Branch Test",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_threebranch_3",
@@ -9159,7 +9159,7 @@ const QUESTIONS = [
       "Force must be objectively reasonable and limited to what is necessary to achieve the lawful purpose.",
     subject: "Federal",
     topic: "Necessary Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -9175,7 +9175,7 @@ const QUESTIONS = [
       "De-escalation is preferred, but force may be necessary if safety is at risk and other efforts fail.",
     subject: "Federal",
     topic: "De-escalation",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_articulation_1",
@@ -9193,7 +9193,7 @@ const QUESTIONS = [
       "Your notes and articulation are evidence and must explain lawful authority, grounds, and necessity of force.",
     subject: "Federal",
     topic: "Articulation",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_template_1",
@@ -9211,7 +9211,7 @@ const QUESTIONS = [
       "The template: authority → grounds (facts + belief) → necessary force + de-escalation considerations.",
     subject: "Federal",
     topic: "Articulation",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -9232,7 +9232,7 @@ const QUESTIONS = [
       "Good faith = honest intention + no knowledge of irregularity.",
     subject: "Federal",
     topic: "Good Faith",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_goodfaith_1",
@@ -9244,7 +9244,7 @@ const QUESTIONS = [
       "The notes describe good faith protection when executing process/sentence despite defects, if acting honestly without knowledge of irregularity.",
     subject: "Federal",
     topic: "Good Faith",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_mistake_1",
@@ -9261,7 +9261,7 @@ const QUESTIONS = [
       "The notes emphasize good faith protects reasonable mistakes of fact, not mistakes of law.",
     subject: "Federal",
     topic: "Good Faith",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_mistake_2",
@@ -9279,7 +9279,7 @@ const QUESTIONS = [
       "Reliance on incorrect system information is a mistake of fact; good faith may apply if the officer had no reason to know it was wrong.",
     subject: "Federal",
     topic: "Good Faith",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_mistake_3",
@@ -9297,7 +9297,7 @@ const QUESTIONS = [
       "Misunderstanding or not knowing arrest authority is a mistake of law and is not protected the same way as mistake of fact.",
     subject: "Federal",
     topic: "Good Faith",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -9313,7 +9313,7 @@ const QUESTIONS = [
       "The notes stress strict compliance: each element must be satisfied or deadly force is not justified.",
     subject: "Federal",
     topic: "Deadly Force – Fleeing Subject",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_254_2",
@@ -9333,7 +9333,7 @@ const QUESTIONS = [
       "The module lists these five requirements (and stresses all must be met).",
     subject: "Federal",
     topic: "Deadly Force – Fleeing Subject",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_254_3",
@@ -9351,7 +9351,7 @@ const QUESTIONS = [
       "Deadly force is tied to preventing death or grievous bodily harm (imminent or future), not minor harm.",
     subject: "Federal",
     topic: "Deadly Force – Fleeing Subject",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -9373,7 +9373,7 @@ const QUESTIONS = [
       "The notes describe a narrow authority: threat of death/GBH + no lesser reasonable option.",
     subject: "Federal",
     topic: "Deadly Force – Escaping Inmate",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_inmate_2",
@@ -9385,7 +9385,7 @@ const QUESTIONS = [
       "The notes describe it as narrow and tied to penitentiary inmates (not all prisoners).",
     subject: "Federal",
     topic: "Deadly Force – Escaping Inmate",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -9407,7 +9407,7 @@ const QUESTIONS = [
       "The notes describe deadly force as last resort: necessary to preserve life/prevent death or grievous bodily harm.",
     subject: "Federal",
     topic: "Deadly Force – Necessity",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_necessity_1",
@@ -9425,7 +9425,7 @@ const QUESTIONS = [
       "Necessity is broken down into imminence, no reasonable alternatives, and proportionality.",
     subject: "Federal",
     topic: "Necessity",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_imminence_1",
@@ -9437,7 +9437,7 @@ const QUESTIONS = [
       "Imminence is evaluated through intent, means, and opportunity—danger capable of being carried out now.",
     subject: "Federal",
     topic: "Imminence",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_proportionality_1",
@@ -9454,7 +9454,7 @@ const QUESTIONS = [
       "Proportionality means the harm caused should not exceed the harm avoided (and deadly force is tied to preventing death/GBH).",
     subject: "Federal",
     topic: "Proportionality",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -9475,7 +9475,7 @@ const QUESTIONS = [
       "s.26 means even if you’re authorized to use force, you’re criminally responsible for any excess.",
     subject: "Federal",
     topic: "Excess Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_s26_2",
@@ -9487,7 +9487,7 @@ const QUESTIONS = [
       "The notes emphasize continuous reassessment; once force becomes excessive, s.26 applies and protection can be lost.",
     subject: "Federal",
     topic: "Excess Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_creditcard_1",
@@ -9505,7 +9505,7 @@ const QUESTIONS = [
       "s.26 is framed as the limit: you can’t exceed what is reasonable and necessary.",
     subject: "Federal",
     topic: "Excess Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -9526,7 +9526,7 @@ const QUESTIONS = [
       "s.27 is framed as prevention-focused, with force limited to what is reasonably necessary.",
     subject: "Federal",
     topic: "Preventing an Offence",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_s27_2",
@@ -9544,7 +9544,7 @@ const QUESTIONS = [
       "The notes outline these conditions and emphasize force must still be reasonable/necessary/proportionate.",
     subject: "Federal",
     topic: "Preventing an Offence",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -9566,7 +9566,7 @@ const QUESTIONS = [
       "The notes use the trigger → motive → response structure: belief, defensive purpose, reasonable response.",
     subject: "Federal",
     topic: "Self-Defence",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_s34_defothers_1",
@@ -9578,7 +9578,7 @@ const QUESTIONS = [
       "The notes state defence of others can apply to any other person; relationship is a factor courts consider.",
     subject: "Federal",
     topic: "Self-Defence",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_s34_factors_1",
@@ -9599,7 +9599,7 @@ const QUESTIONS = [
       "The notes describe a holistic assessment of all relevant circumstances; uniform visibility isn’t listed as a factor here.",
     subject: "Federal",
     topic: "Self-Defence",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -9615,7 +9615,7 @@ const QUESTIONS = [
       "The notes state Charter breaches can remove s.25 protection and expose criminal/civil liability.",
     subject: "Federal",
     topic: "Charter & Use of Force",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_charter_2",
@@ -9634,7 +9634,7 @@ const QUESTIONS = [
       "The notes list s.8, s.9, and s.10 rights as common in police encounters.",
     subject: "Federal",
     topic: "Charter Rights",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_charter_12",
@@ -9651,7 +9651,7 @@ const QUESTIONS = [
       "s.12 is the protection from cruel and unusual treatment or punishment.",
     subject: "Federal",
     topic: "Charter Rights",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_241_1",
@@ -9669,7 +9669,7 @@ const QUESTIONS = [
       "s.24(1) is the general remedy provision for Charter breaches.",
     subject: "Federal",
     topic: "Charter Remedies",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_242_1",
@@ -9686,7 +9686,7 @@ const QUESTIONS = [
       "s.24(2) is the exclusionary rule based on disrepute to the administration of justice.",
     subject: "Federal",
     topic: "Charter Remedies",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_lsda_1",
@@ -9699,7 +9699,7 @@ const QUESTIONS = [
       "LSDA (Liberty, Search, Detention, Arrest) → remedies under s.24.",
     subject: "Federal",
     topic: "Exam Memory Aids",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
 
   // -------------------------------
@@ -9721,7 +9721,7 @@ const QUESTIONS = [
       "If authorized/required by law + RG + necessary force are satisfied, s.25 justification applies.",
     subject: "Federal",
     topic: "Scenario Applications",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_scn_2",
@@ -9739,7 +9739,7 @@ const QUESTIONS = [
       "Even if initial force was justified, continued force can become excessive → s.26 criminal responsibility.",
     subject: "Federal",
     topic: "Scenario Applications",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   {
     id: "fedlaw4_scn_3",
@@ -9757,7 +9757,7 @@ const QUESTIONS = [
       "On arrest/detention, the person must be informed promptly of reasons (10a) and right to counsel (10b).",
     subject: "Federal",
     topic: "Scenario Applications",
-    lecture: "FedLaw4: Use of Force and The Charter",
+    lecture: "Federal Law 4: Use of Force and The Charter",
   },
   // -------------------------------
   // Core Concepts Review
